@@ -1,12 +1,12 @@
 // ═══════════════════════════════════════════════════════════
-// ELVONIS 伊凡仕 — Language & Data System
+// ELVONIS — Language & Data System
 // 双按钮切换（参考CleanPro），中英文数据统一管理
 // ═══════════════════════════════════════════════════════════
 
 // ── 1. 全站配置 ──────────────────────────────────────────
 const SITE_CONFIG = {
   brand:     'ELVONIS',
-  brandZh:   '伊凡仕',
+  brandZh:   '',
   slogan_en: 'Serious Clean for Serious Business',
   slogan_zh: '专为清洁，专为商用',
   whatsapp:  '60123456789',   // ← 替换成真实号码
@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', initLang);
 const I18N = {
   zh: {
     // META
-    'meta.home.title':    'ELVONIS 伊凡仕 | 商用清洁设备 专为清洁 专为商用',
-    'meta.home.desc':     'ELVONIS伊凡仕，直接从认证工厂供应CE认证商用清洁设备，高压清洗机、工业吸尘器、商用洗地机、商用扫地机器人。',
-    'meta.products.title':'产品中心 | ELVONIS 伊凡仕 商用清洁设备',
-    'meta.about.title':   '关于我们 | ELVONIS 伊凡仕',
-    'meta.contact.title': '联系我们 | ELVONIS 伊凡仕 获取报价',
-    'meta.blog.title':    '知识博客 | ELVONIS 伊凡仕',
-    'meta.apps.title':    '应用场景 | ELVONIS 伊凡仕 商用清洁设备',
+    'meta.home.title':    'ELVONIS | 商用清洁设备 专为清洁 专为商用',
+    'meta.home.desc':     'ELVONIS，直接从认证工厂供应CE认证商用清洁设备，高压清洗机、工业吸尘器、商用洗地机、商用扫地机器人。',
+    'meta.products.title':'产品中心 | ELVONIS 商用清洁设备',
+    'meta.about.title':   '关于我们 | ELVONIS',
+    'meta.contact.title': '联系我们 | ELVONIS 获取报价',
+    'meta.blog.title':    '知识博客 | ELVONIS',
+    'meta.apps.title':    '应用场景 | ELVONIS 商用清洁设备',
 
     // NAV
     'nav.home':     '首页',
@@ -93,7 +93,7 @@ const I18N = {
     'hero.eyebrow': '工业级品质 · 工厂直供 · CE认证',
     'hero.h1.line1':'专为清洁，',
     'hero.h1.line2':'专为商用',
-    'hero.desc':    'ELVONIS伊凡仕，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。直接从认证工厂供应高压清洗机、工业吸尘器、商用洗地机和商用扫地机器人，CE认证，工厂直供。',
+    'hero.desc':    'ELVONIS，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。直接从认证工厂供应高压清洗机、工业吸尘器、商用洗地机和商用扫地机器人，CE认证，工厂直供。',
     'hero.btn1':    '查看产品系列',
     'hero.btn2':    '立即询价',
 
@@ -234,10 +234,10 @@ const I18N = {
     'blog.readmore':    '阅读全文 →',
 
     // ABOUT
-    'about.hero.title':    'ELVONIS 伊凡仕',
+    'about.hero.title':    'ELVONIS',
     'about.hero.sub':      '我们相信，每一个认真运营的企业，都值得拥有同样认真的清洁设备。',
     'about.mission.label': '我们的使命',
-    'about.mission':       'ELVONIS伊凡仕，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。',
+    'about.mission':       'ELVONIS，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。',
     'about.story.title':   '我们的故事',
     'about.story':         '太多企业在清洁设备上反复踩坑——产品质量参差不齐、售后服务缺失、配件断供、供应商承诺与实际交付严重脱节。ELVONIS的诞生，就是为了改变这一切。产品涵盖高压清洗机、工业吸尘器、商用洗地机、商用扫地机器人。',
     'about.quote':         '「我们相信，每一个认真运营的企业，都值得拥有同样认真的清洁设备。」',
@@ -274,12 +274,12 @@ const I18N = {
     'contact.hours.val':    '周一至周六 9:00–18:00 (UTC+8)',
 
     // FOOTER
-    'footer.desc':     'ELVONIS伊凡仕直接从认证工厂向全球企业供应CE认证商用清洁设备。',
+    'footer.desc':     'ELVONIS直接从认证工厂向全球企业供应CE认证商用清洁设备。',
     'footer.products': '产品中心',
     'footer.company':  '公司',
     'footer.support':  '支持',
     'footer.cert':     'CE认证 · 支持OEM贴牌 · 全球发货',
-    'footer.copy':     '© 2025 ELVONIS 伊凡仕 版权所有',
+    'footer.copy':     '© 2025 ELVONIS 版权所有',
 
     // WHATSAPP
     'wa.tooltip':  'WhatsApp联系我们',

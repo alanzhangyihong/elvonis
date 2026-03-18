@@ -34,7 +34,7 @@ collections:
         file: "_data/site_config.json"
         fields:
           - { label: "Brand Name (EN)", name: "brand", widget: "string", default: "ELVONIS" }
-          - { label: "Brand Name (ZH)", name: "brandZh", widget: "string", default: "伊凡仕" }
+          - { label: "Brand Name (ZH)", name: "brandZh", widget: "string", default: "" }
           - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
 
