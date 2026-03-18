@@ -148,15 +148,7 @@
     </div>
     <!-- 4 category cards -->
     <div class="prod-cat-grid" id="prodCatGrid"></div>
-    <!-- Featured products below -->
-    <div class="sec-hd" style="margin-top:52px;">
-      <div>
-        <div class="section-tag" data-i18n="prod.section.eyebrow">热门产品</div>
-        <h2 data-i18n="prod.featured">明星产品</h2>
-      </div>
-      <button class="btn btn-outline-dark" onclick="location.href='products.html'" data-i18n="prod.viewall">查看全部产品</button>
-    </div>
-    <div class="prod-grid" id="featuredGrid"></div>
+
   </div>
 </section>
 
@@ -346,10 +338,6 @@ function renderHome() {
         <div class="prod-cat-link">${c[lang].view}</div>
       </div>`).join('');
   }
-
-  // Featured products: hot ones first, max 6
-  const featured = PRODUCTS.filter(p => p.hot).slice(0, 6);
-  document.getElementById('featuredGrid').innerHTML = featured.map(p => renderProductCard(p)).join('');
 
   // App grid
   document.getElementById('appGrid').innerHTML = APPS.map(a => `
