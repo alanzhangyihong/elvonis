@@ -1,104 +1,64 @@
-# ============================================================
-# ELVONIS — Netlify CMS Configuration
-# 访问 yoursite.com/admin 进入可视化编辑后台
-# ============================================================
-
 backend:
   name: git-gateway
-  branch: main   # 如果你的主分支叫 master，改成 master
+  branch: main
 
-# 媒体文件存储位置（上传的图片）
 media_folder: "images/uploads"
 public_folder: "images/uploads"
 
-# 开启可视化编辑后台
-locale: 'zh_Hans'
-
-# ── 内容集合 ────────────────────────────────────────────────
 collections:
-
-  # ① 网站基本设置
-  - name: "settings"
-    label: "网站设置"
-    files:
-      - name: "site_config"
-        label: "基本配置（品牌名、WhatsApp、邮箱）"
-        file: "_data/site_config.json"
-        fields:
-          - { label: "品牌名（英文）", name: "brand", widget: "string", default: "ELVONIS" }
-          - { label: "品牌名（中文）", name: "brandZh", widget: "string", default: "伊凡仕" }
-          - { label: "WhatsApp 号码（含国家代码，不含+）", name: "whatsapp", widget: "string", default: "60123456789" }
-          - { label: "联系邮箱", name: "email", widget: "string", default: "info@elvonis.com" }
-          - { label: "Formspree 表单ID", name: "formspree", widget: "string" }
-          - { label: "网站域名", name: "siteUrl", widget: "string", default: "https://www.elvonis.com" }
-
-  # ② 博客文章
   - name: "blog"
-    label: "博客文章"
-    label_singular: "文章"
+    label: "Blog Posts"
+    label_singular: "Post"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "标题（中文）", name: "title_zh", widget: "string" }
-      - { label: "Title (English)", name: "title_en", widget: "string" }
-      - { label: "分类（中文）", name: "cat_zh", widget: "select",
-          options: ["选购指南", "维护技巧", "行业资讯", "客户案例", "产品介绍"] }
-      - { label: "Category (English)", name: "cat_en", widget: "select",
-          options: ["Buying Guide", "Maintenance", "Industry", "Case Study", "Product"] }
-      - { label: "封面图标（Emoji）", name: "icon", widget: "string", default: "📊" }
-      - { label: "发布日期", name: "date", widget: "date", format: "YYYY-MM-DD" }
-      - { label: "阅读时长（中文）", name: "readZh", widget: "string", default: "5分钟" }
-      - { label: "Reading Time (EN)", name: "readEn", widget: "string", default: "5 min" }
-      - { label: "摘要（中文）", name: "excerpt_zh", widget: "text" }
-      - { label: "Excerpt (English)", name: "excerpt_en", widget: "text" }
-      - { label: "正文（中文）", name: "body_zh", widget: "markdown" }
-      - { label: "Body (English)", name: "body_en", widget: "markdown" }
+      - { label: "Title (ZH)", name: "title_zh", widget: "string" }
+      - { label: "Title (EN)", name: "title_en", widget: "string" }
+      - { label: "Category (ZH)", name: "cat_zh", widget: "select", options: ["选购指南", "维护技巧", "行业资讯", "客户案例", "产品介绍"] }
+      - { label: "Category (EN)", name: "cat_en", widget: "select", options: ["Buying Guide", "Maintenance", "Industry", "Case Study", "Product"] }
+      - { label: "Icon (Emoji)", name: "icon", widget: "string", default: "📊" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "Read Time (ZH)", name: "readZh", widget: "string", default: "5分钟" }
+      - { label: "Read Time (EN)", name: "readEn", widget: "string", default: "5 min" }
+      - { label: "Excerpt (ZH)", name: "excerpt_zh", widget: "text" }
+      - { label: "Excerpt (EN)", name: "excerpt_en", widget: "text" }
+      - { label: "Body (ZH)", name: "body_zh", widget: "markdown" }
+      - { label: "Body (EN)", name: "body_en", widget: "markdown" }
 
-  # ③ 应用场景
-  - name: "applications"
-    label: "应用场景"
+  - name: "settings"
+    label: "Site Settings"
     files:
-      - name: "scenes"
-        label: "8大应用场景"
-        file: "_data/scenes.json"
+      - name: "site_config"
+        label: "Brand & Contact"
+        file: "_data/site_config.json"
         fields:
-          - name: "scenes"
-            label: "场景列表"
-            widget: "list"
-            fields:
-              - { label: "场景名称（中文）", name: "name_zh", widget: "string" }
-              - { label: "Scene Name (EN)", name: "name_en", widget: "string" }
-              - { label: "副标题（中文）", name: "sub_zh", widget: "string" }
-              - { label: "Subtitle (EN)", name: "sub_en", widget: "string" }
-              - { label: "描述（中文）", name: "desc_zh", widget: "text" }
-              - { label: "Description (EN)", name: "desc_en", widget: "text" }
+          - { label: "Brand Name (EN)", name: "brand", widget: "string", default: "ELVONIS" }
+          - { label: "Brand Name (ZH)", name: "brandZh", widget: "string", default: "伊凡仕" }
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
 
-  # ④ 联系页面信息
-  - name: "contact_info"
-    label: "联系信息"
-    files:
-      - name: "contact"
-        label: "联系页面内容"
-        file: "_data/contact.json"
-        fields:
-          - { label: "WhatsApp 显示号码", name: "wa_display", widget: "string" }
-          - { label: "邮箱地址", name: "email", widget: "string" }
-          - { label: "工作时间（中文）", name: "hours_zh", widget: "string", default: "周一至周六 9:00–18:00 (UTC+8)" }
-          - { label: "Business Hours (EN)", name: "hours_en", widget: "string", default: "Mon–Sat 9:00–18:00 (UTC+8)" }
-          - { label: "公司地址", name: "address", widget: "text" }
-
-  # ⑤ 关于我们页面
   - name: "about"
-    label: "关于我们"
+    label: "About Page"
     files:
       - name: "about_content"
-        label: "关于我们页面内容"
+        label: "About Content"
         file: "_data/about.json"
         fields:
-          - { label: "品牌故事（中文）", name: "story_zh", widget: "markdown" }
+          - { label: "Brand Story (ZH)", name: "story_zh", widget: "markdown" }
           - { label: "Brand Story (EN)", name: "story_en", widget: "markdown" }
-          - { label: "使命宣言（中文）", name: "mission_zh", widget: "text" }
-          - { label: "Mission Statement (EN)", name: "mission_en", widget: "text" }
-          - { label: "品牌引言（中文）", name: "quote_zh", widget: "text" }
-          - { label: "Brand Quote (EN)", name: "quote_en", widget: "text" }
+          - { label: "Mission (ZH)", name: "mission_zh", widget: "text" }
+          - { label: "Mission (EN)", name: "mission_en", widget: "text" }
+
+  - name: "contact_info"
+    label: "Contact Info"
+    files:
+      - name: "contact"
+        label: "Contact Details"
+        file: "_data/contact.json"
+        fields:
+          - { label: "WhatsApp Display", name: "wa_display", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Business Hours (ZH)", name: "hours_zh", widget: "string" }
+          - { label: "Business Hours (EN)", name: "hours_en", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
