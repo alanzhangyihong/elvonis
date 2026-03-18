@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.contact.title">ELVONIS 伊凡仕</title>
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/><rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/></svg></div>
+    ELVONIS <em>伊凡仕</em>
+  </a>
+  <nav><button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+    <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+    <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+    <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+    <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+    <button class="nav-link active" onclick="location.href='contact.html'" data-i18n="nav.contact"></button></nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+  <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+  <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+  <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+  <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+  <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
+  <div class="mobile-lang">
+    <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+</div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <h1 class="page-hero-title" data-i18n="contact.hero.title">联系我们</h1>
+    <p class="page-hero-sub" data-i18n="contact.hero.sub"></p>
+  </div>
+</div>
+<section class="section section-silver">
+  <div class="container">
+    <div class="contact-layout">
+      <div>
+        <h2 class="contact-form-title" data-i18n="contact.form.title">发送询盘</h2>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" data-i18n="contact.name">姓名</label><input class="form-input" type="text" name="name" required></div>
+            <div class="form-group"><label class="form-label" data-i18n="contact.company">公司名称</label><input class="form-input" type="text" name="company" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" data-i18n="contact.email">邮箱</label><input class="form-input" type="email" name="email" required></div>
+            <div class="form-group"><label class="form-label" data-i18n="contact.phone">电话/WhatsApp</label><input class="form-input" type="tel" name="phone"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" data-i18n="contact.country">国家/地区</label>
+              <select class="form-select" name="country" required>
+                <option value="">—</option>
+                <option>Malaysia 马来西亚</option><option>Vietnam 越南</option>
+                <option>Indonesia 印度尼西亚</option><option>Philippines 菲律宾</option>
+                <option>Thailand 泰国</option><option>UAE 阿联酋</option>
+                <option>Saudi Arabia 沙特阿拉伯</option><option>Singapore 新加坡</option>
+                <option>China 中国</option><option>Other 其他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" id="inquiryTypeLabel">询盘类型 / Inquiry Type</label>
+              <select class="form-select" name="inquiry_type" id="inquiryType">
+                <option value="">—</option>
+                <option value="new_equipment" id="opt-new">采购新设备 / New Equipment</option>
+                <option value="consumables" id="opt-con">耗材补货 / Consumables Replenishment</option>
+                <option value="spare_parts" id="opt-parts">配件采购 / Spare Parts</option>
+                <option value="oem" id="opt-oem">OEM贴牌合作 / OEM Partnership</option>
+                <option value="distributor" id="opt-dist">经销商合作 / Distributorship</option>
+                <option value="other" id="opt-other">其他 / Other</option>
+              </select>
+            </div>
+          </div>
+            <div class="form-group"><label class="form-label" data-i18n="contact.product">感兴趣的产品</label>
+              <select class="form-select" name="product" id="productSelect">
+                <option value="">—</option>
+                <option value="pressure">高压清洗机 / Pressure Washers</option>
+                <option value="vacuum">工业吸尘器 / Industrial Vacuums</option>
+                <option value="scrubber">商用洗地机 / Floor Scrubbers</option>
+                <option value="sweeper">扫地机器人 / Robotic Sweepers</option>
+                <option value="multiple">多个品类 / Multiple Products</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label class="form-label" data-i18n="contact.qty">预计采购数量</label><input class="form-input" type="text" name="quantity" placeholder="e.g. 5 units / 5台"></div>
+          <div class="form-group"><label class="form-label" data-i18n="contact.message">留言</label><textarea class="form-textarea" name="message" rows="4"></textarea></div>
+          <input type="hidden" name="_subject" value="New ELVONIS Enquiry">
+          <button type="submit" class="form-submit" data-i18n="contact.submit">发送消息</button>
+          <div id="formMsg" class="form-msg"></div>
+        </form>
+      </div>
+      <div>
+        <div class="contact-info-card">
+          <div class="contact-info-title" data-i18n="contact.info.title">联系方式</div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><svg viewBox="0 0 16 16" fill="none" width="15" height="15"><path d="M2 4l6 5 6-5" stroke="#00AEEF" stroke-width="1.3" stroke-linecap="round"/><rect x="2" y="3" width="12" height="10" rx="1.5" stroke="#00AEEF" stroke-width="1.3"/></svg></div>
+            <div><div class="contact-info-label" data-i18n="contact.email.label">邮箱</div><div class="contact-info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8be2e5ede4cbeee7fde4e5e2f8a5e8e4e6">[email&#160;protected]</a></div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><svg viewBox="0 0 16 16" fill="none" width="15" height="15"><path d="M3 3.5C3 9 7 13.5 13 13.5l1-2.5-2.5-1-1 1c-1-.5-2.5-2-3-3l1-1-1-2.5L5 4l-2-.5z" stroke="#00AEEF" stroke-width="1.2"/></svg></div>
+            <div><div class="contact-info-label" data-i18n="contact.wa.label">WhatsApp</div><div class="contact-info-val" id="wa-num">+60 12-345 6789</div></div>
+          </div>
+          <div class="contact-info-item">
+            <div class="contact-info-icon"><svg viewBox="0 0 16 16" fill="none" width="15" height="15"><circle cx="8" cy="8" r="6" stroke="#00AEEF" stroke-width="1.3"/><path d="M8 5v3l2 2" stroke="#00AEEF" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+            <div><div class="contact-info-label" data-i18n="contact.hours.label">工作时间</div><div class="contact-info-val" data-i18n="contact.hours.val"></div></div>
+          </div>
+          <a id="waContactBtn" href="#" target="_blank" class="contact-wa-btn">
+            <svg width="20" height="20" viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-logo-wrap">
+      <div class="footer-logo-icon"><svg viewBox="0 0 14 14" fill="none" width="14" height="14"><rect x="1" y="1" width="5" height="5" rx="1" fill="white"/><rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="white"/></svg></div>
+      <span class="footer-brand">ELVONIS <em>伊凡仕</em></span>
+    </div>
+    <p class="footer-desc" data-i18n="footer.desc"></p>
+    <div class="footer-certs"><span class="footer-cert">CE</span><span class="footer-cert">RoHS</span><span class="footer-cert">OEM</span></div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.products">产品中心</div>
+    <div class="footer-links">
+      <a href="products.html?cat=pressure" data-i18n="prod.filter.pressure">高压清洗机</a>
+      <a href="products.html?cat=vacuum" data-i18n="prod.filter.vacuum">工业吸尘器</a>
+      <a href="products.html?cat=scrubber" data-i18n="prod.filter.scrubber">商用洗地机</a>
+      <a href="products.html?cat=sweeper" data-i18n="prod.filter.sweeper">扫地机器人</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.company">公司</div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">关于我们</a>
+      <a href="blog.html" data-i18n="nav.blog">知识博客</a>
+      <a href="applications.html" data-i18n="nav.apps">应用场景</a>
+      <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.support">支持</div>
+    <div class="footer-links">
+      <a href="contact.html">FAQ</a>
+      <a href="contact.html" data-i18n="nav.inquiry">立即询价</a>
+      <a href="contact.html">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:var(--navy-deep,#0f1e2b);">
+  <p class="footer-copy" data-i18n="footer.copy"></p>
+  <p class="footer-cert-row" data-i18n="footer.cert"></p>
+</div>
+<a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="language.js"></script>
+<script>
+// Pre-fill from URL params
+const _urlP = new URLSearchParams(location.search);
+const _urlProd = _urlP.get('product');
+const _urlType = _urlP.get('type');
+
+if (_urlProd) {
+  const sel = document.getElementById('productSelect');
+  // Try to match existing option value
+  const existing = Array.from(sel.options).find(o => o.value === _urlProd);
+  if (existing) {
+    existing.selected = true;
+  } else {
+    // Specific product name passed (from product detail page quote button)
+    const opt = document.createElement('option');
+    opt.value = _urlProd; opt.textContent = _urlProd; opt.selected = true;
+    sel.prepend(opt);
+  }
+}
+if (_urlType === 'consumables') {
+  const typeSelect = document.getElementById('inquiryType');
+  if (typeSelect) {
+    const opt = typeSelect.querySelector('[value="consumables"]');
+    if (opt) opt.selected = true;
+  }
+}
+
+// Update inquiry type label bilingually
+function renderPage() {
+  const zh = currentLang === 'zh';
+  document.getElementById('inquiryTypeLabel').textContent = zh ? '询盘类型' : 'Inquiry Type';
+  document.getElementById('opt-new').textContent    = zh ? '采购新设备' : 'New Equipment';
+  document.getElementById('opt-con').textContent    = zh ? '耗材补货'   : 'Consumables Replenishment';
+  document.getElementById('opt-parts').textContent  = zh ? '配件采购'   : 'Spare Parts';
+  document.getElementById('opt-oem').textContent    = zh ? 'OEM贴牌合作': 'OEM Partnership';
+  document.getElementById('opt-dist').textContent   = zh ? '经销商合作' : 'Distributorship';
+  document.getElementById('opt-other').textContent  = zh ? '其他'       : 'Other';
+
+  // WA button
+  const btn = document.getElementById('waContactBtn');
+  if (btn) btn.href = 'https://wa.me/' + SITE_CONFIG.whatsapp + '?text=' + encodeURIComponent(T('wa.greeting'));
+}
+// Form submit
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.form-submit');
+  const msg=document.getElementById('formMsg');
+  btn.textContent=T('contact.sending');btn.disabled=true;
+  const data=Object.fromEntries(new FormData(this));
+  try{
+    const res=await fetch('https://formspree.io/f/'+SITE_CONFIG.formspree,{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(data)
+    });
+    if(res.ok){msg.textContent=T('contact.success');msg.className='form-msg success';this.reset();}
+    else throw new Error();
+  }catch{msg.textContent=T('contact.error');msg.className='form-msg error';}
+  msg.style.display='block';
+  btn.textContent=T('contact.submit');btn.disabled=false;
+});
+</script>
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.t

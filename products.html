@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.products.title">ELVONIS 伊凡仕</title>
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/><rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/></svg></div>
+    ELVONIS <em>伊凡仕</em>
+  </a>
+  <nav><button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+    <button class="nav-link active" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+    <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+    <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+    <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+    <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button></nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+  <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+  <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+  <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+  <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+  <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
+  <div class="mobile-lang">
+    <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+</div>
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow">ELVONIS — PRODUCT CATALOGUE</div>
+    <h1 class="page-hero-title" data-i18n="prod.filter.all">产品中心</h1>
+    <p class="page-hero-sub" data-i18n="prod.section.sub"></p>
+  </div>
+</div>
+<div class="filter-bar" id="filterBar">
+  <div class="filter-bar-inner">
+    <button class="filter-btn active" data-cat="all" data-i18n="prod.filter.all">全部产品</button>
+    <button class="filter-btn" data-cat="pressure" data-i18n="prod.filter.pressure">高压清洗机</button>
+    <button class="filter-btn" data-cat="vacuum" data-i18n="prod.filter.vacuum">工业吸尘器</button>
+    <button class="filter-btn" data-cat="scrubber" data-i18n="prod.filter.scrubber">商用洗地机</button>
+    <button class="filter-btn" data-cat="sweeper" data-i18n="prod.filter.sweeper">扫地机器人</button>
+    <button class="filter-btn" data-cat="consumable" data-i18n="prod.filter.consumable">配件耗材</button>
+    <div class="filter-search">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" width="14" height="14"><circle cx="6.5" cy="6.5" r="4.5" stroke-width="1.5"/><path d="M11 11l3 3" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <input type="text" id="searchInput" data-i18n="prod.search" data-i18n-attr="placeholder">
+    </div>
+  </div>
+</div>
+<section class="section section-silver" style="padding-top:36px;">
+  <div class="container">
+    <div id="prodCount" style="font-size:12px;color:var(--text-muted);margin-bottom:16px;"></div>
+    <div id="productGrid" class="product-grid product-grid-5"></div>
+    <div id="noResults" style="display:none;text-align:center;padding:60px 0;color:var(--text-muted);">
+      <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="currentColor" style="margin:0 auto 12px;opacity:.3;display:block;"><circle cx="22" cy="22" r="14" stroke-width="2"/><path d="M32 32l8 8" stroke-width="2" stroke-linecap="round"/></svg>
+      <p data-i18n="prod.notfound">未找到相关产品</p>
+    </div>
+  </div>
+</section>
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2 class="cta-title"><span data-i18n="cta.title1"></span><br><em data-i18n="cta.title2"></em></h2>
+      <p class="cta-sub" data-i18n="cta.sub"></p>
+    </div>
+    <div class="cta-right">
+      <button class="btn btn-accent" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo-wrap">
+      <div class="footer-logo-icon"><svg viewBox="0 0 14 14" fill="none" width="14" height="14"><rect x="1" y="1" width="5" height="5" rx="1" fill="white"/><rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="white"/></svg></div>
+      <span class="footer-brand">ELVONIS <em>伊凡仕</em></span>
+    </div>
+    <p class="footer-desc" data-i18n="footer.desc"></p>
+    <div class="footer-certs"><span class="footer-cert">CE</span><span class="footer-cert">RoHS</span><span class="footer-cert">OEM</span></div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.products">产品中心</div>
+    <div class="footer-links">
+      <a href="products.html?cat=pressure" data-i18n="prod.filter.pressure">高压清洗机</a>
+      <a href="products.html?cat=vacuum" data-i18n="prod.filter.vacuum">工业吸尘器</a>
+      <a href="products.html?cat=scrubber" data-i18n="prod.filter.scrubber">商用洗地机</a>
+      <a href="products.html?cat=sweeper" data-i18n="prod.filter.sweeper">扫地机器人</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.company">公司</div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">关于我们</a>
+      <a href="blog.html" data-i18n="nav.blog">知识博客</a>
+      <a href="applications.html" data-i18n="nav.apps">应用场景</a>
+      <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.support">支持</div>
+    <div class="footer-links">
+      <a href="contact.html">FAQ</a>
+      <a href="contact.html" data-i18n="nav.inquiry">立即询价</a>
+      <a href="contact.html">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:var(--navy-deep,#0f1e2b);">
+  <p class="footer-copy" data-i18n="footer.copy"></p>
+  <p class="footer-cert-row" data-i18n="footer.cert"></p>
+</div>
+<a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+<script src="language.js"></script>
+<script>
+let currentCat='all', currentQuery='';
+const urlP=new URLSearchParams(location.search);
+if(urlP.get('cat'))currentCat=urlP.get('cat');
+
+function renderPage(){
+  const lang=currentLang;
+  let list=getProducts(currentCat,currentQuery);
+  const grid=document.getElementById('productGrid');
+  const noRes=document.getElementById('noResults');
+  const count=document.getElementById('prodCount');
+  if(list.length===0){grid.innerHTML='';noRes.style.display='block';}
+  else{noRes.style.display='none';grid.innerHTML=list.map(p=>renderProductCard(p)).join('');}
+  count.textContent=(lang==='zh'?T('prod.showing')+' '+list.length+' '+T('prod.items'):T('prod.showing')+' '+list.length+' '+T('prod.items'));
+  document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.toggle('active',b.dataset.cat===currentCat);});
+}
+
+document.querySelectorAll('.filter-btn').forEach(b=>{
+  b.addEventListener('click',()=>{currentCat=b.dataset.cat||'all';renderPage();});
+});
+document.getElementById('searchInput').addEventListener('input',e=>{currentQuery=e.target.value.toLowerCase().trim();renderPage();});
+</script>
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}}
+function onLangChange(){if(typeof renderPage==='function')renderPage();initWA();}
+document.addEventListener('DOMContentLoaded',()=>{initWA();if(typeof renderPage==='function')renderPage();});
+</script><script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+    }
+  });
+}
+</script>
+</body></html>

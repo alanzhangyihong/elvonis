@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="900" height="500">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#0f1e2b"/><stop offset="100%" stop-color="#1a2a3a"/>
+  </linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+    <stop offset="0%" stop-color="#c9a84c"/><stop offset="100%" stop-color="#f0d98a"/>
+  </linearGradient>
+</defs>
+<rect width="900" height="500" fill="url(#bg)"/>
+<!-- subtle grid -->
+<line x1="0" y1="0" x2="900" y2="0" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="50" x2="900" y2="50" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="100" x2="900" y2="100" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="150" x2="900" y2="150" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="200" x2="900" y2="200" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="250" x2="900" y2="250" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="300" x2="900" y2="300" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="350" x2="900" y2="350" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="400" x2="900" y2="400" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="450" x2="900" y2="450" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="0" y1="500" x2="900" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+<line x1="0" y1="0" x2="0" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="60" y1="0" x2="60" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="120" y1="0" x2="120" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="180" y1="0" x2="180" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="240" y1="0" x2="240" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="300" y1="0" x2="300" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="360" y1="0" x2="360" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="420" y1="0" x2="420" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="480" y1="0" x2="480" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="540" y1="0" x2="540" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="600" y1="0" x2="600" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="660" y1="0" x2="660" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="720" y1="0" x2="720" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="780" y1="0" x2="780" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="840" y1="0" x2="840" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/><line x1="900" y1="0" x2="900" y2="500" stroke="rgba(255,255,255,0.025)" stroke-width="1"/>
+<!-- gold accent bar left -->
+<rect x="0" y="60" width="4" height="380" fill="url(#gold)" rx="2"/>
+<!-- large background icon -->
+<text x="780" y="400" font-family="Arial,sans-serif" font-size="240" fill="rgba(255,255,255,0.03)" text-anchor="middle">✈️</text>
+<!-- number -->
+<text x="80" y="120" font-family="Arial Black,sans-serif" font-size="72" font-weight="900" fill="rgba(201,168,76,0.08)" letter-spacing="-2">01</text>
+<!-- icon -->
+<text x="80" y="188" font-family="Arial,sans-serif" font-size="52">✈️</text>
+<!-- gold line under icon -->
+<rect x="80" y="204" width="60" height="3" rx="2" fill="url(#gold)"/>
+<!-- title zh -->
+<text x="80" y="248" font-family="Arial Black,sans-serif" font-size="28" font-weight="900" fill="white" letter-spacing="-0.5">机场 / 车站</text>
+<!-- title en -->
+<text x="80" y="272" font-family="Arial,sans-serif" font-size="13" fill="rgba(201,168,76,0.65)" letter-spacing="2">AIRPORT STATION</text>
+<text x="80" y="295" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.62)">超大面积一次通过</text><text x="80" y="317" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.62)">锂电快充不停机</text><text x="80" y="339" font-family="Arial,sans-serif" font-size="13" fill="rgba(255,255,255,0.62)">洗扫一体高效率</text>
+<!-- right side decorative elements -->
+<circle cx="720" cy="250" r="180" fill="none" stroke="rgba(201,168,76,0.06)" stroke-width="1"/>
+<circle cx="720" cy="250" r="120" fill="none" stroke="rgba(201,168,76,0.05)" stroke-width="1"/>
+<circle cx="720" cy="250" r="60" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+<!-- stat boxes -->
+<rect x="560" y="170" width="130" height="60" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+<text x="625" y="204" font-family="Arial Black,sans-serif" font-size="22" font-weight="900" fill="#c9a84c" text-anchor="middle">24/7</text>
+<text x="625" y="222" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">OPERATION</text>
+<rect x="710" y="170" width="130" height="60" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(201,168,76,0.2)" stroke-width="1"/>
+<text x="775" y="204" font-family="Arial Black,sans-serif" font-size="22" font-weight="900" fill="#c9a84c" text-anchor="middle">CE</text>
+<text x="775" y="222" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="1">CERTIFIED</text>
+<rect x="560" y="246" width="280" height="60" rx="4" fill="rgba(255,255,255,0.03)" stroke="rgba(201,168,76,0.15)" stroke-width="1"/>
+<text x="700" y="272" font-family="Arial Black,sans-serif" font-size="16" font-weight="900" fill="rgba(201,168,76,0.5)" text-anchor="middle" letter-spacing="2">CLEANPRO</text>
+<text x="700" y="290" font-family="Arial,sans-serif" font-size="9" fill="rgba(255,255,255,0.28)" text-anchor="middle" letter-spacing="1">PROFESSIONAL SOLUTIONS</text>
+<!-- bottom gold line -->
+<rect x="0" y="490" width="900" height="4" fill="url(#gold)" opacity="0.5"/>
+</svg>

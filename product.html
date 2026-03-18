@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.products.title">ELVONIS 伊凡仕</title>
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/><rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/></svg></div>
+    ELVONIS <em>伊凡仕</em>
+  </a>
+  <nav><button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+    <button class="nav-link active" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+    <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+    <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+    <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+    <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button></nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+  <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+  <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+  <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+  <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+  <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
+  <div class="mobile-lang">
+    <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+</div>
+<div class="page-hero" style="padding:32px 24px 24px;">
+  <div class="page-hero-inner" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+    <a href="index.html" style="font-size:12px;color:#5A7A9A;" data-i18n="nav.home">首页</a>
+    <span style="color:#3A5060;">›</span>
+    <a href="products.html" style="font-size:12px;color:#5A7A9A;" data-i18n="nav.products">产品中心</a>
+    <span style="color:#3A5060;">›</span>
+    <span id="bcName" style="font-size:12px;color:var(--cyan-light);">...</span>
+  </div>
+</div>
+<section class="section section-white" style="padding-top:28px;">
+  <div class="container">
+    <div id="detailWrap"></div>
+  </div>
+</section>
+<section class="section section-silver">
+  <div class="container">
+    <div class="sec-hd"><h2 data-i18n="detail.related">相关产品</h2></div>
+    <div id="relatedGrid" class="product-grid product-grid-5"></div>
+  </div>
+</section>
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2 class="cta-title"><span data-i18n="cta.title1"></span><br><em data-i18n="cta.title2"></em></h2>
+      <p class="cta-sub" data-i18n="cta.sub"></p>
+    </div>
+    <div class="cta-right">
+      <button class="btn btn-accent" onclick="location.href='contact.html'" data-i18n="detail.btn.quote">立即询价</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo-wrap">
+      <div class="footer-logo-icon"><svg viewBox="0 0 14 14" fill="none" width="14" height="14"><rect x="1" y="1" width="5" height="5" rx="1" fill="white"/><rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="white"/></svg></div>
+      <span class="footer-brand">ELVONIS <em>伊凡仕</em></span>
+    </div>
+    <p class="footer-desc" data-i18n="footer.desc"></p>
+    <div class="footer-certs"><span class="footer-cert">CE</span><span class="footer-cert">RoHS</span><span class="footer-cert">OEM</span></div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.products">产品中心</div>
+    <div class="footer-links">
+      <a href="products.html?cat=pressure" data-i18n="prod.filter.pressure">高压清洗机</a>
+      <a href="products.html?cat=vacuum" data-i18n="prod.filter.vacuum">工业吸尘器</a>
+      <a href="products.html?cat=scrubber" data-i18n="prod.filter.scrubber">商用洗地机</a>
+      <a href="products.html?cat=sweeper" data-i18n="prod.filter.sweeper">扫地机器人</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.company">公司</div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">关于我们</a>
+      <a href="blog.html" data-i18n="nav.blog">知识博客</a>
+      <a href="applications.html" data-i18n="nav.apps">应用场景</a>
+      <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.support">支持</div>
+    <div class="footer-links">
+      <a href="contact.html">FAQ</a>
+      <a href="contact.html" data-i18n="nav.inquiry">立即询价</a>
+      <a href="contact.html">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:var(--navy-deep,#0f1e2b);">
+  <p class="footer-copy" data-i18n="footer.copy"></p>
+  <p class="footer-cert-row" data-i18n="footer.cert"></p>
+</div>
+<a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+<script src="language.js"></script>
+<script>
+function renderPage(){
+  const lang=currentLang;
+  const id=new URLSearchParams(location.search).get('id');
+  const p=getProductById(id);
+  if(!p){document.getElementById('detailWrap').innerHTML='<p style="text-align:center;padding:60px;color:var(--text-muted);">Product not found.</p>';return;}
+  const name=p.name[lang]; const spec=p.spec[lang]; const desc=p.desc[lang];
+  document.title=name+' — ELVONIS';
+  document.getElementById('bcName').textContent=name;
+  const waMsg=encodeURIComponent((lang==='zh'?'您好，我想询问 ':'Hi, I am interested in ')+name);
+  const waHref='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+waMsg;
+  const quoteHref='contact.html?product='+encodeURIComponent(name);
+  const ceLabel=T('prod.badge.ce'); const oemLabel=T('prod.badge.oem');
+  const badges=[
+    p.badges.includes('ce')  ? '<span class="badge badge-cyan">'+ceLabel+'</span>' : '',
+    p.badges.includes('oem') ? '<span class="badge badge-navy">'+oemLabel+'</span>' : '',
+  ].join('');
+  document.getElementById('detailWrap').innerHTML=`
+  <div class="detail-layout">
+    <div class="detail-images">
+      <div class="detail-main-img" style="flex-direction:column;gap:12px;color:var(--slate);opacity:.35;">
+        <svg width="80" height="80" viewBox="0 0 48 48" fill="none" stroke="currentColor"><rect x="8" y="8" width="32" height="32" rx="4" stroke-width="1.5"/><circle cx="24" cy="24" r="8" stroke-width="1.5"/><path d="M24 16v4M24 28v4M16 24h4M28 24h4" stroke-width="1.5"/></svg>
+        <span style="font-size:12px;">${name}</span>
+      </div>
+      <div class="detail-thumbs">
+        ${[1,2,3,4].map((n,i)=>`<div class="detail-thumb ${i===0?'active':''}" style="background:var(--silver);display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--slate)" style="opacity:.3;"><rect x="3" y="3" width="18" height="18" rx="2" stroke-width="1.2"/></svg></div>`).join('')}
+      </div>
+    </div>
+    <div class="detail-info">
+      <div class="detail-cat">${p.cat.toUpperCase()}</div>
+      <h1 class="detail-name">${name}</h1>
+      <div class="detail-quick">
+        <div class="detail-quick-item"><div class="detail-quick-label" data-i18n="detail.label.model"></div><div class="detail-quick-val">${p.id.toUpperCase()}</div></div>
+        <div class="detail-quick-item"><div class="detail-quick-label" data-i18n="detail.label.cert"></div><div class="detail-quick-val">${p.badges.map(b=>b.toUpperCase()).join(' / ')}</div></div>
+        <div class="detail-quick-item"><div class="detail-quick-label" data-i18n="detail.label.moq"></div><div class="detail-quick-val">${p.moq}</div></div>
+        <div class="detail-quick-item"><div class="detail-quick-label" data-i18n="detail.label.lead"></div><div class="detail-quick-val">${p.lead}</div></div>
+      </div>
+      <div class="detail-btns">
+        <a href="${quoteHref}" class="btn btn-accent" data-i18n="detail.btn.quote" style="flex:1;justify-content:center;"></a>
+        <a href="${waHref}" class="detail-btn-wa" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3z"/></svg>
+          <span data-i18n="detail.btn.whatsapp"></span>
+        </a>
+      </div>
+      <div class="detail-tabs">
+        <div class="detail-tab active" data-tab="overview" data-i18n="detail.tab.overview"></div>
+        <div class="detail-tab" data-tab="specs" data-i18n="detail.tab.specs"></div>
+        <div class="detail-tab" data-tab="apps" data-i18n="detail.tab.apps"></div>
+        <div class="detail-tab" data-tab="consumables" data-i18n="detail.tab.consumables"></div>
+      </div>
+
+      <div class="detail-tab-pane active" id="tab-overview">
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.75;margin-bottom:14px;">${desc}</p>
+        <p style="font-size:12px;font-weight:500;color:var(--navy);margin-bottom:6px;">${spec}</p>
+        <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:10px;">${badges}</div>
+        <div class="oem-box"><div class="oem-box-title" data-i18n="detail.oem.title"></div><div class="oem-box-desc" data-i18n="detail.oem.desc"></div></div>
+      </div>
+
+      <div class="detail-tab-pane" id="tab-specs">
+        <h3 style="font-size:12px;font-weight:500;color:var(--cyan);letter-spacing:.08em;margin-bottom:14px;" data-i18n="detail.spec.title"></h3>
+        <table class="spec-table">
+          <tr><td data-i18n="detail.label.model"></td><td>${p.id.toUpperCase()}</td></tr>
+          <tr><td>Spec</td><td>${spec}</td></tr>
+          <tr><td data-i18n="detail.label.cert"></td><td>${p.badges.map(b=>b.toUpperCase()).join(' / ')}</td></tr>
+          <tr><td data-i18n="detail.label.moq"></td><td>${p.moq}</td></tr>
+          <tr><td data-i18n="detail.label.lead"></td><td>${p.lead}</td></tr>
+          <tr><td>OEM</td><td>${p.badges.includes('oem')?'✓ Available':'On request'}</td></tr>
+        </table>
+      </div>
+
+      <div class="detail-tab-pane" id="tab-apps">
+        <h3 style="font-size:12px;font-weight:500;color:var(--cyan);letter-spacing:.08em;margin-bottom:14px;" data-i18n="detail.app.title"></h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          ${['app.factory','app.warehouse','app.mall','app.hospital','app.airport','app.hotel'].map(k=>`<div style="background:var(--silver);border-radius:6px;padding:9px 12px;font-size:12px;color:var(--text-mid);border-left:3px solid var(--cyan);">${T(k)}</div>`).join('')}
+        </div>
+      </div>
+
+      <div class="detail-tab-pane" id="tab-consumables">
+        <h3 style="font-size:12px;font-weight:500;color:var(--cyan);letter-spacing:.08em;margin-bottom:12px;" data-i18n="detail.tab.consumables"></h3>
+        ${renderConsumables(p.cat)}
+      </div>
+
+    </div>
+  </div>`;
+  applyI18n();
+  document.querySelectorAll('.detail-tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      document.querySelectorAll('.detail-tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.detail-tab-pane').forEach(c=>c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-'+tab.dataset.tab).classList.add('active');
+    });
+  });
+  // Related
+  const related=PRODUCTS.filter(r=>r.cat===p.cat&&r.id!==p.id).slice(0,5);
+  document.getElementById('relatedGrid').innerHTML=related.map(r=>renderProductCard(r)).join('');
+}
+</script>
+<script>
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}}
+function onLangChange(){if(typeof renderPage==='function')renderPage();initWA();}
+document.addEventListener('DOMContentLoaded',()=>{initWA();if(typeof renderPage==='function')renderPage();});
+</script><script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+    }
+  });
+}
+</script>
+</body></html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.apps.title">ELVONIS 伊凡仕</title>
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+<style>
+.scene-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.scene-card{background:var(--white);border:0.5px solid var(--silver-dark,#CBD5E1);border-radius:12px;padding:32px 28px;position:relative;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+.scene-card:hover{box-shadow:0 12px 36px rgba(0,174,239,.12);transform:translateY(-3px);}
+.scene-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.scene-card:hover::before{transform:scaleX(1);}
+.scene-num{font-family:var(--font-d);font-size:72px;font-weight:800;color:rgba(26,42,58,.04);position:absolute;right:20px;bottom:-10px;line-height:1;pointer-events:none;}
+.scene-icon{font-size:40px;margin-bottom:14px;display:block;}
+.scene-title{font-family:var(--font-d);font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--navy);margin-bottom:4px;}
+.scene-sub{font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:.04em;margin-bottom:12px;display:block;}
+.scene-desc{font-size:13px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;}
+.scene-rec-label{font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
+.scene-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.scene-tag{background:var(--silver);border:0.5px solid var(--silver-dark,#CBD5E1);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--navy);cursor:pointer;transition:all .2s;}
+.scene-tag:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);}
+@media(max-width:760px){.scene-grid{grid-template-columns:1fr;}}
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/><rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/></svg></div>
+    ELVONIS <em>伊凡仕</em>
+  </a>
+  <nav>
+    <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+    <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+    <button class="nav-link active" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+    <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+    <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+    <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
+  </nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-nav" id="mobileNav">
+  <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+  <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
+  <button class="nav-link active" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
+  <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
+  <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+  <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
+  <div class="mobile-lang">
+    <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+</div>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-eyebrow" data-i18n="app.section.eyebrow">行业覆盖</div>
+    <h1 class="page-hero-title" data-i18n="app.hero.title">应用场景</h1>
+    <p class="page-hero-sub" data-i18n="app.hero.sub"></p>
+  </div>
+</div>
+
+<section class="section section-silver">
+  <div class="container">
+    <div class="scene-grid" id="sceneGrid"></div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2 class="cta-title"><span data-i18n="cta.title1"></span><br><em data-i18n="cta.title2"></em></h2>
+      <p class="cta-sub" data-i18n="cta.sub"></p>
+    </div>
+    <div class="cta-right"><button class="btn btn-accent" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button></div>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo-wrap">
+      <div class="footer-logo-icon"><svg viewBox="0 0 14 14" fill="none" width="14" height="14"><rect x="1" y="1" width="5" height="5" rx="1" fill="white"/><rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="white"/></svg></div>
+      <span class="footer-brand">ELVONIS <em>伊凡仕</em></span>
+    </div>
+    <p class="footer-desc" data-i18n="footer.desc"></p>
+    <div class="footer-certs"><span class="footer-cert">CE</span><span class="footer-cert">RoHS</span><span class="footer-cert">OEM</span></div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.products">产品中心</div>
+    <div class="footer-links">
+      <a href="products.html?cat=pressure" data-i18n="prod.filter.pressure">高压清洗机</a>
+      <a href="products.html?cat=vacuum" data-i18n="prod.filter.vacuum">工业吸尘器</a>
+      <a href="products.html?cat=scrubber" data-i18n="prod.filter.scrubber">商用洗地机</a>
+      <a href="products.html?cat=sweeper" data-i18n="prod.filter.sweeper">扫地机器人</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.company">公司</div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">关于我们</a>
+      <a href="blog.html" data-i18n="nav.blog">知识博客</a>
+      <a href="applications.html" data-i18n="nav.apps">应用场景</a>
+      <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.support">支持</div>
+    <div class="footer-links">
+      <a href="contact.html">FAQ</a>
+      <a href="contact.html" data-i18n="nav.inquiry">立即询价</a>
+      <a href="contact.html">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:var(--navy-deep,#0f1e2b);">
+  <p class="footer-copy" data-i18n="footer.copy"></p>
+  <p class="footer-cert-row" data-i18n="footer.cert"></p>
+</div>
+<a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<script src="language.js"></script>
+<script>
+const SCENES = [
+  { key:'factory',   icon:'🏭', num:'01', recs:[
+    {id:'hp-200e',zh:'HP-200E 工业高压清洗机',en:'HP-200E Industrial Pressure Washer'},
+    {id:'hp-300hw',zh:'HP-300HW 热水清洗机',en:'HP-300HW Hot Water Washer'},
+    {id:'wv-50l',zh:'WV-50L 重型工业吸尘器',en:'WV-50L Heavy-Duty Vacuum'},
+    {id:'wv-explosion',zh:'WV-EX 防爆吸尘器',en:'WV-EX Explosion-Proof Vacuum'},
+    {id:'fs-80r',zh:'FS-80R 驾驶式洗地机',en:'FS-80R Ride-On Scrubber'},
+  ]},
+  { key:'warehouse', icon:'📦', num:'02', recs:[
+    {id:'fs-100r',zh:'FS-100R 大型驾驶洗地机',en:'FS-100R Large Ride-On Scrubber'},
+    {id:'fs-120r',zh:'FS-120R 旗舰驾驶洗地机',en:'FS-120R Mega Ride-On Scrubber'},
+    {id:'rs-industrial',zh:'RS-IND300 工业机器人',en:'RS-IND300 Industrial Robot'},
+    {id:'wv-ride',zh:'WV-RI 驾驶式扫吸一体',en:'WV-RI Ride-On Sweeper-Vac'},
+  ]},
+  { key:'mall',      icon:'🏬', num:'03', recs:[
+    {id:'fs-75w',zh:'FS-75W 手推洗地机',en:'FS-75W Walk-Behind Scrubber'},
+    {id:'rs-s200',zh:'RS-S200 商用扫地机器人',en:'RS-S200 Advanced Robot Sweeper'},
+    {id:'rs-scrub200',zh:'RS-SC200 扫洗机器人',en:'RS-SC200 Robotic Scrubber-Sweeper'},
+    {id:'wv-2m',zh:'WV-2M 双电机商用吸尘器',en:'WV-2M Twin-Motor Vacuum'},
+  ]},
+  { key:'hospital',  icon:'🏥', num:'04', recs:[
+    {id:'wv-hepa',zh:'WV-H14 HEPA H14吸尘器',en:'WV-H14 HEPA H14 Vacuum'},
+    {id:'fs-steam',zh:'FS-ST 蒸汽洗地机',en:'FS-ST Steam Floor Cleaner'},
+    {id:'rs-disinfect',zh:'RS-DIS 消毒机器人',en:'RS-DIS Disinfection Robot'},
+    {id:'wv-backpack',zh:'WV-BP 背负式吸尘器',en:'WV-BP Backpack Vacuum'},
+  ]},
+  { key:'airport',   icon:'✈️', num:'05', recs:[
+    {id:'rs-s200',zh:'RS-S200 进阶商用机器人',en:'RS-S200 Advanced Robot Sweeper'},
+    {id:'rs-scrub200',zh:'RS-SC200 扫洗机器人',en:'RS-SC200 Robotic Scrubber-Sweeper'},
+    {id:'fs-120r',zh:'FS-120R 旗舰洗地机',en:'FS-120R Mega Ride-On Scrubber'},
+    {id:'wv-50l',zh:'WV-50L 重型工业吸尘器',en:'WV-50L Heavy-Duty Vacuum'},
+  ]},
+  { key:'hotel',     icon:'🏨', num:'06', recs:[
+    {id:'rs-hotel',zh:'RS-HTL 酒店走廊机器人',en:'RS-HTL Hotel Corridor Robot'},
+    {id:'fs-50w',zh:'FS-50W 手推洗地机',en:'FS-50W Walk-Behind Scrubber'},
+    {id:'wv-2m',zh:'WV-2M 双电机商用吸尘器',en:'WV-2M Twin-Motor Vacuum'},
+    {id:'wv-backpack',zh:'WV-BP 背负式吸尘器',en:'WV-BP Backpack Vacuum'},
+  ]},
+  { key:'parking',   icon:'🚗', num:'07', recs:[
+    {id:'hp-200g',zh:'HP-200G 汽油高压清洗机',en:'HP-200G Petrol Pressure Washer'},
+    {id:'hp-200e',zh:'HP-200E 工业高压清洗机',en:'HP-200E Industrial Washer'},
+    {id:'fs-outdoor',zh:'FS-OD 户外洗扫一体机',en:'FS-OD Outdoor Scrubber-Sweeper'},
+    {id:'rs-outdoor',zh:'RS-OD200 户外扫地机器人',en:'RS-OD200 Outdoor Robot Sweeper'},
+  ]},
+  { key:'food',      icon:'🍽️', num:'08', recs:[
+    {id:'hp-300hw',zh:'HP-300HW 热水高压清洗机',en:'HP-300HW Hot Water Washer'},
+    {id:'hp-500hw',zh:'HP-500HW 超高压热水清洗机',en:'HP-500HW Super High-Pressure Washer'},
+    {id:'rs-food',zh:'RS-FP 食品厂扫洗机器人',en:'RS-FP Food Plant Robot'},
+    {id:'wv-hepa',zh:'WV-H14 HEPA H14吸尘器',en:'WV-H14 HEPA H14 Vacuum'},
+    {id:'fs-steam',zh:'FS-ST 蒸汽洗地机',en:'FS-ST Steam Floor Cleaner'},
+  ]},
+];
+
+function renderPage() {
+  const lang = currentLang;
+  const recLabel = lang === 'zh' ? '推荐产品' : 'RECOMMENDED PRODUCTS';
+  document.getElementById('sceneGrid').innerHTML = SCENES.map(s => `
+    <div class="scene-card">
+      <div class="scene-num">${s.num}</div>
+      <span class="scene-icon">${s.icon}</span>
+      <div class="scene-title">${T('app.'+s.key)}</div>
+      <span class="scene-sub">${T('app.'+s.key+'.sub')}</span>
+      <p class="scene-desc">${T('app.'+s.key+'.desc')}</p>
+      <div class="scene-rec-label">${recLabel}</div>
+      <div class="scene-tags">${s.recs.map(r =>
+        `<span class="scene-tag" onclick="location.href='product.html?id=${r.id}'">${r[lang]}</span>`
+      ).join('')}</div>
+    </div>`).join('');
+}
+
+function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
+function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}}
+function onLangChange(){renderPage();initWA();}
+document.addEventListener('DOMContentLoaded',()=>{initWA();renderPage();});
+</script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+    }
+  });
+}
+</script>
+</body>
+</html>

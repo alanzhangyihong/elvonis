@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.home.title">ELVONIS 伊凡仕 | 商用清洁设备 专为清洁 专为商用</title>
+<meta name="description" data-i18n="meta.home.desc" content="ELVONIS伊凡仕，工厂直供CE认证商用清洁设备">
+<meta name="keywords" content="商用清洁设备,洗地机,高压清洗机,工业吸尘器,扫地机器人,commercial cleaning equipment,floor scrubber,pressure washer">
+<meta property="og:title" content="ELVONIS — Serious Clean for Serious Business">
+<meta property="og:type" content="website">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.elvonis.com/">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"ELVONIS","alternateName":"伊凡仕","url":"https://www.elvonis.com","description":"CE-certified commercial cleaning equipment supplier","contactPoint":{"@type":"ContactPoint","contactType":"Sales","availableLanguage":["Chinese","English"]}}
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 18 18" fill="none">
+        <rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/>
+        <rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/>
+        <rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/>
+        <rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/>
+      </svg>
+    </div>
+    ELVONIS <em>伊凡仕</em>
+  </a>
+  <nav>
+    <button class="nav-link active" onclick="location.href='index.html'" data-i18n="nav.home">首页</button>
+    <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products">产品中心</button>
+    <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps">应用场景</button>
+    <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog">知识博客</button>
+    <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about">关于我们</button>
+    <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact">联系我们</button>
+  </nav>
+  <div class="header-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ══ MOBILE NAV ══ -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home">首页</button>
+  <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products">产品中心</button>
+  <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps">应用场景</button>
+  <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog">知识博客</button>
+  <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about">关于我们</button>
+  <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact">联系我们</button>
+  <div class="mobile-lang">
+    <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
+    <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
+  <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="pulse-dot"></div>
+        <span data-i18n="hero.eyebrow">工业级品质 · 工厂直供 · CE认证</span>
+      </div>
+      <h1 class="hero-h1">
+        <span data-i18n="hero.h1.line1">专为清洁，</span>
+        <em data-i18n="hero.h1.line2">专为商用</em>
+      </h1>
+      <p class="hero-desc" data-i18n="hero.desc"></p>
+      <div class="hero-actions">
+        <button class="btn btn-accent" onclick="location.href='products.html'" data-i18n="hero.btn1">查看产品系列</button>
+        <button class="btn btn-outline" onclick="location.href='contact.html'" data-i18n="hero.btn2">立即询价</button>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-num">50<em>+</em></div>
+          <div class="stat-label" data-i18n="stat.countries">已覆盖国家</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num"><em>CE</em></div>
+          <div class="stat-label" data-i18n="stat.certified">认证产品</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num" data-i18n="stat.moq">低起订量</div>
+          <div class="stat-label" style="font-size:10px;" id="stat-moq-sub">最少1台起</div>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-num">24<em>h</em></div>
+          <div class="stat-label" data-i18n="stat.response">响应时间</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M8 1l1.8 4L14 6l-3 3 .7 4.2L8 11.2l-3.7 2L5 9 2 6l4.2-1z" stroke="#00AEEF" stroke-width="1.3"/></svg></div>
+      <div><div class="trust-title" data-i18n="trust.ce.title">CE认证</div><div class="trust-sub" data-i18n="trust.ce.sub">符合欧盟市场标准</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="#00AEEF" stroke-width="1.3"/><path d="M5 8l2.5 2.5L11 5" stroke="#00AEEF" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+      <div><div class="trust-title" data-i18n="trust.oem.title">支持OEM</div><div class="trust-sub" data-i18n="trust.oem.sub">定制品牌贴牌服务</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12l4-4 2.5 2.5L13 4" stroke="#00AEEF" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg></div>
+      <div><div class="trust-title" data-i18n="trust.direct.title">工厂直供</div><div class="trust-sub" data-i18n="trust.direct.sub">无中间商差价</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#00AEEF" stroke-width="1.3"/><path d="M8 5v3l2.5 1.5" stroke="#00AEEF" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+      <div><div class="trust-title" data-i18n="trust.reply.title">24小时响应</div><div class="trust-sub" data-i18n="trust.reply.sub">WhatsApp / 邮件</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M2 5h12M2 8h8M2 11h6" stroke="#00AEEF" stroke-width="1.4" stroke-linecap="round"/></svg></div>
+      <div><div class="trust-title" data-i18n="trust.parts.title">耗材配件</div><div class="trust-sub" data-i18n="trust.parts.sub">全套耗材持续供应</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#00AEEF" stroke-width="1.3"/><path d="M4.5 8c0-1.2 1.5-3.5 3.5-3.5" stroke="#00AEEF" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+      <div><div class="trust-title" data-i18n="trust.ship.title">全球发货</div><div class="trust-sub" data-i18n="trust.ship.sub">DHL · FedEx · 海运</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PRODUCT CATEGORIES + FEATURED ══ -->
+<section class="section section-white">
+  <div class="container">
+    <!-- Section header -->
+    <div class="section-head">
+      <div class="section-tag" data-i18n="prod.section.eyebrow">产品系列</div>
+      <h2 data-i18n="prod.section.title">工业级清洁设备，应对各种清洁挑战</h2>
+      <p class="section-sub" data-i18n="prod.section.sub">全系产品CE认证 · 低起订量 · 提供完整耗材和配件持续供应</p>
+    </div>
+    <!-- 4 category cards -->
+    <div class="prod-cat-grid" id="prodCatGrid"></div>
+    <!-- Featured products below -->
+    <div class="sec-hd" style="margin-top:52px;">
+      <div>
+        <div class="section-tag" data-i18n="prod.section.eyebrow">热门产品</div>
+        <h2 data-i18n="prod.featured">明星产品</h2>
+      </div>
+      <button class="btn btn-outline-dark" onclick="location.href='products.html'" data-i18n="prod.viewall">查看全部产品</button>
+    </div>
+    <div class="prod-grid" id="featuredGrid"></div>
+  </div>
+</section>
+
+<!-- ══ APPLICATIONS PREVIEW ══ -->
+<section class="section section-silver">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag" data-i18n="app.section.eyebrow">行业覆盖</div>
+      <h2 data-i18n="app.section.title">专为高要求场所打造</h2>
+    </div>
+    <div class="app-grid" id="appGrid"></div>
+  </div>
+</section>
+
+<!-- ══ MARKETS ══ -->
+<section class="section section-navy">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag" data-i18n="market.eyebrow">目标市场</div>
+      <h2 class="light" data-i18n="market.title">覆盖亚洲和中东核心市场</h2>
+    </div>
+    <div class="market-grid" id="marketGrid"></div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag" data-i18n="process.eyebrow">合作流程</div>
+      <h2 data-i18n="process.title">从询盘到交货——简单透明</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step"><div class="process-dot"></div><div class="process-num">01</div><div class="process-title" data-i18n="step1.title">发送需求</div><div class="process-desc" data-i18n="step1.desc"></div></div>
+      <div class="process-step"><div class="process-dot"></div><div class="process-num">02</div><div class="process-title" data-i18n="step2.title">收到详细报价</div><div class="process-desc" data-i18n="step2.desc"></div></div>
+      <div class="process-step"><div class="process-dot"></div><div class="process-num">03</div><div class="process-title" data-i18n="step3.title">确认订单发货</div><div class="process-desc" data-i18n="step3.desc"></div></div>
+      <div class="process-step"><div class="process-dot"></div><div class="process-num">04</div><div class="process-title" data-i18n="step4.title">持续售后支持</div><div class="process-desc" data-i18n="step4.desc"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOG PREVIEW ══ -->
+<section class="section section-silver">
+  <div class="container">
+    <div class="sec-hd">
+      <div>
+        <div class="section-tag" data-i18n="blog.title">最新文章</div>
+        <h2 data-i18n="blog.hero.title">知识中心</h2>
+      </div>
+      <button class="btn btn-outline-dark" onclick="location.href='blog.html'" data-i18n="btn.viewall">查看全部</button>
+    </div>
+    <div class="blog-grid" id="blogPreview"></div>
+  </div>
+</section>
+
+<!-- ══ CTA BAND ══ -->
+<div class="cta-band">
+  <div class="cta-inner">
+    <div class="cta-left">
+      <h2 class="cta-title"><span data-i18n="cta.title1">准备好更聪明地</span><br><em data-i18n="cta.title2">采购了吗？</em></h2>
+      <p class="cta-sub" data-i18n="cta.sub"></p>
+    </div>
+    <div class="cta-right">
+      <div class="cta-form">
+        <input class="cta-input" type="email" data-i18n="cta.email.ph" data-i18n-attr="placeholder" placeholder="您的邮箱地址">
+        <button class="cta-submit" onclick="location.href='contact.html'" data-i18n="cta.btn">获取免费报价 →</button>
+      </div>
+      <div class="cta-notes">
+        <span class="cta-note"><span class="cta-check">✓</span><span data-i18n="cta.note1">无垃圾邮件</span></span>
+        <span class="cta-note"><span class="cta-check">✓</span><span data-i18n="cta.note2">24小时内回复</span></span>
+        <span class="cta-note"><span class="cta-check">✓</span><span data-i18n="cta.note3">免费咨询</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    <div class="footer-logo-wrap">
+      <div class="footer-logo-icon">
+        <svg viewBox="0 0 14 14" fill="none" width="14" height="14">
+          <rect x="1" y="1" width="5" height="5" rx="1" fill="white"/>
+          <rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/>
+          <rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/>
+          <rect x="8" y="8" width="5" height="5" rx="1" fill="white"/>
+        </svg>
+      </div>
+      <span class="footer-brand">ELVONIS <em>伊凡仕</em></span>
+    </div>
+    <p class="footer-desc" data-i18n="footer.desc"></p>
+    <div class="footer-certs">
+      <span class="footer-cert">CE</span>
+      <span class="footer-cert">RoHS</span>
+      <span class="footer-cert">OEM</span>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.products">产品中心</div>
+    <div class="footer-links">
+      <a href="products.html?cat=pressure" data-i18n="prod.filter.pressure">高压清洗机</a>
+      <a href="products.html?cat=vacuum" data-i18n="prod.filter.vacuum">工业吸尘器</a>
+      <a href="products.html?cat=scrubber" data-i18n="prod.filter.scrubber">商用洗地机</a>
+      <a href="products.html?cat=sweeper" data-i18n="prod.filter.sweeper">扫地机器人</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.company">公司</div>
+    <div class="footer-links">
+      <a href="about.html" data-i18n="nav.about">关于我们</a>
+      <a href="blog.html" data-i18n="nav.blog">知识博客</a>
+      <a href="applications.html" data-i18n="nav.apps">应用场景</a>
+      <a href="contact.html" data-i18n="nav.contact">联系我们</a>
+    </div>
+  </div>
+  <div>
+    <div class="footer-col-title" data-i18n="footer.support">支持</div>
+    <div class="footer-links">
+      <a href="contact.html">FAQ</a>
+      <a href="contact.html" data-i18n="nav.inquiry">立即询价</a>
+      <a href="contact.html">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom" style="background:var(--navy-deep,#0f1e2b);">
+  <p class="footer-copy" data-i18n="footer.copy">© 2025 ELVONIS 伊凡仕 版权所有</p>
+  <p class="footer-cert-row" data-i18n="footer.cert">CE认证 · 支持OEM贴牌 · 全球发货</p>
+</div>
+
+<!-- ══ WHATSAPP FLOAT ══ -->
+<a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <div class="wa-pulse"></div>
+  <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<script src="language.js"></script>
+<script>
+const APPS = [
+  {key:'factory',  icon:'🏭'},
+  {key:'warehouse',icon:'📦'},
+  {key:'mall',     icon:'🏬'},
+  {key:'hospital', icon:'🏥'},
+  {key:'airport',  icon:'✈️'},
+  {key:'hotel',    icon:'🏨'},
+  {key:'parking',  icon:'🚗'},
+  {key:'food',     icon:'🍽️'},
+];
+const MARKETS = [
+  {flag:'🇲🇾',name:'Malaysia',         badge:'priority', desc:'market.my.desc'},
+  {flag:'🇻🇳',name:'Vietnam',          badge:'priority', desc:'market.vn.desc'},
+  {flag:'🇮🇩',name:'Indonesia',        badge:'growth',   desc:'market.id.desc'},
+  {flag:'🇵🇭',name:'Philippines',      badge:'growth',   desc:'market.ph.desc'},
+  {flag:'🇦🇪',name:'UAE',              badge:'premium',  desc:'market.ae.desc'},
+  {flag:'🇸🇦',name:'Saudi Arabia',     badge:'premium',  desc:'market.sa.desc'},
+  {flag:'🇹🇭',name:'Thailand',         badge:'expanding',desc:'market.th.desc'},
+  {flag:'🌏',name:'50+ Countries',    badge:'worldwide', desc:'market.ww.desc', special:true},
+];
+
+function renderHome() {
+  // Product category cards (4 main categories)
+  const PROD_CATS = [
+    { cat:'pressure', icon:'💧',
+      zh:{ name:'高压清洗机', sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证', view:'查看产品 →' },
+      en:{ name:'Pressure Washers', sub:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE', view:'View Products →' }
+    },
+    { cat:'vacuum', icon:'🌀',
+      zh:{ name:'工业吸尘器', sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证', view:'查看产品 →' },
+      en:{ name:'Industrial Vacuums', sub:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE', view:'View Products →' }
+    },
+    { cat:'scrubber', icon:'🧹',
+      zh:{ name:'商用洗地机', sub:'手推式和驾驶式 · 最大120cm · 锂电 · CE认证', view:'查看产品 →' },
+      en:{ name:'Floor Scrubbers', sub:'Walk-behind & Ride-on · Up to 120cm · Battery · CE', view:'View Products →' }
+    },
+    { cat:'sweeper', icon:'🤖',
+      zh:{ name:'扫地机器人', sub:'激光雷达导航 · 自动回充 · App控制 · 7×24运行', view:'查看产品 →' },
+      en:{ name:'Robotic Sweepers', sub:'LiDAR Navigation · Auto-Charge · App Control · 7×24h', view:'View Products →' }
+    },
+  ];
+  const catEl = document.getElementById('prodCatGrid');
+  if (catEl) {
+    const lang = currentLang;
+    catEl.innerHTML = PROD_CATS.map(c => `
+      <div class="prod-cat-card" onclick="location.href='products.html?cat=${c.cat}'">
+        <div class="prod-cat-icon">${c.icon}</div>
+        <div class="prod-cat-name">${c[lang].name}</div>
+        <div class="prod-cat-sub">${c[lang].sub}</div>
+        <div class="prod-cat-link">${c[lang].view}</div>
+      </div>`).join('');
+  }
+
+  // Featured products: hot ones first, max 6
+  const featured = PRODUCTS.filter(p => p.hot).slice(0, 6);
+  document.getElementById('featuredGrid').innerHTML = featured.map(p => renderProductCard(p)).join('');
+
+  // App grid
+  document.getElementById('appGrid').innerHTML = APPS.map(a => `
+    <div class="app-card" onclick="location.href='applications.html'">
+      <span class="app-icon">${a.icon}</span>
+      <h3 data-i18n="app.${a.key}">${T('app.'+a.key)}</h3>
+      <div class="app-sub" data-i18n="app.${a.key}.sub">${T('app.'+a.key+'.sub')}</div>
+      <p data-i18n="app.${a.key}.desc">${T('app.'+a.key+'.desc')}</p>
+    </div>`).join('');
+
+  // Market grid
+  document.getElementById('marketGrid').innerHTML = MARKETS.map(m => `
+    <div class="market-card ${m.special?'market-card-special':''}">
+      <div class="market-flag">${m.flag}</div>
+      <div class="market-name ${m.special?'market-name-cyan':''}">${m.name}</div>
+      <div class="market-badge">${T('market.badge.'+m.badge)}</div>
+      <div class="market-desc">${T(m.desc)}</div>
+    </div>`).join('');
+
+  // Blog preview (3 posts)
+  document.getElementById('blogPreview').innerHTML = getBlogPosts(3).map(b => renderBlogCard(b)).join('');
+
+  // Update stat sub label
+  const sub = document.getElementById('stat-moq-sub');
+  if (sub) sub.textContent = currentLang === 'zh' ? '最少1台起' : 'From 1 unit';
+
+  // Update WA float
+  const waBtn = document.getElementById('wa-float');
+  if (waBtn) {
+    const msg = encodeURIComponent(T('wa.greeting'));
+    waBtn.href = `https://wa.me/${SITE_CONFIG.whatsapp}?text=${msg}`;
+    waBtn.title = T('wa.tooltip');
+  }
+}
+
+function toggleMobileNav() {
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+function onLangChange() { renderHome(); }
+document.addEventListener('DOMContentLoaded', renderHome);
+</script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) {
+      window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+    }
+  });
+}
+</script>
+</body>
+</html>
