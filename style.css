@@ -9,7 +9,7 @@
 :root {
   --navy:        #1B3A6B;
   --navy-dark:   #111D30;
-  --navy-deeper: #0A1220;
+  --navy-deeper: #111D30; /* unified */
   --cyan:        #00AEEF;
   --cyan-light:  #7DD4F5;
   --cyan-pale:   #E3F5FD;
@@ -96,7 +96,7 @@ nav { display:flex; gap:2px; }
 /* Mobile nav */
 .mobile-nav {
   display:none; flex-direction:column; gap:2px;
-  background:var(--navy-dark); padding:12px 20px 16px;
+  background:var(--navy-dark); padding:32px 48px 28px;
   border-bottom:1px solid rgba(255,255,255,0.05);
 }
 .mobile-nav.open { display:flex; }
@@ -107,7 +107,7 @@ nav { display:flex; gap:2px; }
 .mobile-lang .lang-btn.active { background:var(--cyan); color:var(--white); border-color:var(--cyan); }
 
 /* ── HERO ──────────────────────────────────────────────── */
-.hero { background:var(--navy); padding:72px 24px 64px; position:relative; overflow:hidden; }
+.hero { background:var(--navy-dark); padding:72px 24px 64px; position:relative; overflow:hidden; }
 .hero-bg-grid {
   position:absolute; inset:0; opacity:0.035;
   background-image:linear-gradient(rgba(255,255,255,.6) 1px, transparent 1px),
@@ -161,11 +161,11 @@ h1.hero-h1 em { color:var(--cyan); font-style:normal; display:block; }
 .btn-outline-sm:hover { border-color:var(--cyan); color:var(--cyan); }
 
 /* ── TRUST BAR ──────────────────────────────────────────── */
-.trust-bar { background:var(--silver); border-bottom:1px solid var(--silver-dark); overflow-x:auto; }
+.trust-bar { background:var(--white); border-top:1px solid var(--silver-dark); border-bottom:1px solid var(--silver-dark); overflow-x:auto; }
 .trust-bar-inner { max-width:var(--max-w); margin:0 auto; padding:0 24px; display:flex; }
 .trust-item { display:flex; align-items:center; gap:10px; padding:14px 24px; flex-shrink:0; }
 .trust-item + .trust-item { border-left:1px solid var(--silver-dark); }
-.trust-icon { width:32px; height:32px; background:var(--navy); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.trust-icon { width:32px; height:32px; background:var(--cyan-pale); border-radius:var(--radius); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 .trust-icon svg { width:15px; height:15px; }
 .trust-title { font-size:12px; font-weight:500; color:var(--navy); }
 .trust-sub   { font-size:10px; color:var(--slate); }
@@ -174,7 +174,7 @@ h1.hero-h1 em { color:var(--cyan); font-style:normal; display:block; }
 .section { padding:68px 0; }
 .section-white { background:var(--white); }
 .section-silver { background:var(--silver); border-top:1px solid var(--silver-dark); }
-.section-navy { background:var(--navy); }
+.section-navy { background:var(--navy-dark); }
 .section-dark { background:var(--navy-dark); }
 .section-tag { font-size:10px; font-weight:500; color:var(--cyan); letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
 .section-head { margin-bottom:36px; }
