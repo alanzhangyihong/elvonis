@@ -52,21 +52,9 @@ header {
 .logo {
   display:flex; align-items:center; flex-shrink:0; margin-right:32px;
   text-decoration:none;
-}
-.logo-text-wrap {
-  display:flex; flex-direction:column; gap:0;
-}
-.logo-wordmark {
-  font-family:'Raleway', 'Barlow Condensed', var(--font-d), sans-serif;
+  font-family:'Raleway', var(--font-d), sans-serif;
   font-size:20px; font-weight:600; color:var(--white);
-  letter-spacing:0.18em; line-height:1.1; display:block;
-  border-bottom:1px solid rgba(0,174,239,0.55);
-  padding-bottom:3px; margin-bottom:3px;
-}
-.logo-slogan {
-  font-family:var(--font-b), sans-serif;
-  font-size:8px; font-weight:400; color:rgba(0,174,239,0.75);
-  letter-spacing:0.12em; text-transform:uppercase; display:block; line-height:1;
+  letter-spacing:0.18em;
 }
 
 nav { display:flex; gap:2px; }
@@ -433,18 +421,10 @@ footer {
   margin: 0 auto;
 }
 .footer-logo-wrap { margin-bottom:16px; }
-.footer-logo-text-wrap { display:flex; flex-direction:column; gap:0; }
 .footer-wordmark {
-  font-family:'Raleway', 'Barlow Condensed', var(--font-d), sans-serif;
+  font-family:'Raleway', var(--font-d), sans-serif;
   font-size:18px; font-weight:600; color:var(--white);
-  letter-spacing:0.18em; line-height:1.1; display:block;
-  border-bottom:1px solid rgba(0,174,239,0.45);
-  padding-bottom:3px; margin-bottom:3px;
-}
-.footer-logo-slogan {
-  font-family:var(--font-b), sans-serif;
-  font-size:8px; font-weight:400; color:rgba(0,174,239,0.6);
-  letter-spacing:0.12em; text-transform:uppercase; display:block; line-height:1;
+  letter-spacing:0.18em; display:block;
 }
 .footer-desc { font-size:12px; color:#4A6080; line-height:1.7; margin-bottom:14px; }
 .footer-certs { display:flex; gap:6px; }
