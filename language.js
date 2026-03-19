@@ -257,6 +257,7 @@ const I18N = {
     'cta.note3':       '免费咨询',
 
     // BLOG
+    'blog.hero.eyebrow':'知识博客',
     'blog.hero.title':  '知识中心',
     'blog.hero.sub':    '为设施管理人员和采购团队提供清洁设备选购指南、使用技巧和行业资讯。',
     'blog.title':       '最新文章',
@@ -283,6 +284,7 @@ const I18N = {
     'about.prod.title':    '四大核心产品系列',
 
     // CONTACT
+    'contact.hero.eyebrow': '联系我们',
     'contact.hero.title':   '联系我们',
     'contact.hero.sub':     '获取报价、咨询问题，或寻找当地经销商。我们24小时内回复。',
     'contact.form.title':   '发送询盘',
@@ -490,6 +492,7 @@ const I18N = {
     'cta.note2':      'Reply within 24h',
     'cta.note3':      'Free consultation',
 
+    'blog.hero.eyebrow':'Knowledge Blog',
     'blog.hero.title': 'Knowledge Hub',
     'blog.hero.sub':   'Guides, tips and industry insights for facility managers and procurement teams.',
     'blog.title':      'Latest Articles',
@@ -514,6 +517,7 @@ const I18N = {
     'about.val4':          'From sourcing to delivery, consumables replenishment and spare parts supply — worldwide.',
     'about.prod.title':    'Four Core Product Categories',
 
+    'contact.hero.eyebrow': 'Contact',
     'contact.hero.title':   'Contact Us',
     'contact.hero.sub':     'Get a quote, ask a question, or find a distributor near you. We respond within 24 hours.',
     'contact.form.title':   'Send an Enquiry',
