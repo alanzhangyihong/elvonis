@@ -253,8 +253,10 @@ const I18N = {
     // ABOUT
     'about.hero.title':    'ELVONIS',
     'about.hero.sub':      '全球商用及工业清洁设备品牌供应商',
+    'about.mission.tag':   'OUR MISSION',
     'about.mission.label': '我们的使命',
     'about.mission':       'ELVONIS，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。',
+    'about.story.tag':     'OUR STORY',
     'about.story.title':   '我们的故事',
     'about.story':         '然而现实是，太多企业在这件事上反复踩坑——设备质量参差不齐、售后服务缺失、配件断供、供应商承诺与实际交付严重脱节。这些问题年复一年地消耗着企业的时间和成本，却长期得不到真正的解决。\n\nELVONIS的诞生，就是为了改变这一切。我们深度整合中国优质制造资源，精选通过CE等国际认证的商用清洁设备，涵盖高压清洗机、工业吸尘器、商用洗地机、商用扫地机器人等核心品类，为全球工厂、仓库、酒店、商场、医院、学校等专业场所，提供真正可以依赖的清洁解决方案。\n\n我们服务的客户遍布全球，从本地的物业管理公司，到跨国企业的采购团队。他们对ELVONIS的共同期待只有一个——买得放心，用得安心。\n\n我们不是行业里最大的品牌，但我们是最认真对待每一个客户的那一个。',
     'about.quote':         '「我们相信，每一个认真运营的企业，都值得拥有同样认真的清洁设备。」',
@@ -468,8 +470,10 @@ const I18N = {
 
     'about.hero.title':    'About ELVONIS',
     'about.hero.sub':      'Global Commercial & Industrial Cleaning Equipment Supplier',
+    'about.mission.tag':   'OUR MISSION',
     'about.mission.label': 'Our Mission',
     'about.mission':       'ELVONIS empowers businesses worldwide with industrial-grade cleaning equipment that reduces costs and improves operational efficiency.',
+    'about.story.tag':     'OUR STORY',
     'about.story.title':   'Our Story',
     'about.story':         'The reality is that too many businesses keep making the same costly mistakes — unreliable equipment, absent after-sales support, unavailable spare parts, and suppliers who disappear once payment is made. Year after year, these problems drain time, money, and operational efficiency, with no real solution in sight.\n\nELVONIS was built to change that. We work directly with certified manufacturing partners across China, carefully selecting commercial cleaning equipment that meets international standards — including CE certification. From high-pressure washers and industrial vacuum cleaners to floor scrubbers and commercial robotic sweepers, every product we offer is chosen because we would stake our reputation on it.\n\nToday, ELVONIS serves businesses and institutions across the globe — from local property management companies to multinational procurement teams. What they all share is one simple expectation: equipment they can rely on, and a supplier who stands behind it.\n\nWe may not be the biggest name in the industry. But we are the most serious about every single customer we serve.',
     'about.quote':         '"We believe every business that runs seriously deserves cleaning equipment that\'s just as serious."',

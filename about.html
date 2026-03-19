@@ -7,53 +7,129 @@
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
-.about-section { padding: 56px 0; border-bottom: 1px solid var(--silver-dark); }
-.about-section:last-of-type { border-bottom: none; }
-.about-section-inner { max-width: 720px; }
-.about-quote-block {
-  border-left: 4px solid var(--cyan);
-  padding: 16px 22px;
-  background: var(--silver);
-  border-radius: 0 8px 8px 0;
-  margin: 20px 0 28px;
+/* ── Unified about section structure ── */
+.about-block {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--silver-dark);
 }
-.about-quote-block p {
+.about-block:last-child { border-bottom: none; }
+
+/* Every block: same tag + title combo */
+.about-tag {
+  font-size: 10px; font-weight: 600;
+  color: var(--cyan); letter-spacing: .12em;
+  text-transform: uppercase; margin-bottom: 10px;
+}
+.about-h2 {
   font-family: var(--font-d);
-  font-size: 17px; font-weight: 600;
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700; color: var(--navy);
+  margin-bottom: 24px; line-height: 1.2;
+}
+
+/* Story */
+.about-quote {
+  border-left: 3px solid var(--cyan);
+  padding: 14px 20px;
+  background: var(--silver);
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 24px;
+}
+.about-quote p {
+  font-size: 15px; font-weight: 600;
   color: var(--navy); line-height: 1.6; margin: 0;
 }
-.about-story-text p { font-size: 13px; color: var(--text-muted); line-height: 1.9; margin-bottom: 14px; }
+.about-body p {
+  font-size: 13px; color: var(--text-muted);
+  line-height: 1.9; margin-bottom: 12px;
+}
+.about-body p:last-child { margin-bottom: 0; }
+
+/* Stats — uniform with value cards */
 .about-stats {
-  display: grid; grid-template-columns: repeat(4,1fr); gap: 12px;
-  margin-top: 36px;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 14px; margin-top: 36px;
 }
 .about-stat {
-  background: var(--silver); border-radius: 8px;
-  padding: 18px; text-align: center;
+  padding: 22px 16px; text-align: center;
+  background: var(--white);
+  border: 0.5px solid var(--silver-dark);
   border-top: 3px solid var(--cyan);
+  border-radius: 8px;
 }
-.about-stat-num { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--cyan); }
-.about-stat-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
-.mission-text {
-  font-size: 15px; color: var(--text-mid);
+.about-stat-num {
+  font-family: var(--font-d); font-size: 28px;
+  font-weight: 700; color: var(--cyan); line-height: 1;
+}
+.about-stat-label {
+  font-size: 11px; color: var(--text-muted);
+  margin-top: 6px; letter-spacing: .02em;
+}
+
+/* Mission */
+.about-mission-text {
+  font-size: 14px; color: var(--text-mid);
   line-height: 1.9; max-width: 680px;
-  padding: 24px 28px;
+  padding: 22px 26px;
   background: var(--silver);
-  border-left: 4px solid var(--cyan);
-  border-radius: 0 8px 8px 0;
-  margin-top: 20px;
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 6px 6px 0;
 }
-.values-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 20px; }
-.value-item { padding: 22px 20px; background: var(--white); border: 0.5px solid var(--silver-dark); border-radius: 8px; border-top: 3px solid var(--cyan); }
-.value-item-num { font-family: var(--font-d); font-size: 22px; font-weight: 700; color: var(--cyan); margin-bottom: 10px; }
-.value-item-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
-.value-item-desc { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
-@media(max-width:900px){
-  .about-stats { grid-template-columns: repeat(2,1fr); }
-  .values-row { grid-template-columns: repeat(2,1fr); }
+
+/* Values — same card style as stats */
+.about-values {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 14px;
 }
-@media(max-width:600px){
-  .values-row { grid-template-columns: 1fr; }
+.about-value {
+  padding: 22px 20px;
+  background: var(--white);
+  border: 0.5px solid var(--silver-dark);
+  border-top: 3px solid var(--cyan);
+  border-radius: 8px;
+}
+.about-value-num {
+  font-family: var(--font-d); font-size: 22px;
+  font-weight: 700; color: var(--cyan); margin-bottom: 10px;
+}
+.about-value-title {
+  font-size: 13px; font-weight: 600;
+  color: var(--navy); margin-bottom: 8px;
+}
+.about-value-desc {
+  font-size: 12px; color: var(--text-muted); line-height: 1.7;
+}
+
+/* Products — same card style */
+.about-products {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+}
+.about-product {
+  padding: 22px 20px;
+  background: var(--white);
+  border: 0.5px solid var(--silver-dark);
+  border-top: 3px solid var(--cyan);
+  border-radius: 8px; cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+}
+.about-product:hover {
+  box-shadow: 0 6px 20px rgba(0,174,239,.12);
+  transform: translateY(-2px);
+}
+.about-product-name {
+  font-size: 13px; font-weight: 600;
+  color: var(--navy); margin-bottom: 8px;
+}
+.about-product-desc {
+  font-size: 11px; color: var(--text-muted); line-height: 1.6;
+}
+
+@media(max-width:960px){
+  .about-stats,.about-values,.about-products { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:560px){
+  .about-values,.about-products { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -91,7 +167,6 @@
   <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
 </div>
 
-<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-eyebrow" data-i18n="nav.about">关于我们</div>
@@ -100,20 +175,17 @@
   </div>
 </div>
 
-<!-- CONTENT -->
 <section class="section section-white">
   <div class="container">
 
-    <!-- ① 我们的故事 -->
-    <div class="about-section">
-      <div class="about-section-inner">
-        <div class="section-tag" data-i18n="about.story.title">我们的故事</div>
-        <div class="about-quote-block">
-          <p data-i18n="about.quote"></p>
-        </div>
-        <div class="about-story-text" id="storyBody"></div>
+    <!-- ① OUR STORY -->
+    <div class="about-block">
+      <div class="about-tag">OUR STORY</div>
+      <h2 class="about-h2" data-i18n="about.story.title">我们的故事</h2>
+      <div class="about-quote">
+        <p data-i18n="about.quote"></p>
       </div>
-      <!-- Stats row -->
+      <div class="about-body" id="storyBody"></div>
       <div class="about-stats">
         <div class="about-stat">
           <div class="about-stat-num">50+</div>
@@ -134,55 +206,48 @@
       </div>
     </div>
 
-    <!-- ② 我们的使命 -->
-    <div class="about-section">
-      <div class="about-section-inner">
-        <div class="section-tag" data-i18n="about.mission.label">我们的使命</div>
-        <div class="mission-text" data-i18n="about.mission"></div>
+    <!-- ② OUR MISSION -->
+    <div class="about-block">
+      <div class="about-tag">OUR MISSION</div>
+      <h2 class="about-h2" data-i18n="about.mission.label">我们的使命</h2>
+      <div class="about-mission-text" data-i18n="about.mission"></div>
+    </div>
+
+    <!-- ③ OUR VALUES -->
+    <div class="about-block">
+      <div class="about-tag">OUR VALUES</div>
+      <h2 class="about-h2" id="valTitle">我们的价值观</h2>
+      <div class="about-values">
+        <div class="about-value">
+          <div class="about-value-num">01</div>
+          <div class="about-value-title" data-i18n="about.val1.title"></div>
+          <div class="about-value-desc" data-i18n="about.val1"></div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-num">02</div>
+          <div class="about-value-title" data-i18n="about.val2.title"></div>
+          <div class="about-value-desc" data-i18n="about.val2"></div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-num">03</div>
+          <div class="about-value-title" data-i18n="about.val3.title"></div>
+          <div class="about-value-desc" data-i18n="about.val3"></div>
+        </div>
+        <div class="about-value">
+          <div class="about-value-num">04</div>
+          <div class="about-value-title" data-i18n="about.val4.title"></div>
+          <div class="about-value-desc" data-i18n="about.val4"></div>
+        </div>
       </div>
     </div>
 
-    <!-- ③ 我们的价值观 -->
-    <div class="about-section">
-      <div class="about-section-inner">
-        <div class="section-tag">VALUES</div>
-        <h2 id="valTitle" style="margin-top:8px;">我们的价值观</h2>
-      </div>
-      <div class="values-row">
-        <div class="value-item">
-          <div class="value-item-num">01</div>
-          <div class="value-item-title" data-i18n="about.val1.title"></div>
-          <div class="value-item-desc" data-i18n="about.val1"></div>
-        </div>
-        <div class="value-item">
-          <div class="value-item-num">02</div>
-          <div class="value-item-title" data-i18n="about.val2.title"></div>
-          <div class="value-item-desc" data-i18n="about.val2"></div>
-        </div>
-        <div class="value-item">
-          <div class="value-item-num">03</div>
-          <div class="value-item-title" data-i18n="about.val3.title"></div>
-          <div class="value-item-desc" data-i18n="about.val3"></div>
-        </div>
-        <div class="value-item">
-          <div class="value-item-num">04</div>
-          <div class="value-item-title" data-i18n="about.val4.title"></div>
-          <div class="value-item-desc" data-i18n="about.val4"></div>
-        </div>
-      </div>
+    <!-- ④ OUR PRODUCTS -->
+    <div class="about-block">
+      <div class="about-tag">OUR PRODUCTS</div>
+      <h2 class="about-h2" id="prodTitle">四大核心产品系列</h2>
+      <div class="about-products" id="prodCoverage"></div>
     </div>
 
-  </div>
-</section>
-
-<!-- PRODUCT COVERAGE -->
-<section class="section section-silver">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag" data-i18n="about.prod.title">四大核心产品系列</div>
-      <h2 data-i18n="about.prod.title">四大核心产品系列</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" id="prodCoverage"></div>
   </div>
 </section>
 
@@ -202,15 +267,9 @@
 <div class="footer-wrap">
 <footer>
   <div>
-    <div class="footer-logo-wrap">
-      <span class="footer-wordmark">ELVONIS</span>
-    </div>
+    <div class="footer-logo-wrap"><span class="footer-wordmark">ELVONIS</span></div>
     <p class="footer-desc" data-i18n="footer.slogan"></p>
-    <div class="footer-certs">
-      <span class="footer-cert">CE</span>
-      <span class="footer-cert">RoHS</span>
-      <span class="footer-cert">OEM</span>
-    </div>
+    <div class="footer-certs"><span class="footer-cert">CE</span><span class="footer-cert">RoHS</span><span class="footer-cert">OEM</span></div>
   </div>
   <div>
     <div class="footer-col-title" data-i18n="footer.products">产品中心</div>
@@ -252,37 +311,50 @@
 
 <script src="language.js"></script>
 <script>
-const PROD_CATS=[
-  {zh:'高压清洗机',en:'High-Pressure Washers',zh_sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证',en_sub:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE'},
-  {zh:'工业吸尘器',en:'Industrial Vacuums',zh_sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证',en_sub:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE'},
-  {zh:'商用洗地机',en:'Floor Scrubbers',zh_sub:'手推式和驾驶式 · 最大120cm · 锂电 · CE认证',en_sub:'Walk-behind & Ride-on · Up to 120cm · Battery · CE'},
-  {zh:'商用扫地机器人',en:'Robotic Sweepers',zh_sub:'激光雷达导航 · 自动回充 · App控制 · 7×24运行',en_sub:'LiDAR Navigation · Auto-Charge · App Control · 7×24h'},
+const PROD_CATS = [
+  { zh:'高压清洗机',      en:'High-Pressure Washers',
+    zh_sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证',
+    en_sub:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE' },
+  { zh:'工业吸尘器',      en:'Industrial Vacuums',
+    zh_sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证',
+    en_sub:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE' },
+  { zh:'商用洗地机',      en:'Floor Scrubbers',
+    zh_sub:'手推式和驾驶式 · 最大120cm · 锂电 · CE认证',
+    en_sub:'Walk-behind & Ride-on · Up to 120cm · Battery · CE' },
+  { zh:'商用扫地机器人',  en:'Robotic Sweepers',
+    zh_sub:'激光雷达导航 · 自动回充 · App控制 · 7×24运行',
+    en_sub:'LiDAR Navigation · Auto-Charge · App Control · 7×24h' },
 ];
-function renderPage(){
-  const zh=currentLang==='zh';
-  document.getElementById('valTitle').textContent=zh?'我们的价值观':'What We Stand For';
-  document.getElementById('stat-c').textContent=zh?'已覆盖国家':'Countries';
-  document.getElementById('stat-ce').textContent=zh?'认证产品':'Certified';
-  document.getElementById('stat-r').textContent=zh?'响应时间':'Response';
-  document.getElementById('stat-moq').textContent=zh?'低起订量':'Low MOQ';
-  document.getElementById('prodCoverage').innerHTML=PROD_CATS.map(c=>`
-    <div style="background:var(--white);border:0.5px solid var(--silver-dark);border-radius:8px;padding:18px;border-top:3px solid var(--cyan);cursor:pointer;" onclick="location.href='products.html'">
-      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;">${zh?c.zh:c.en}</div>
-      <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">${zh?c.zh_sub:c.en_sub}</div>
+
+function renderPage() {
+  const zh = currentLang === 'zh';
+  document.getElementById('valTitle').textContent  = zh ? '我们的价值观' : 'Our Values';
+  document.getElementById('prodTitle').textContent = zh ? '四大核心产品系列' : 'Our Product Range';
+  document.getElementById('stat-c').textContent    = zh ? '已覆盖国家' : 'Countries';
+  document.getElementById('stat-ce').textContent   = zh ? '认证产品' : 'Certified';
+  document.getElementById('stat-r').textContent    = zh ? '响应时间' : 'Response';
+  document.getElementById('stat-moq').textContent  = zh ? '低起订量' : 'Low MOQ';
+
+  document.getElementById('prodCoverage').innerHTML = PROD_CATS.map(c => `
+    <div class="about-product" onclick="location.href='products.html'">
+      <div class="about-product-name">${zh ? c.zh : c.en}</div>
+      <div class="about-product-desc">${zh ? c.zh_sub : c.en_sub}</div>
     </div>`).join('');
-  const el=document.getElementById('storyBody');
-  if(el){
-    const raw=T('about.story');
-    el.innerHTML=raw.split('\n\n').map(p=>`<p>${p.trim()}</p>`).join('');
+
+  const el = document.getElementById('storyBody');
+  if (el) {
+    el.innerHTML = T('about.story').split('\n\n')
+      .map(p => `<p>${p.trim()}</p>`).join('');
   }
 }
-function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
-function initWA(){
-  const b=document.getElementById('wa-float');
-  if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}
+
+function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+function initWA() {
+  const b = document.getElementById('wa-float');
+  if (b) { b.href = 'https://wa.me/' + SITE_CONFIG.whatsapp + '?text=' + encodeURIComponent(T('wa.greeting')); b.title = T('wa.tooltip'); }
 }
-function onLangChange(){renderPage();initWA();}
-document.addEventListener('DOMContentLoaded',()=>{initWA();renderPage();});
+function onLangChange() { renderPage(); initWA(); }
+document.addEventListener('DOMContentLoaded', () => { initWA(); renderPage(); });
 </script>
 <script>
 if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
