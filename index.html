@@ -273,14 +273,14 @@
 <script src="language.js"></script>
 <script>
 const APPS = [
-  {key:'factory',  icon:'🏭'},
-  {key:'warehouse',icon:'📦'},
-  {key:'mall',     icon:'🏬'},
-  {key:'hospital', icon:'🏥'},
-  {key:'airport',  icon:'✈️'},
-  {key:'hotel',    icon:'🏨'},
-  {key:'parking',  icon:'🚗'},
-  {key:'food',     icon:'🍽️'},
+  {key:'factory',  icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V10l6-4v4l6-4v4l6-4v14H2z"/><rect x="8" y="14" width="3" height="6"/><rect x="13" y="14" width="3" height="6"/></svg>'},
+  {key:'warehouse',icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>'},
+  {key:'mall',     icon:'<svg width="32" height="32" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>'},
+  {key:'hospital', icon:'<svg width="32" height="32" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10M12 7v6M9 10h6"/></svg>'},
+  {key:'airport',  icon:'<svg width="32" height="32" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 5.2 3.2 6.8l7 3-2.3 2.3-2.8-.9L3.7 12.6l4.7 1.7 1.7 4.7 1.4-1.4-.9-2.8 2.3-2.3 3 7z"/></svg>'},
+  {key:'hotel',    icon:'<svg width="32" height="32" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v3M10 14h4"/></svg>'},
+  {key:'parking',  icon:'<svg width="32" height="32" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h3l3 3v5h-6V8zM5.5 17a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM18.5 17a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>'},
+  {key:'food',     icon:'<svg width="32" height="32" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>'},
 ];
 const TRUST_DATA = {
   zh: {
@@ -294,12 +294,12 @@ const TRUST_DATA = {
       { num:'24h',  label:'询盘响应时间' },
     ],
     reasons: [
-      { icon:'🏆', title:'CE认证产品',      desc:'所有核心产品通过CE认证，满足欧盟及国际市场准入要求，采购无后顾之忧。' },
-      { icon:'🏭', title:'工厂直供',         desc:'直接从认证制造商采购，无中间商加价，价格透明，质量可追溯。' },
-      { icon:'🔧', title:'耗材持续供应',     desc:'刷盘、胶条、滤芯等耗材长期备货，与设备一同发货，避免断供影响运营。' },
-      { icon:'🤝', title:'支持OEM贴牌',      desc:'提供完整OEM服务，定制品牌、颜色和包装，适合经销商建立自有品牌。' },
-      { icon:'📦', title:'全球发货',          desc:'DHL · FedEx · 海运，覆盖全球所有主要港口和城市，1台起可发货。' },
-      { icon:'💬', title:'24小时售后响应',   desc:'专属WhatsApp联系渠道，安装指导、配件采购、技术问题24小时内响应。' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.8 5.6.8-4 3.9.9 5.5L12 14.5l-4.9 2.5.9-5.5-4-3.9 5.6-.8z"/></svg>', title:'CE认证产品',      desc:'所有核心产品通过CE认证，满足欧盟及国际市场准入要求，采购无后顾之忧。' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V10l6-4v4l6-4v4l6-4v14H2z"/><rect x="8" y="14" width="3" height="6"/><rect x="13" y="14" width="3" height="6"/></svg>', title:'工厂直供',         desc:'直接从认证制造商采购，无中间商加价，价格透明，质量可追溯。' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>', title:'耗材持续供应',     desc:'刷盘、胶条、滤芯等耗材长期备货，与设备一同发货，避免断供影响运营。' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>', title:'支持OEM贴牌',      desc:'提供完整OEM服务，定制品牌、颜色和包装，适合经销商建立自有品牌。' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>', title:'全球发货',          desc:'DHL · FedEx · 海运，覆盖全球所有主要港口和城市，1台起可发货。' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>', title:'24小时售后响应',   desc:'专属WhatsApp联系渠道，安装指导、配件采购、技术问题24小时内响应。' },
     ],
   },
   en: {
@@ -313,12 +313,12 @@ const TRUST_DATA = {
       { num:'24h',  label:'Response Time' },
     ],
     reasons: [
-      { icon:'🏆', title:'CE Certified Products',    desc:'All core products are CE certified, meeting EU and international market requirements — no compliance headaches.' },
-      { icon:'🏭', title:'Factory Direct',            desc:'Source directly from certified manufacturers. No middleman markup, transparent pricing, full traceability.' },
-      { icon:'🔧', title:'Consumables Supply',        desc:'Brush pads, squeegee blades, filters — kept in stock and shipped with your equipment. No supply disruptions.' },
-      { icon:'🤝', title:'OEM Available',             desc:'Full OEM service — custom branding, colors and packaging for distributors building their own product line.' },
-      { icon:'📦', title:'Global Shipping',           desc:'DHL · FedEx · Sea freight to all major ports and cities. From 1 unit to full containers.' },
-      { icon:'💬', title:'24h After-Sales Support',   desc:'Dedicated WhatsApp channel for setup guidance, spare parts and technical support — responded within 24 hours.' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.8 5.6.8-4 3.9.9 5.5L12 14.5l-4.9 2.5.9-5.5-4-3.9 5.6-.8z"/></svg>', title:'CE Certified Products',    desc:'All core products are CE certified, meeting EU and international market requirements — no compliance headaches.' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V10l6-4v4l6-4v4l6-4v14H2z"/><rect x="8" y="14" width="3" height="6"/><rect x="13" y="14" width="3" height="6"/></svg>', title:'Factory Direct',            desc:'Source directly from certified manufacturers. No middleman markup, transparent pricing, full traceability.' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>', title:'Consumables Supply',        desc:'Brush pads, squeegee blades, filters — kept in stock and shipped with your equipment. No supply disruptions.' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>', title:'OEM Available',             desc:'Full OEM service — custom branding, colors and packaging for distributors building their own product line.' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>', title:'Global Shipping',           desc:'DHL · FedEx · Sea freight to all major ports and cities. From 1 unit to full containers.' },
+      { icon:'<svg width="24" height="24" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>', title:'24h After-Sales Support',   desc:'Dedicated WhatsApp channel for setup guidance, spare parts and technical support — responded within 24 hours.' },
     ],
   }
 };
@@ -326,19 +326,19 @@ const TRUST_DATA = {
 function renderHome() {
   // Product category cards (4 main categories)
   const PROD_CATS = [
-    { cat:'pressure', icon:'💧',
+    { cat:'pressure', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span>',
       zh:{ name:'高压清洗机', sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证', view:'查看产品 →' },
       en:{ name:'Pressure Washers', sub:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE', view:'View Products →' }
     },
-    { cat:'vacuum', icon:'🌀',
+    { cat:'vacuum', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-3 9H8c0-3-3-5-3-9a7 7 0 0 1 7-7z"/><path d="M8 18h8M10 22h4"/></svg></span>',
       zh:{ name:'工业吸尘器', sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证', view:'查看产品 →' },
       en:{ name:'Industrial Vacuums', sub:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE', view:'View Products →' }
     },
-    { cat:'scrubber', icon:'🧹',
+    { cat:'scrubber', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="18" height="4" rx="1"/><path d="M7 14V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"/><path d="M5 18v2M19 18v2"/></svg></span>',
       zh:{ name:'商用洗地机', sub:'手推式和驾驶式 · 最大120cm · 锂电 · CE认证', view:'查看产品 →' },
       en:{ name:'Floor Scrubbers', sub:'Walk-behind & Ride-on · Up to 120cm · Battery · CE', view:'View Products →' }
     },
-    { cat:'sweeper', icon:'🤖',
+    { cat:'sweeper', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>',
       zh:{ name:'扫地机器人', sub:'激光雷达导航 · 自动回充 · App控制 · 7×24运行', view:'查看产品 →' },
       en:{ name:'Robotic Sweepers', sub:'LiDAR Navigation · Auto-Charge · App Control · 7×24h', view:'View Products →' }
     },

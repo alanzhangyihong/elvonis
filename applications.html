@@ -139,50 +139,50 @@
 <script src="language.js"></script>
 <script>
 const SCENES = [
-  { key:'factory',   icon:'🏭', num:'01', recs:[
+  { key:'factory',   icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V10l6-4v4l6-4v4l6-4v14H2z"/><rect x="8" y="14" width="3" height="6"/><rect x="13" y="14" width="3" height="6"/></svg>', num:'01', recs:[
     {id:'hp-200e',zh:'HP-200E 工业高压清洗机',en:'HP-200E Industrial Pressure Washer'},
     {id:'hp-300hw',zh:'HP-300HW 热水清洗机',en:'HP-300HW Hot Water Washer'},
     {id:'wv-50l',zh:'WV-50L 重型工业吸尘器',en:'WV-50L Heavy-Duty Vacuum'},
     {id:'wv-explosion',zh:'WV-EX 防爆吸尘器',en:'WV-EX Explosion-Proof Vacuum'},
     {id:'fs-80r',zh:'FS-80R 驾驶式洗地机',en:'FS-80R Ride-On Scrubber'},
   ]},
-  { key:'warehouse', icon:'📦', num:'02', recs:[
+  { key:'warehouse', icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>', num:'02', recs:[
     {id:'fs-100r',zh:'FS-100R 大型驾驶洗地机',en:'FS-100R Large Ride-On Scrubber'},
     {id:'fs-120r',zh:'FS-120R 旗舰驾驶洗地机',en:'FS-120R Mega Ride-On Scrubber'},
     {id:'rs-industrial',zh:'RS-IND300 工业机器人',en:'RS-IND300 Industrial Robot'},
     {id:'wv-ride',zh:'WV-RI 驾驶式扫吸一体',en:'WV-RI Ride-On Sweeper-Vac'},
   ]},
-  { key:'mall',      icon:'🏬', num:'03', recs:[
+  { key:'mall',      icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>', num:'03', recs:[
     {id:'fs-75w',zh:'FS-75W 手推洗地机',en:'FS-75W Walk-Behind Scrubber'},
     {id:'rs-s200',zh:'RS-S200 商用扫地机器人',en:'RS-S200 Advanced Robot Sweeper'},
     {id:'rs-scrub200',zh:'RS-SC200 扫洗机器人',en:'RS-SC200 Robotic Scrubber-Sweeper'},
     {id:'wv-2m',zh:'WV-2M 双电机商用吸尘器',en:'WV-2M Twin-Motor Vacuum'},
   ]},
-  { key:'hospital',  icon:'🏥', num:'04', recs:[
+  { key:'hospital',  icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10M12 7v6M9 10h6"/></svg>', num:'04', recs:[
     {id:'wv-hepa',zh:'WV-H14 HEPA H14吸尘器',en:'WV-H14 HEPA H14 Vacuum'},
     {id:'fs-steam',zh:'FS-ST 蒸汽洗地机',en:'FS-ST Steam Floor Cleaner'},
     {id:'rs-disinfect',zh:'RS-DIS 消毒机器人',en:'RS-DIS Disinfection Robot'},
     {id:'wv-backpack',zh:'WV-BP 背负式吸尘器',en:'WV-BP Backpack Vacuum'},
   ]},
-  { key:'airport',   icon:'✈️', num:'05', recs:[
+  { key:'airport',   icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2L16 11l3.5-3.5C21 6 21 4 19.5 2.5S18 2 16.5 3.5L13 7 4.8 5.2 3.2 6.8l7 3-2.3 2.3-2.8-.9L3.7 12.6l4.7 1.7 1.7 4.7 1.4-1.4-.9-2.8 2.3-2.3 3 7z"/></svg>', num:'05', recs:[
     {id:'rs-s200',zh:'RS-S200 进阶商用机器人',en:'RS-S200 Advanced Robot Sweeper'},
     {id:'rs-scrub200',zh:'RS-SC200 扫洗机器人',en:'RS-SC200 Robotic Scrubber-Sweeper'},
     {id:'fs-120r',zh:'FS-120R 旗舰洗地机',en:'FS-120R Mega Ride-On Scrubber'},
     {id:'wv-50l',zh:'WV-50L 重型工业吸尘器',en:'WV-50L Heavy-Duty Vacuum'},
   ]},
-  { key:'hotel',     icon:'🏨', num:'06', recs:[
+  { key:'hotel',     icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2M12 12v3M10 14h4"/></svg>', num:'06', recs:[
     {id:'rs-hotel',zh:'RS-HTL 酒店走廊机器人',en:'RS-HTL Hotel Corridor Robot'},
     {id:'fs-50w',zh:'FS-50W 手推洗地机',en:'FS-50W Walk-Behind Scrubber'},
     {id:'wv-2m',zh:'WV-2M 双电机商用吸尘器',en:'WV-2M Twin-Motor Vacuum'},
     {id:'wv-backpack',zh:'WV-BP 背负式吸尘器',en:'WV-BP Backpack Vacuum'},
   ]},
-  { key:'parking',   icon:'🚗', num:'07', recs:[
+  { key:'parking',   icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h3l3 3v5h-6V8zM5.5 17a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM18.5 17a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>', num:'07', recs:[
     {id:'hp-200g',zh:'HP-200G 汽油高压清洗机',en:'HP-200G Petrol Pressure Washer'},
     {id:'hp-200e',zh:'HP-200E 工业高压清洗机',en:'HP-200E Industrial Washer'},
     {id:'fs-outdoor',zh:'FS-OD 户外洗扫一体机',en:'FS-OD Outdoor Scrubber-Sweeper'},
     {id:'rs-outdoor',zh:'RS-OD200 户外扫地机器人',en:'RS-OD200 Outdoor Robot Sweeper'},
   ]},
-  { key:'food',      icon:'🍽️', num:'08', recs:[
+  { key:'food',      icon:'<svg width="36" height="36" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>', num:'08', recs:[
     {id:'hp-300hw',zh:'HP-300HW 热水高压清洗机',en:'HP-300HW Hot Water Washer'},
     {id:'hp-500hw',zh:'HP-500HW 超高压热水清洗机',en:'HP-500HW Super High-Pressure Washer'},
     {id:'rs-food',zh:'RS-FP 食品厂扫洗机器人',en:'RS-FP Food Plant Robot'},
