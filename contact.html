@@ -62,36 +62,29 @@
           </div>
           <div class="form-row">
             <div class="form-group"><label class="form-label" data-i18n="contact.country">国家/地区</label>
-              <select class="form-select" name="country" required>
-                <option value="">—</option>
-                <option>Malaysia 马来西亚</option><option>Vietnam 越南</option>
-                <option>Indonesia 印度尼西亚</option><option>Philippines 菲律宾</option>
-                <option>Thailand 泰国</option><option>UAE 阿联酋</option>
-                <option>Saudi Arabia 沙特阿拉伯</option><option>Singapore 新加坡</option>
-                <option>China 中国</option><option>Other 其他</option>
-              </select>
+              <input class="form-input" type="text" name="country" id="countryInput" data-i18n-ph="contact.country.ph" placeholder="请填写您所在的国家/地区">
             </div>
             <div class="form-group">
-              <label class="form-label" id="inquiryTypeLabel">询盘类型 / Inquiry Type</label>
+              <label class="form-label" id="inquiryTypeLabel" data-i18n="contact.inquiry.label">询盘类型</label>
               <select class="form-select" name="inquiry_type" id="inquiryType">
                 <option value="">—</option>
-                <option value="new_equipment" id="opt-new">采购新设备 / New Equipment</option>
-                <option value="consumables" id="opt-con">耗材补货 / Consumables Replenishment</option>
-                <option value="spare_parts" id="opt-parts">配件采购 / Spare Parts</option>
-                <option value="oem" id="opt-oem">OEM贴牌合作 / OEM Partnership</option>
-                <option value="distributor" id="opt-dist">经销商合作 / Distributorship</option>
-                <option value="other" id="opt-other">其他 / Other</option>
+                <option value="new_equipment" data-i18n-opt="contact.inquiry.opt1">采购新设备</option>
+                <option value="consumables" data-i18n-opt="contact.inquiry.opt2">耗材补货</option>
+                <option value="spare_parts" data-i18n-opt="contact.inquiry.opt3">配件采购</option>
+                <option value="oem" data-i18n-opt="contact.inquiry.opt4">OEM贴牌合作</option>
+                <option value="distributor" data-i18n-opt="contact.inquiry.opt5">经销商合作</option>
+                <option value="other" data-i18n-opt="contact.inquiry.opt6">其他</option>
               </select>
             </div>
           </div>
-            <div class="form-group"><label class="form-label" data-i18n="contact.product">感兴趣的产品</label>
+            <div class="form-group"><label class="form-label" id="productLabel" data-i18n="contact.product.label">感兴趣的产品</label>
               <select class="form-select" name="product" id="productSelect">
                 <option value="">—</option>
-                <option value="pressure">高压清洗机 / Pressure Washers</option>
-                <option value="vacuum">工业吸尘器 / Industrial Vacuums</option>
-                <option value="scrubber">商用洗地机 / Floor Scrubbers</option>
-                <option value="sweeper">扫地机器人 / Robotic Sweepers</option>
-                <option value="multiple">多个品类 / Multiple Products</option>
+                <option value="pressure" data-i18n-opt="contact.product.opt1">高压清洗机</option>
+                <option value="vacuum" data-i18n-opt="contact.product.opt2">工业吸尘器</option>
+                <option value="scrubber" data-i18n-opt="contact.product.opt3">商用洗地机</option>
+                <option value="sweeper" data-i18n-opt="contact.product.opt4">扫地机器人</option>
+                <option value="multiple" data-i18n-opt="contact.product.opt5">多个品类</option>
               </select>
             </div>
           </div>
@@ -208,7 +201,14 @@ if (_urlType === 'consumables') {
 // Update inquiry type label bilingually
 function renderPage() {
   const zh = currentLang === 'zh';
-  document.getElementById('inquiryTypeLabel').textContent = zh ? '询盘类型' : 'Inquiry Type';
+  // Update select option texts
+  document.querySelectorAll('[data-i18n-opt]').forEach(opt => {
+    const key = opt.getAttribute('data-i18n-opt');
+    opt.textContent = T(key);
+  });
+  // Update country placeholder
+  const ci = document.getElementById('countryInput');
+  if (ci) ci.placeholder = T('contact.country.ph');
   document.getElementById('opt-new').textContent    = zh ? '采购新设备' : 'New Equipment';
   document.getElementById('opt-con').textContent    = zh ? '耗材补货'   : 'Consumables Replenishment';
   document.getElementById('opt-parts').textContent  = zh ? '配件采购'   : 'Spare Parts';
