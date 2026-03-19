@@ -252,7 +252,7 @@ const I18N = {
 
     // ABOUT
     'about.hero.title':    'ELVONIS',
-    'about.hero.sub':      '我们相信，每一个认真运营的企业，都值得拥有同样认真的清洁设备。',
+    'about.hero.sub':      '全球商用及工业清洁设备品牌供应商',
     'about.mission.label': '我们的使命',
     'about.mission':       'ELVONIS，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。',
     'about.story.title':   '我们的故事',
@@ -292,7 +292,7 @@ const I18N = {
 
     // FOOTER
     'footer.desc':     'ELVONIS直接从认证工厂向全球企业供应CE认证商用清洁设备。',
-    'footer.slogan':   '专为清洁，专为商用',
+    'footer.slogan':   '全球商用及工业清洁设备品牌供应商',
     'footer.products': '产品中心',
     'footer.company':  '公司',
     'footer.support':  '支持',
@@ -467,7 +467,7 @@ const I18N = {
     'blog.readmore':   'Read more →',
 
     'about.hero.title':    'About ELVONIS',
-    'about.hero.sub':      'We believe every business that runs seriously deserves cleaning equipment that\'s just as serious.',
+    'about.hero.sub':      'Global Commercial & Industrial Cleaning Equipment Supplier',
     'about.mission.label': 'Our Mission',
     'about.mission':       'ELVONIS empowers businesses worldwide with industrial-grade cleaning equipment that reduces costs and improves operational efficiency.',
     'about.story.title':   'Our Story',
@@ -505,7 +505,7 @@ const I18N = {
     'contact.hours.val':    'Mon–Sat 9:00–18:00 (UTC+8)',
 
     'footer.desc':     'ELVONIS supplies CE-certified commercial cleaning equipment directly from factories to businesses worldwide.',
-    'footer.slogan':   'Serious Clean for Serious Business',
+    'footer.slogan':   'Global Commercial & Industrial Cleaning Equipment Supplier',
     'footer.products': 'Products',
     'footer.company':  'Company',
     'footer.support':  'Support',

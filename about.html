@@ -6,12 +6,60 @@
 <meta name="robots" content="index, follow">
 <link rel="stylesheet" href="style.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+.about-section { padding: 56px 0; border-bottom: 1px solid var(--silver-dark); }
+.about-section:last-of-type { border-bottom: none; }
+.about-section-inner { max-width: 720px; }
+.about-quote-block {
+  border-left: 4px solid var(--cyan);
+  padding: 16px 22px;
+  background: var(--silver);
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0 28px;
+}
+.about-quote-block p {
+  font-family: var(--font-d);
+  font-size: 17px; font-weight: 600;
+  color: var(--navy); line-height: 1.6; margin: 0;
+}
+.about-story-text p { font-size: 13px; color: var(--text-muted); line-height: 1.9; margin-bottom: 14px; }
+.about-stats {
+  display: grid; grid-template-columns: repeat(4,1fr); gap: 12px;
+  margin-top: 36px;
+}
+.about-stat {
+  background: var(--silver); border-radius: 8px;
+  padding: 18px; text-align: center;
+  border-top: 3px solid var(--cyan);
+}
+.about-stat-num { font-family: var(--font-d); font-size: 28px; font-weight: 700; color: var(--cyan); }
+.about-stat-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.mission-text {
+  font-size: 15px; color: var(--text-mid);
+  line-height: 1.9; max-width: 680px;
+  padding: 24px 28px;
+  background: var(--silver);
+  border-left: 4px solid var(--cyan);
+  border-radius: 0 8px 8px 0;
+  margin-top: 20px;
+}
+.values-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 20px; }
+.value-item { padding: 22px 20px; background: var(--white); border: 0.5px solid var(--silver-dark); border-radius: 8px; border-top: 3px solid var(--cyan); }
+.value-item-num { font-family: var(--font-d); font-size: 22px; font-weight: 700; color: var(--cyan); margin-bottom: 10px; }
+.value-item-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
+.value-item-desc { font-size: 12px; color: var(--text-muted); line-height: 1.7; }
+@media(max-width:900px){
+  .about-stats { grid-template-columns: repeat(2,1fr); }
+  .values-row { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:600px){
+  .values-row { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
 <header>
-    <a href="index.html" class="logo">
-    ELVONIS
-  </a>
+  <a href="index.html" class="logo">ELVONIS</a>
   <nav>
     <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
     <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
@@ -47,74 +95,88 @@
 <div class="page-hero">
   <div class="page-hero-inner">
     <div class="page-hero-eyebrow" data-i18n="nav.about">关于我们</div>
-    <h1 class="page-hero-title" data-i18n="about.hero.title">关于ELVONIS</h1>
-    <p class="page-hero-sub" data-i18n="about.hero.sub"></p>
+    <h1 class="page-hero-title">ELVONIS</h1>
+    <p class="page-hero-sub" data-i18n="about.hero.sub">全球商用及工业清洁设备品牌供应商</p>
   </div>
 </div>
 
-<!-- ══ BRAND STORY ══ -->
+<!-- CONTENT -->
 <section class="section section-white">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
 
-      <!-- LEFT: story text -->
-      <div>
+    <!-- ① 我们的故事 -->
+    <div class="about-section">
+      <div class="about-section-inner">
         <div class="section-tag" data-i18n="about.story.title">我们的故事</div>
-        <blockquote style="border-left:4px solid var(--cyan);padding:14px 20px;background:var(--silver);border-radius:0 8px 8px 0;margin:16px 0 24px;">
-          <p style="font-family:var(--font-d);font-size:17px;font-weight:600;color:var(--navy);line-height:1.55;" data-i18n="about.quote"></p>
-        </blockquote>
-        <div id="storyBody" style="font-size:13px;color:var(--text-muted);line-height:1.9;"></div>
-      </div>
-
-      <!-- RIGHT: stats + mission -->
-      <div style="display:flex;flex-direction:column;gap:20px;">
-        <!-- Key stats -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
-            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">50+</div>
-            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-c">已覆盖国家</div>
-          </div>
-          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
-            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">CE</div>
-            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-ce">认证产品</div>
-          </div>
-          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
-            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">24h</div>
-            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-r">响应时间</div>
-          </div>
-          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
-            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">1pc</div>
-            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-moq">低起订量</div>
-          </div>
+        <div class="about-quote-block">
+          <p data-i18n="about.quote"></p>
         </div>
-        <!-- Mission box -->
-        <div style="background:var(--navy-dark);border-radius:8px;padding:24px;border-left:4px solid var(--cyan);">
-          <div style="font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;" data-i18n="about.mission.label">我们的使命</div>
-          <p style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.8;" data-i18n="about.mission"></p>
+        <div class="about-story-text" id="storyBody"></div>
+      </div>
+      <!-- Stats row -->
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-num">50+</div>
+          <div class="about-stat-label" id="stat-c">已覆盖国家</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">CE</div>
+          <div class="about-stat-label" id="stat-ce">认证产品</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">24h</div>
+          <div class="about-stat-label" id="stat-r">响应时间</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-num">1pc</div>
+          <div class="about-stat-label" id="stat-moq">低起订量</div>
         </div>
       </div>
     </div>
+
+    <!-- ② 我们的使命 -->
+    <div class="about-section">
+      <div class="about-section-inner">
+        <div class="section-tag" data-i18n="about.mission.label">我们的使命</div>
+        <div class="mission-text" data-i18n="about.mission"></div>
+      </div>
+    </div>
+
+    <!-- ③ 我们的价值观 -->
+    <div class="about-section">
+      <div class="about-section-inner">
+        <div class="section-tag">VALUES</div>
+        <h2 id="valTitle" style="margin-top:8px;">我们的价值观</h2>
+      </div>
+      <div class="values-row">
+        <div class="value-item">
+          <div class="value-item-num">01</div>
+          <div class="value-item-title" data-i18n="about.val1.title"></div>
+          <div class="value-item-desc" data-i18n="about.val1"></div>
+        </div>
+        <div class="value-item">
+          <div class="value-item-num">02</div>
+          <div class="value-item-title" data-i18n="about.val2.title"></div>
+          <div class="value-item-desc" data-i18n="about.val2"></div>
+        </div>
+        <div class="value-item">
+          <div class="value-item-num">03</div>
+          <div class="value-item-title" data-i18n="about.val3.title"></div>
+          <div class="value-item-desc" data-i18n="about.val3"></div>
+        </div>
+        <div class="value-item">
+          <div class="value-item-num">04</div>
+          <div class="value-item-title" data-i18n="about.val4.title"></div>
+          <div class="value-item-desc" data-i18n="about.val4"></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ══ VALUES ══ -->
+<!-- PRODUCT COVERAGE -->
 <section class="section section-silver">
-  <div class="container">
-    <div class="section-head">
-      <div class="section-tag">VALUES</div>
-      <h2 id="valTitle">我们的价值观</h2>
-    </div>
-    <div class="values-grid">
-      <div class="value-card"><div class="value-num">01</div><div class="value-title" data-i18n="about.val1.title"></div><div class="value-desc" data-i18n="about.val1"></div></div>
-      <div class="value-card"><div class="value-num">02</div><div class="value-title" data-i18n="about.val2.title"></div><div class="value-desc" data-i18n="about.val2"></div></div>
-      <div class="value-card"><div class="value-num">03</div><div class="value-title" data-i18n="about.val3.title"></div><div class="value-desc" data-i18n="about.val3"></div></div>
-      <div class="value-card"><div class="value-num">04</div><div class="value-title" data-i18n="about.val4.title"></div><div class="value-desc" data-i18n="about.val4"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ PRODUCT COVERAGE ══ -->
-<section class="section section-white">
   <div class="container">
     <div class="section-head">
       <div class="section-tag" data-i18n="about.prod.title">四大核心产品系列</div>
@@ -124,7 +186,7 @@
   </div>
 </section>
 
-<!-- ══ CTA ══ -->
+<!-- CTA -->
 <div class="cta-band">
   <div class="cta-inner">
     <div class="cta-left">
@@ -208,17 +270,16 @@ function renderPage(){
       <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;">${zh?c.zh:c.en}</div>
       <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">${zh?c.zh_sub:c.en_sub}</div>
     </div>`).join('');
-  // Render story paragraphs
   const el=document.getElementById('storyBody');
   if(el){
     const raw=T('about.story');
-    el.innerHTML=raw.split('\n\n').map(p=>`<p style="margin-bottom:14px;">${p.trim()}</p>`).join('');
+    el.innerHTML=raw.split('\n\n').map(p=>`<p>${p.trim()}</p>`).join('');
   }
 }
 function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
-function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}
-  const sl=document.getElementById('logo-slogan');
-  if(sl) sl.textContent=currentLang==='zh'?'专为清洁，专为商用':'Serious Clean for Serious Business';
+function initWA(){
+  const b=document.getElementById('wa-float');
+  if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}
 }
 function onLangChange(){renderPage();initWA();}
 document.addEventListener('DOMContentLoaded',()=>{initWA();renderPage();});
