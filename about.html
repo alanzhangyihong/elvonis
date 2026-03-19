@@ -13,12 +13,14 @@
     <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/><rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/></svg></div>
     ELVONIS
   </a>
-  <nav><button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
+  <nav>
+    <button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
     <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
     <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
     <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
     <button class="nav-link active" onclick="location.href='about.html'" data-i18n="nav.about"></button>
-    <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button></nav>
+    <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
+  </nav>
   <div class="header-right">
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
@@ -33,7 +35,7 @@
   <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
   <button class="nav-link" onclick="location.href='applications.html'" data-i18n="nav.apps"></button>
   <button class="nav-link" onclick="location.href='blog.html'" data-i18n="nav.blog"></button>
-  <button class="nav-link" onclick="location.href='about.html'" data-i18n="nav.about"></button>
+  <button class="nav-link active" onclick="location.href='about.html'" data-i18n="nav.about"></button>
   <button class="nav-link" onclick="location.href='contact.html'" data-i18n="nav.contact"></button>
   <div class="mobile-lang">
     <button class="lang-btn active" data-lang="zh" onclick="setLang('zh')">中文</button>
@@ -41,59 +43,68 @@
   </div>
   <button class="btn-header" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
 </div>
+
+<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-hero-eyebrow">ELVONIS</div>
+    <div class="page-hero-eyebrow" data-i18n="nav.about">关于我们</div>
     <h1 class="page-hero-title" data-i18n="about.hero.title">关于ELVONIS</h1>
     <p class="page-hero-sub" data-i18n="about.hero.sub"></p>
   </div>
 </div>
-<div class="about-mission-band">
-  <div class="about-mission-inner">
-    <div style="font-size:10px;color:var(--cyan);letter-spacing:.1em;margin-bottom:10px;" data-i18n="about.mission.label">我们的使命</div>
-    <p class="about-quote-big" data-i18n="about.mission"></p>
-    <div style="display:flex;gap:28px;justify-content:center;margin-top:20px;flex-wrap:wrap;">
-      <div style="text-align:center;"><div style="font-family:var(--font-d);font-size:26px;font-weight:700;color:var(--cyan);">Serious Clean for Serious Business</div><div style="font-size:14px;color:#6A8EB0;margin-top:4px;">专为清洁，专为商用</div></div>
-    </div>
-  </div>
-</div>
+
+<!-- ══ BRAND STORY ══ -->
 <section class="section section-white">
   <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+
+      <!-- LEFT: story text -->
       <div>
         <div class="section-tag" data-i18n="about.story.title">我们的故事</div>
-        <h2 style="font-family:var(--font-d);font-size:clamp(20px,3vw,28px);font-weight:700;color:var(--navy);margin-bottom:16px;" data-i18n="about.story.title">我们的故事</h2>
-        <blockquote style="border-left:4px solid var(--cyan);padding:16px 20px;background:var(--silver);border-radius:0 8px 8px 0;margin-bottom:18px;">
-          <p style="font-family:var(--font-d);font-size:18px;font-weight:600;color:var(--navy);line-height:1.5;" data-i18n="about.quote"></p>
+        <blockquote style="border-left:4px solid var(--cyan);padding:14px 20px;background:var(--silver);border-radius:0 8px 8px 0;margin:16px 0 24px;">
+          <p style="font-family:var(--font-d);font-size:17px;font-weight:600;color:var(--navy);line-height:1.55;" data-i18n="about.quote"></p>
         </blockquote>
-        <div id="storyBody" style="font-size:13px;color:var(--text-muted);line-height:1.85;"></div>
-        <div style="display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;">
-          <div style="background:var(--cyan-pale);border-radius:8px;padding:14px 18px;text-align:center;"><div style="font-family:var(--font-d);font-size:24px;font-weight:700;color:var(--cyan);">50+</div><div style="font-size:11px;color:var(--text-muted);margin-top:3px;" id="stat-c">已覆盖国家</div></div>
-          <div style="background:var(--cyan-pale);border-radius:8px;padding:14px 18px;text-align:center;"><div style="font-family:var(--font-d);font-size:24px;font-weight:700;color:var(--cyan);">CE</div><div style="font-size:11px;color:var(--text-muted);margin-top:3px;" id="stat-ce">认证</div></div>
-          <div style="background:var(--cyan-pale);border-radius:8px;padding:14px 18px;text-align:center;"><div style="font-family:var(--font-d);font-size:24px;font-weight:700;color:var(--cyan);">24h</div><div style="font-size:11px;color:var(--text-muted);margin-top:3px;" id="stat-r">响应时间</div></div>
-        </div>
+        <div id="storyBody" style="font-size:13px;color:var(--text-muted);line-height:1.9;"></div>
       </div>
-      <div style="background:var(--navy);border-radius:12px;padding:28px 24px;text-align:center;">
-        <div style="font-family:var(--font-d);font-size:26px;font-weight:700;color:var(--white);margin-bottom:6px;">Serious Clean for<br><span style="color:var(--cyan);">Serious Business</span></div>
-        <div style="font-size:15px;color:var(--cyan-light);margin-bottom:16px;">专为清洁，专为商用</div>
-        <div style="width:40px;height:2px;background:var(--cyan);margin:0 auto 16px;"></div>
-        <p style="font-size:12px;color:#6A8EB0;line-height:1.7;" data-i18n="about.mission"></p>
+
+      <!-- RIGHT: stats + mission -->
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- Key stats -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
+            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">50+</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-c">已覆盖国家</div>
+          </div>
+          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
+            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">CE</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-ce">认证产品</div>
+          </div>
+          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
+            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">24h</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-r">响应时间</div>
+          </div>
+          <div style="background:var(--silver);border-radius:8px;padding:20px;text-align:center;border-top:3px solid var(--cyan);">
+            <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);">1pc</div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;" id="stat-moq">低起订量</div>
+          </div>
+        </div>
+        <!-- Mission box -->
+        <div style="background:var(--navy-dark);border-radius:8px;padding:24px;border-left:4px solid var(--cyan);">
+          <div style="font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px;" data-i18n="about.mission.label">我们的使命</div>
+          <p style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.8;" data-i18n="about.mission"></p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ══ VALUES ══ -->
 <section class="section section-silver">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag" data-i18n="about.prod.title">四大核心产品系列</div>
-      <h2 data-i18n="about.prod.title">四大核心产品系列</h2>
+      <div class="section-tag">VALUES</div>
+      <h2 id="valTitle">我们的价值观</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" id="prodCoverage"></div>
-  </div>
-</section>
-<section class="section section-white">
-  <div class="container">
-    <div class="section-head"><div class="section-tag">VALUES</div><h2 id="valTitle">我们的价值观</h2></div>
     <div class="values-grid">
       <div class="value-card"><div class="value-num">01</div><div class="value-title" data-i18n="about.val1.title"></div><div class="value-desc" data-i18n="about.val1"></div></div>
       <div class="value-card"><div class="value-num">02</div><div class="value-title" data-i18n="about.val2.title"></div><div class="value-desc" data-i18n="about.val2"></div></div>
@@ -102,10 +113,28 @@
     </div>
   </div>
 </section>
+
+<!-- ══ PRODUCT COVERAGE ══ -->
+<section class="section section-white">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag" data-i18n="about.prod.title">四大核心产品系列</div>
+      <h2 data-i18n="about.prod.title">四大核心产品系列</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" id="prodCoverage"></div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
 <div class="cta-band">
   <div class="cta-inner">
-    <div class="cta-left"><h2 class="cta-title"><span data-i18n="cta.title1"></span><br><em data-i18n="cta.title2"></em></h2><p class="cta-sub" data-i18n="cta.sub"></p></div>
-    <div class="cta-right"><button class="btn btn-accent" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button></div>
+    <div class="cta-left">
+      <h2 class="cta-title"><span data-i18n="cta.title1"></span><br><em data-i18n="cta.title2"></em></h2>
+      <p class="cta-sub" data-i18n="cta.sub"></p>
+    </div>
+    <div class="cta-right">
+      <button class="btn btn-accent" onclick="location.href='contact.html'" data-i18n="nav.inquiry">立即询价</button>
+    </div>
   </div>
 </div>
 
@@ -146,48 +175,51 @@
     </div>
   </div>
 </footer>
-<div class="footer-bottom" style="background:var(--navy-deep,#0f1e2b);">
+</div>
+<div class="footer-bottom" style="background:var(--navy-dark);">
   <p class="footer-copy" data-i18n="footer.copy"></p>
   <p class="footer-cert-row" data-i18n="footer.cert"></p>
 </div>
-</div><!-- /footer-wrap -->
+
 <a id="wa-float" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
   <div class="wa-pulse"></div>
   <svg viewBox="0 0 32 32" fill="white"><path d="M16 3C9 3 3.4 8.6 3.4 15.6c0 2.3.6 4.5 1.8 6.4L3 29l7.3-2.2c1.8 1 3.8 1.6 5.8 1.6h.1C23 28.4 28.6 22.8 28.6 15.8 28.6 8.7 23 3 16 3zm6 8.1c-.3-.2-1.9-1-2.3-1.1-.4-.1-.6-.2-.9.2-.3.3-.9 1.1-1.1 1.4-.2.2-.4.3-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.1-.7l.6-.7c.2-.2.2-.4.4-.6.1-.2.1-.4 0-.6-.1-.2-.9-2.1-1.2-2.8-.3-.7-.6-.6-.9-.6h-.7c-.2 0-.6.1-.9.4C8 13 7.2 13.8 7.2 15.5s1.3 3.4 1.5 3.6c.2.2 2.6 4 6.3 5.6.9.4 1.5.6 2 .7.9.3 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.5-.3z"/></svg>
 </a>
+
 <script src="language.js"></script>
 <script>
 const PROD_CATS=[
-  {zh:'高压清洗机',en:'High-Pressure Washers',zh_sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证',en_sub:'100–500 bar · Cold & Hot · Electric / Petrol / Diesel · CE'},
-  {zh:'工业吸尘器',en:'Industrial Vacuums',zh_sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证',en_sub:'Dry / Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE'},
+  {zh:'高压清洗机',en:'High-Pressure Washers',zh_sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证',en_sub:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE'},
+  {zh:'工业吸尘器',en:'Industrial Vacuums',zh_sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证',en_sub:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE'},
   {zh:'商用洗地机',en:'Floor Scrubbers',zh_sub:'手推式和驾驶式 · 最大120cm · 锂电 · CE认证',en_sub:'Walk-behind & Ride-on · Up to 120cm · Battery · CE'},
   {zh:'商用扫地机器人',en:'Robotic Sweepers',zh_sub:'激光雷达导航 · 自动回充 · App控制 · 7×24运行',en_sub:'LiDAR Navigation · Auto-Charge · App Control · 7×24h'},
 ];
 function renderPage(){
   const zh=currentLang==='zh';
-  document.getElementById('valTitle').textContent=zh?'我们的价值观':'What we stand for';
+  document.getElementById('valTitle').textContent=zh?'我们的价值观':'What We Stand For';
   document.getElementById('stat-c').textContent=zh?'已覆盖国家':'Countries';
   document.getElementById('stat-ce').textContent=zh?'认证产品':'Certified';
   document.getElementById('stat-r').textContent=zh?'响应时间':'Response';
+  document.getElementById('stat-moq').textContent=zh?'低起订量':'Low MOQ';
   document.getElementById('prodCoverage').innerHTML=PROD_CATS.map(c=>`
-    <div style="background:var(--white);border:0.5px solid var(--silver-dark);border-radius:8px;padding:16px;border-top:3px solid var(--cyan);">
-      <div style="font-size:13px;font-weight:500;color:var(--navy);margin-bottom:5px;">${zh?c.zh:c.en}</div>
-      <div style="font-size:11px;color:var(--text-muted);line-height:1.55;">${zh?c.zh_sub:c.en_sub}</div>
+    <div style="background:var(--white);border:0.5px solid var(--silver-dark);border-radius:8px;padding:18px;border-top:3px solid var(--cyan);cursor:pointer;" onclick="location.href='products.html'">
+      <div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px;">${zh?c.zh:c.en}</div>
+      <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">${zh?c.zh_sub:c.en_sub}</div>
     </div>`).join('');
+  // Render story paragraphs
+  const el=document.getElementById('storyBody');
+  if(el){
+    const raw=T('about.story');
+    el.innerHTML=raw.split('\n\n').map(p=>`<p style="margin-bottom:14px;">${p.trim()}</p>`).join('');
+  }
 }
-</script>
-<script>
 function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
 function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}}
-function onLangChange(){if(typeof renderPage==='function')renderPage();initWA();}
-document.addEventListener('DOMContentLoaded',()=>{initWA();if(typeof renderPage==='function')renderPage();});
-</script><script>
-if (window.netlifyIdentity) {
-  window.netlifyIdentity.on("init", user => {
-    if (!user) {
-      window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-    }
-  });
-}
+function onLangChange(){renderPage();initWA();}
+document.addEventListener('DOMContentLoaded',()=>{initWA();renderPage();});
 </script>
-</body></html>
+<script>
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
+</script>
+</body>
+</html>
