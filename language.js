@@ -292,6 +292,7 @@ const I18N = {
 
     // FOOTER
     'footer.desc':     'ELVONIS直接从认证工厂向全球企业供应CE认证商用清洁设备。',
+    'footer.slogan':   '专为清洁，专为商用',
     'footer.products': '产品中心',
     'footer.company':  '公司',
     'footer.support':  '支持',
@@ -504,6 +505,7 @@ const I18N = {
     'contact.hours.val':    'Mon–Sat 9:00–18:00 (UTC+8)',
 
     'footer.desc':     'ELVONIS supplies CE-certified commercial cleaning equipment directly from factories to businesses worldwide.',
+    'footer.slogan':   'Serious Clean for Serious Business',
     'footer.products': 'Products',
     'footer.company':  'Company',
     'footer.support':  'Support',
