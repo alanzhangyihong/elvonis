@@ -9,9 +9,11 @@
 </head>
 <body>
 <header>
-  <a href="index.html" class="logo">
-    <div class="logo-icon"><svg viewBox="0 0 18 18" fill="none"><rect x="1" y="1" width="7" height="7" rx="1.5" fill="white"/><rect x="10" y="1" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="1" y="10" width="7" height="7" rx="1.5" fill="white" opacity="0.5"/><rect x="10" y="10" width="7" height="7" rx="1.5" fill="white"/></svg></div>
-    ELVONIS
+    <a href="index.html" class="logo">
+    <div class="logo-text-wrap">
+      <span class="logo-wordmark">ELVONIS</span>
+      <span class="logo-slogan" id="logo-slogan">Serious Clean for Serious Business</span>
+    </div>
   </a>
   <nav><button class="nav-link" onclick="location.href='index.html'" data-i18n="nav.home"></button>
     <button class="nav-link" onclick="location.href='products.html'" data-i18n="nav.products"></button>
@@ -56,9 +58,12 @@
 <div class="footer-wrap">
 <footer>
   <div>
-    <div class="footer-logo-wrap">
-      <div class="footer-logo-icon"><svg viewBox="0 0 14 14" fill="none" width="14" height="14"><rect x="1" y="1" width="5" height="5" rx="1" fill="white"/><rect x="8" y="1" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="1" y="8" width="5" height="5" rx="1" fill="white" opacity="0.5"/><rect x="8" y="8" width="5" height="5" rx="1" fill="white"/></svg></div>
-      <span class="footer-brand">ELVONIS</span>
+        <div class="footer-logo-wrap">
+      <div class="footer-logo-text-wrap">
+        <span class="footer-wordmark">ELVONIS</span>
+        <span class="footer-logo-slogan">Serious Clean for Serious Business</span>
+      </div>
+    </div>
     </div>
     <p class="footer-desc" data-i18n="footer.desc"></p>
     <div class="footer-certs"><span class="footer-cert">CE</span><span class="footer-cert">RoHS</span><span class="footer-cert">OEM</span></div>
@@ -107,7 +112,10 @@ function renderPage(){
 </script>
 <script>
 function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
-function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}}
+function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.tooltip');}
+  const sl=document.getElementById('logo-slogan');
+  if(sl) sl.textContent=currentLang==='zh'?'专为清洁，专为商用':'Serious Clean for Serious Business';
+}
 function onLangChange(){if(typeof renderPage==='function')renderPage();initWA();}
 document.addEventListener('DOMContentLoaded',()=>{initWA();if(typeof renderPage==='function')renderPage();});
 </script><script>
