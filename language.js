@@ -14,8 +14,17 @@ const SITE_CONFIG = {
   formspree: 'YOUR_FORM_ID',  // ← 替换成 formspree.io 表单ID
 };
 
-// ── 2. 当前语言（双按钮，无toggle歧义）──────────────────
-let currentLang = localStorage.getItem('elvonis_lang') || 'zh';
+// ── 2. 语言检测 ──────────────────────────────────────────
+// 优先级：① 用户手动选择过 → ② 浏览器语言 → ③ 默认英文
+function detectLang() {
+  // ① 用户已手动选择，尊重选择
+  const saved = localStorage.getItem('elvonis_lang');
+  if (saved) return saved;
+  // ② 浏览器语言（手机/电脑/平板逻辑相同）
+  const bl = navigator.language || navigator.userLanguage || '';
+  return /^zh/i.test(bl) ? 'zh' : 'en';
+}
+let currentLang = detectLang();
 
 function setLang(lang) {
   currentLang = lang;
