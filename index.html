@@ -163,14 +163,14 @@
   </div>
 </section>
 
-<!-- ══ GLOBAL REACH ══ -->
+<!-- ══ GLOBAL TRUST ══ -->
 <section class="section section-navy">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag" id="reach-eyebrow">全球覆盖</div>
-      <h2 class="light" id="reach-title">服务全球各类企业</h2>
+      <div class="section-tag" id="trust-eyebrow">全球供货</div>
+      <h2 class="light" id="trust-title">为什么选择 ELVONIS</h2>
     </div>
-    <div id="reachGrid"></div>
+    <div id="trustGrid"></div>
   </div>
 </section>
 
@@ -297,31 +297,44 @@ const APPS = [
   {key:'parking',  icon:'🚗'},
   {key:'food',     icon:'🍽️'},
 ];
-// Global reach data — by customer type, not region
-const REACH = {
+const TRUST_DATA = {
   zh: {
-    eyebrow: '全球覆盖',
-    title: '服务全球各类企业',
-    sub: '无论您身处哪个国家，只要有商业清洁需求，我们就能为您供货。已服务超过50个国家和地区的企业与机构。',
-    customers: [
-      { icon:'🏭', name:'工厂与制造业', desc:'汽车零配件 · 电子 · 食品加工 · 化工', tag:'工业级设备' },
-      { icon:'🏨', name:'酒店与物业管理', desc:'连锁酒店 · 商业地产 · 写字楼管理', tag:'低噪安静高效' },
-      { icon:'🤝', name:'外贸公司与经销商', desc:'进出口贸易 · 设备经销 · 品牌代理', tag:'支持OEM贴牌' },
-      { icon:'🏥', name:'政府与公共机构', desc:'医院 · 学校 · 机场 · 地铁 · 市政', tag:'认证齐全' },
+    eyebrow: '全球供货',
+    title: '为什么选择 ELVONIS',
+    desc: '无论您身处哪个国家，只要有商业清洁需求，我们就能为您供货和提供售后支持。',
+    stats: [
+      { num:'50+',  label:'已服务国家' },
+      { num:'CE',   label:'产品认证标准' },
+      { num:'1pc',  label:'最低起订量' },
+      { num:'24h',  label:'询盘响应时间' },
     ],
-    shipping: '✈ 全球发货 — DHL · FedEx · 海运，覆盖所有主要港口和城市',
+    reasons: [
+      { icon:'🏆', title:'CE认证产品',      desc:'所有核心产品通过CE认证，满足欧盟及国际市场准入要求，采购无后顾之忧。' },
+      { icon:'🏭', title:'工厂直供',         desc:'直接从认证制造商采购，无中间商加价，价格透明，质量可追溯。' },
+      { icon:'🔧', title:'耗材持续供应',     desc:'刷盘、胶条、滤芯等耗材长期备货，与设备一同发货，避免断供影响运营。' },
+      { icon:'🤝', title:'支持OEM贴牌',      desc:'提供完整OEM服务，定制品牌、颜色和包装，适合经销商建立自有品牌。' },
+      { icon:'📦', title:'全球发货',          desc:'DHL · FedEx · 海运，覆盖全球所有主要港口和城市，1台起可发货。' },
+      { icon:'💬', title:'24小时售后响应',   desc:'专属WhatsApp联系渠道，安装指导、配件采购、技术问题24小时内响应。' },
+    ],
   },
   en: {
-    eyebrow: 'GLOBAL COVERAGE',
-    title: 'Serving Businesses Worldwide',
-    sub: 'Wherever your business is located, if you need commercial cleaning equipment, we can supply it. Currently serving clients in 50+ countries across every continent.',
-    customers: [
-      { icon:'🏭', name:'Factories & Manufacturing', desc:'Auto parts · Electronics · Food processing · Chemical', tag:'Industrial Grade' },
-      { icon:'🏨', name:'Hotels & Property Management', desc:'Hotel chains · Commercial real estate · Office buildings', tag:'Quiet & Efficient' },
-      { icon:'🤝', name:'Trading Companies & Distributors', desc:'Import/export · Equipment dealers · Brand agents', tag:'OEM Available' },
-      { icon:'🏥', name:'Government & Institutions', desc:'Hospitals · Schools · Airports · Metro · Municipal', tag:'Fully Certified' },
+    eyebrow: 'WORLDWIDE SUPPLY',
+    title: 'Why Choose ELVONIS',
+    desc: 'No matter where your business is located, we can supply and support you. Serving clients in 50+ countries.',
+    stats: [
+      { num:'50+',  label:'Countries Served' },
+      { num:'CE',   label:'Product Standard' },
+      { num:'1pc',  label:'Min. Order Qty' },
+      { num:'24h',  label:'Response Time' },
     ],
-    shipping: '✈ Worldwide Shipping — DHL · FedEx · Sea freight to all major ports and cities',
+    reasons: [
+      { icon:'🏆', title:'CE Certified Products',    desc:'All core products are CE certified, meeting EU and international market requirements — no compliance headaches.' },
+      { icon:'🏭', title:'Factory Direct',            desc:'Source directly from certified manufacturers. No middleman markup, transparent pricing, full traceability.' },
+      { icon:'🔧', title:'Consumables Supply',        desc:'Brush pads, squeegee blades, filters — kept in stock and shipped with your equipment. No supply disruptions.' },
+      { icon:'🤝', title:'OEM Available',             desc:'Full OEM service — custom branding, colors and packaging for distributors building their own product line.' },
+      { icon:'📦', title:'Global Shipping',           desc:'DHL · FedEx · Sea freight to all major ports and cities. From 1 unit to full containers.' },
+      { icon:'💬', title:'24h After-Sales Support',   desc:'Dedicated WhatsApp channel for setup guidance, spare parts and technical support — responded within 24 hours.' },
+    ],
   }
 };
 
@@ -366,22 +379,29 @@ function renderHome() {
       <p data-i18n="app.${a.key}.desc">${T('app.'+a.key+'.desc')}</p>
     </div>`).join('');
 
-  // Global reach section
-  const rd = REACH[currentLang] || REACH.en;
-  document.getElementById('reach-eyebrow').textContent = rd.eyebrow;
-  document.getElementById('reach-title').textContent = rd.title;
-  document.getElementById('reachGrid').innerHTML = `
-    <p style="font-size:14px;color:rgba(255,255,255,0.5);max-width:620px;line-height:1.8;margin-bottom:32px;">${rd.sub}</p>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;">
-      ${rd.customers.map(c => `
-        <div style="background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.10);border-radius:8px;padding:22px 18px;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='rgba(255,255,255,0.04)'">
-          <div style="font-size:28px;margin-bottom:10px;">${c.icon}</div>
-          <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:6px;">${c.name}</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.42);line-height:1.6;margin-bottom:10px;">${c.desc}</div>
-          <span style="font-size:10px;font-weight:600;color:var(--cyan);background:rgba(0,174,239,0.12);border:0.5px solid rgba(0,174,239,0.3);padding:2px 8px;border-radius:3px;letter-spacing:.05em;">${c.tag}</span>
+  // Trust / Why ELVONIS section
+  const td = TRUST_DATA[currentLang] || TRUST_DATA.en;
+  document.getElementById('trust-eyebrow').textContent = td.eyebrow;
+  document.getElementById('trust-title').textContent = td.title;
+  document.getElementById('trustGrid').innerHTML = `
+    <p style="font-size:14px;color:rgba(255,255,255,0.48);max-width:580px;line-height:1.8;margin-bottom:36px;">${td.desc}</p>
+    <!-- 4 key stats -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;">
+      ${td.stats.map(s => `
+        <div style="text-align:center;padding:20px 12px;background:rgba(255,255,255,0.04);border:0.5px solid rgba(255,255,255,0.08);border-radius:8px;border-top:2px solid var(--cyan);">
+          <div style="font-family:var(--font-d);font-size:32px;font-weight:700;color:var(--cyan);line-height:1;">${s.num}</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:7px;letter-spacing:.03em;">${s.label}</div>
         </div>`).join('')}
     </div>
-    <div style="background:rgba(0,174,239,0.08);border:0.5px solid rgba(0,174,239,0.25);border-radius:6px;padding:14px 18px;font-size:13px;color:rgba(255,255,255,0.55);">${rd.shipping}</div>
+    <!-- 6 reason cards -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      ${td.reasons.map(r => `
+        <div style="background:rgba(255,255,255,0.03);border:0.5px solid rgba(255,255,255,0.08);border-radius:8px;padding:22px 20px;transition:background .2s;border-left:3px solid var(--cyan);" onmouseover="this.style.background='rgba(255,255,255,0.07)'" onmouseout="this.style.background='rgba(255,255,255,0.03)'">
+          <div style="font-size:22px;margin-bottom:10px;">${r.icon}</div>
+          <div style="font-size:13px;font-weight:600;color:var(--white);margin-bottom:7px;">${r.title}</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.42);line-height:1.7;">${r.desc}</div>
+        </div>`).join('')}
+    </div>
   `;
 
   // Blog preview (3 posts)
