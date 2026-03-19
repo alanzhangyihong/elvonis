@@ -61,13 +61,25 @@ function T(key) {
 
 // 批量应用翻译
 function applyI18n() {
+  // Standard data-i18n elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const attr = el.getAttribute('data-i18n-attr');
     const val = T(key);
-    if (attr)      el.setAttribute(attr, val);
+    if (!val) return;
+    if (attr) el.setAttribute(attr, val);
     else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = val;
-    else           el.textContent = val;
+    else el.textContent = val;
+  });
+  // Placeholder via data-i18n-ph
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const val = T(el.getAttribute('data-i18n-ph'));
+    if (val) el.placeholder = val;
+  });
+  // Select option text via data-i18n-opt
+  document.querySelectorAll('[data-i18n-opt]').forEach(el => {
+    const val = T(el.getAttribute('data-i18n-opt'));
+    if (val) el.textContent = val;
   });
 }
 

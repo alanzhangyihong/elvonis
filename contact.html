@@ -198,24 +198,8 @@ if (_urlType === 'consumables') {
   }
 }
 
-// Update inquiry type label bilingually
 function renderPage() {
-  const zh = currentLang === 'zh';
-  // Update select option texts
-  document.querySelectorAll('[data-i18n-opt]').forEach(opt => {
-    const key = opt.getAttribute('data-i18n-opt');
-    opt.textContent = T(key);
-  });
-  // Update country placeholder
-  const ci = document.getElementById('countryInput');
-  if (ci) ci.placeholder = T('contact.country.ph');
-  document.getElementById('opt-new').textContent    = zh ? '采购新设备' : 'New Equipment';
-  document.getElementById('opt-con').textContent    = zh ? '耗材补货'   : 'Consumables Replenishment';
-  document.getElementById('opt-parts').textContent  = zh ? '配件采购'   : 'Spare Parts';
-  document.getElementById('opt-oem').textContent    = zh ? 'OEM贴牌合作': 'OEM Partnership';
-  document.getElementById('opt-dist').textContent   = zh ? '经销商合作' : 'Distributorship';
-  document.getElementById('opt-other').textContent  = zh ? '其他'       : 'Other';
-
+  // applyI18n in language.js now handles data-i18n-ph and data-i18n-opt automatically
   // WA button
   const btn = document.getElementById('waContactBtn');
   if (btn) btn.href = 'https://wa.me/' + SITE_CONFIG.whatsapp + '?text=' + encodeURIComponent(T('wa.greeting'));
