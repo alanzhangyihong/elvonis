@@ -17,6 +17,7 @@
 .scene-sub{font-size:11px;color:var(--cyan);font-weight:600;letter-spacing:.04em;margin-bottom:12px;display:block;}
 .scene-desc{font-size:13px;color:var(--text-muted);line-height:1.75;margin-bottom:18px;}
 .scene-rec-label{font-size:10px;font-weight:600;color:var(--cyan);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;}
+.scene-slogan{font-size:12px;font-weight:700;color:var(--navy);background:var(--silver);border-left:3px solid var(--cyan);padding:7px 12px;border-radius:0 4px 4px 0;margin-bottom:16px;letter-spacing:.02em;}
 .scene-tags{display:flex;flex-wrap:wrap;gap:6px;}
 .scene-tag{background:var(--silver);border:0.5px solid var(--silver-dark,#CBD5E1);border-radius:4px;padding:4px 10px;font-size:11px;font-weight:500;color:var(--navy);cursor:pointer;transition:all .2s;}
 .scene-tag:hover{background:var(--cyan);color:#fff;border-color:var(--cyan);}
@@ -197,6 +198,7 @@ function renderPage() {
       <div class="scene-title">${T('app.'+s.key)}</div>
       <span class="scene-sub">${T('app.'+s.key+'.sub')}</span>
       <p class="scene-desc">${T('app.'+s.key+'.desc')}</p>
+      <div class="scene-slogan">${T('app.'+s.key+'.slogan')}</div>
       <div class="scene-rec-label">${recLabel}</div>
       <div class="scene-tags">${s.recs.map(r =>
         `<span class="scene-tag" onclick="location.href='product.html?id=${r.id}'">${r[lang]}</span>`
