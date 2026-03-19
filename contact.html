@@ -199,10 +199,11 @@ if (_urlType === 'consumables') {
 }
 
 function renderPage() {
-  // applyI18n in language.js now handles data-i18n-ph and data-i18n-opt automatically
-  // WA button
   const btn = document.getElementById('waContactBtn');
   if (btn) btn.href = 'https://wa.me/' + SITE_CONFIG.whatsapp + '?text=' + encodeURIComponent(T('wa.greeting'));
+}
+function onLangChange() {
+  renderPage();
 }
 // Form submit
 document.getElementById('contactForm').addEventListener('submit',async function(e){
