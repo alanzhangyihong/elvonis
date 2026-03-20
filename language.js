@@ -9,9 +9,9 @@ const SITE_CONFIG = {
   brandZh:   '',
   slogan_en: 'Serious Clean for Serious Business',
   slogan_zh: '专为清洁，专为商用',
-  whatsapp:  '60123456789',   // ← 替换成真实号码
+  whatsapp:  '+8618057039893',   // ← 替换成真实号码
   email:     'info@elvonis.com',
-  formspree: 'YOUR_FORM_ID',  // ← 替换成 formspree.io 表单ID
+  formspree: 'xlgpzqpq',  // ← 替换成 formspree.io 表单ID
 };
 
 // ── 2. 语言检测 ──────────────────────────────────────────
