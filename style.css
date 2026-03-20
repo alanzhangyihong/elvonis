@@ -469,6 +469,8 @@ footer {
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.9)} }
 @keyframes wa-pulse { 0%{transform:scale(1);opacity:.5} 100%{transform:scale(1.8);opacity:0} }
 
+
+
 /* ── RESPONSIVE ──────────────────────────────────────────── */
 @media(max-width:1100px) {
   .prod-grid, .product-grid { grid-template-columns:repeat(3,1fr); }
