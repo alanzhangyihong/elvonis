@@ -227,4 +227,18 @@ document.getElementById('contactForm').addEventListener('submit',async function(
 </script>
 <script>
 function toggleMobileNav(){document.getElementById('mobileNav').classList.toggle('open');}
-function initWA(){const b=document.getElementById('wa-float');if(b){b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));b.title=T('wa.t
+function initWA(){
+  const b=document.getElementById('wa-float');
+  if(b){
+    b.href='https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+encodeURIComponent(T('wa.greeting'));
+    b.title=T('wa.tooltip');
+  }
+}
+function onLangChange(){renderPage();initWA();}
+document.addEventListener('DOMContentLoaded',()=>{initWA();renderPage();});
+</script>
+<script>
+if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
+</script>
+</body>
+</html>
