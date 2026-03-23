@@ -108,39 +108,61 @@
 <section class="hero">
   <div class="hero-bg-grid"></div>
   <div class="hero-glow"></div>
+
+  <!-- Hook Banner -->
+  <div class="hero-hook-bar">
+    <span class="hero-hook-icon">🔥</span>
+    <span class="hero-hook-text" data-i18n="hero.hook">Best Price Within 12 Hours + Free OEM Design Support</span>
+    <a class="hero-hook-cta" href="contact.html" data-i18n="hero.hook.cta">Contact Us Now →</a>
+  </div>
+
   <div class="container">
     <div class="hero-content">
+
+      <!-- SEO eyebrow -->
       <div class="hero-eyebrow">
         <div class="pulse-dot"></div>
-        <span data-i18n="hero.eyebrow">工业级品质 · 工厂直供 · CE认证</span>
+        <span data-i18n="hero.eyebrow">Commercial Cleaning Equipment Manufacturer · CE Certified · Factory Direct</span>
       </div>
+
+      <!-- H1: SEO headline -->
       <h1 class="hero-h1">
-        <span data-i18n="hero.h1.line1">专为清洁，</span>
-        <em data-i18n="hero.h1.line2">专为商用</em>
+        <span data-i18n="hero.h1.line1">Commercial Cleaning Equipment</span><br>
+        <em data-i18n="hero.h1.line2">Manufacturer &amp; Supplier</em>
       </h1>
-      <p class="hero-desc" data-i18n="hero.desc"></p>
+
+      <!-- 4 core selling points -->
+      <p class="hero-sub4" data-i18n="hero.sub4">10+ Years OEM/ODM · CE Certified · Factory Direct Price · Fast Delivery</p>
+
+      <!-- Brand slogan — kept, repositioned -->
+      <p class="hero-slogan" data-i18n="hero.slogan">Serious Clean for Serious Business.</p>
+
+      <!-- CTAs -->
       <div class="hero-actions">
-        <button class="btn btn-accent" onclick="location.href='products.html'" data-i18n="hero.btn1">查看产品系列</button>
-        <button class="btn btn-outline" onclick="location.href='contact.html'" data-i18n="hero.btn2">立即询价</button>
+        <button class="btn btn-accent btn-lg" onclick="location.href='contact.html'" data-i18n="hero.btn1">Get a Free Quote</button>
+        <button class="btn btn-wa" id="heroWaBtn" data-i18n="hero.btn2">WhatsApp Us Now</button>
       </div>
+
+      <!-- Stats -->
       <div class="hero-stats">
         <div class="hero-stat">
           <div class="stat-num">50<em>+</em></div>
-          <div class="stat-label" data-i18n="stat.countries">已覆盖国家</div>
+          <div class="stat-label" data-i18n="stat.countries">Countries Served</div>
         </div>
         <div class="hero-stat">
           <div class="stat-num"><em>CE</em></div>
-          <div class="stat-label" data-i18n="stat.certified">认证产品</div>
+          <div class="stat-label" data-i18n="stat.certified">CE Certified</div>
         </div>
         <div class="hero-stat">
-          <div class="stat-num" data-i18n="stat.moq">低起订量</div>
-          <div class="stat-label" style="font-size:10px;" id="stat-moq-sub">最少1台起</div>
+          <div class="stat-num">1<em>+</em></div>
+          <div class="stat-label" id="stat-moq-sub">MOQ From 1 Unit</div>
         </div>
         <div class="hero-stat">
-          <div class="stat-num">24<em>h</em></div>
-          <div class="stat-label" data-i18n="stat.response">响应时间</div>
+          <div class="stat-num">12<em>h</em></div>
+          <div class="stat-label" data-i18n="stat.response">Quote Response</div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -242,23 +264,78 @@
   </div>
 </section>
 
+<!-- ══ LEAD MAGNET ══ -->
+<section class="section section-silver">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-tag" id="lm-eyebrow">免费下载</div>
+      <h2 id="lm-title">获取免费资源</h2>
+      <p class="section-sub" id="lm-sub">为采购商和经销商准备的实用资料，输入邮箱即可获取</p>
+    </div>
+    <div class="lm-grid">
+      <div class="lm-card">
+        <div class="lm-icon">📋</div>
+        <div class="lm-label" id="lm1-label">最受欢迎</div>
+        <h3 class="lm-title" id="lm1-title">2026 ELVONIS 产品价格表</h3>
+        <p class="lm-desc" id="lm1-desc">全系产品出厂价格参考，含批量折扣说明。采购前必看。</p>
+        <form class="lm-form" onsubmit="submitLeadMagnet(event,'price-list')">
+          <input class="lm-input" type="email" name="email" required id="lm1-ph" placeholder="输入邮箱获取价格表">
+          <button class="lm-btn" type="submit" id="lm1-btn">免费获取 →</button>
+        </form>
+      </div>
+      <div class="lm-card">
+        <div class="lm-icon">📖</div>
+        <div class="lm-label" id="lm2-label">采购必读</div>
+        <h3 class="lm-title" id="lm2-title">商用清洁设备选购指南 2026</h3>
+        <p class="lm-desc" id="lm2-desc">洗地机、吸尘器、高压清洗机如何选型？设施管理人员和采购团队的实用指南。</p>
+        <form class="lm-form" onsubmit="submitLeadMagnet(event,'buyer-guide')">
+          <input class="lm-input" type="email" name="email" required id="lm2-ph" placeholder="输入邮箱获取指南">
+          <button class="lm-btn" type="submit" id="lm2-btn">免费获取 →</button>
+        </form>
+      </div>
+      <div class="lm-card">
+        <div class="lm-icon">📊</div>
+        <div class="lm-label" id="lm3-label">经销商专属</div>
+        <h3 class="lm-title" id="lm3-title">ROI计算表：设备采购 vs 人工清洁</h3>
+        <p class="lm-desc" id="lm3-desc">Excel表格，输入您的场地面积和人工成本，自动计算设备投资回报周期。</p>
+        <form class="lm-form" onsubmit="submitLeadMagnet(event,'roi-calculator')">
+          <input class="lm-input" type="email" name="email" required id="lm3-ph" placeholder="输入邮箱获取计算表">
+          <button class="lm-btn" type="submit" id="lm3-btn">免费获取 →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ CTA BAND ══ -->
 <div class="cta-band">
-  <div class="cta-inner">
+  <div class="cta-inner cta-inner-full">
     <div class="cta-left">
+      <div class="cta-badge" data-i18n="cta.badge">免费 · 无义务</div>
       <h2 class="cta-title"><span data-i18n="cta.title1">准备好更聪明地</span><br><em data-i18n="cta.title2">采购了吗？</em></h2>
       <p class="cta-sub" data-i18n="cta.sub"></p>
+      <div class="cta-advantages">
+        <div class="cta-adv"><span class="cta-adv-icon">✓</span><span data-i18n="cta.note1">无垃圾邮件</span></div>
+        <div class="cta-adv"><span class="cta-adv-icon">✓</span><span data-i18n="cta.note2">24小时内回复</span></div>
+        <div class="cta-adv"><span class="cta-adv-icon">✓</span><span data-i18n="cta.note3">免费咨询</span></div>
+        <div class="cta-adv"><span class="cta-adv-icon">✓</span><span data-i18n="cta.note4">最低1台起订</span></div>
+      </div>
     </div>
     <div class="cta-right">
-      <div class="cta-form">
-        <input class="cta-input" type="email" data-i18n="cta.email.ph" data-i18n-attr="placeholder" placeholder="您的邮箱地址">
-        <button class="cta-submit" onclick="location.href='contact.html'" data-i18n="cta.btn">获取免费报价 →</button>
-      </div>
-      <div class="cta-notes">
-        <span class="cta-note"><span class="cta-check">✓</span><span data-i18n="cta.note1">无垃圾邮件</span></span>
-        <span class="cta-note"><span class="cta-check">✓</span><span data-i18n="cta.note2">24小时内回复</span></span>
-        <span class="cta-note"><span class="cta-check">✓</span><span data-i18n="cta.note3">免费咨询</span></span>
-      </div>
+      <form class="cta-form-full" id="ctaForm" onsubmit="submitCtaForm(event)">
+        <div class="cta-form-row">
+          <input class="cta-field" type="text" name="name" required
+            placeholder="您的姓名 *" data-i18n-attr="placeholder" data-i18n="cta.field.name">
+          <input class="cta-field" type="email" name="email" required
+            placeholder="电子邮箱 *" data-i18n-attr="placeholder" data-i18n="cta.field.email">
+        </div>
+        <input class="cta-field" type="text" name="company"
+          placeholder="公司名称" data-i18n-attr="placeholder" data-i18n="cta.field.company">
+        <textarea class="cta-field cta-textarea" name="message" rows="3"
+          placeholder="您的需求（产品、数量、应用场景等）" data-i18n-attr="placeholder" data-i18n="cta.field.msg"></textarea>
+        <button type="submit" class="cta-submit-full" data-i18n="cta.btn">立即获取报价 →</button>
+        <div id="ctaMsg" class="cta-msg" style="display:none;"></div>
+      </form>
     </div>
   </div>
 </div>
@@ -373,21 +450,25 @@ function renderHome() {
   const zh = currentLang === 'zh';
   // Product category cards (4 main categories)
   const PROD_CATS = [
-    { cat:'pressure', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg></span>',
-      zh:{ name:'高压清洗机', sub:'100–500bar · 冷热水 · 电动/汽油/柴油 · CE认证', view:'查看产品 →' },
-      en:{ name:'Pressure Washers', sub:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE', view:'View Products →' }
+    { cat:'pressure',
+      icon:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>',
+      zh:{ name:'高压清洗机', scene:'混凝土、油脂、锈迹——没有冲不走的污渍。100–500bar，冷热水，一次解决所有顽固污染。', spec:'100–500bar · 冷热水 · 电/汽油/柴油 · CE认证', view:'查看产品 →' },
+      en:{ name:'High-Pressure Washers', scene:'Grease, concrete, rust — no surface too stubborn. 100–500 bar, cold & hot water. Built for the jobs nothing else handles.', spec:'100–500 bar · Cold & Hot · Electric/Petrol/Diesel · CE', view:'View Products →' }
     },
-    { cat:'vacuum', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-3 9H8c0-3-3-5-3-9a7 7 0 0 1 7-7z"/><path d="M8 18h8M10 22h4"/></svg></span>',
-      zh:{ name:'工业吸尘器', sub:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证', view:'查看产品 →' },
-      en:{ name:'Industrial Vacuums', sub:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE', view:'View Products →' }
+    { cat:'vacuum',
+      icon:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 1 7 7c0 4-3 6-3 9H8c0-3-3-5-3-9a7 7 0 0 1 7-7z"/><path d="M8 18h8M10 22h4"/></svg>',
+      zh:{ name:'工业吸尘器', scene:'HEPA H14过滤，适用于粉尘即意味停工或合规风险的工厂。干湿两用，防爆防静电，一台应对所有工况。', spec:'干湿两用 · HEPA H14 · 防静电 · 防爆 · CE认证', view:'查看产品 →' },
+      en:{ name:'Industrial Vacuum Cleaners', scene:'HEPA H14 filtration for factories where dust means downtime or compliance risk. Dry/wet, anti-static, explosion-proof — one machine, every condition.', spec:'Dry/Wet · HEPA H14 · Anti-Static · Explosion-Proof · CE', view:'View Products →' }
     },
-    { cat:'scrubber', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="18" height="4" rx="1"/><path d="M7 14V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"/><path d="M5 18v2M19 18v2"/></svg></span>',
-      zh:{ name:'商用洗地机', sub:'手推式和驾驶式 · 最大120cm · 锂电 · CE认证', view:'查看产品 →' },
-      en:{ name:'Floor Scrubbers', sub:'Walk-behind & Ride-on · Up to 120cm · Battery · CE', view:'View Products →' }
+    { cat:'scrubber',
+      icon:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="14" width="18" height="4" rx="1"/><path d="M7 14V8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6"/><path d="M5 18v2M19 18v2"/></svg>',
+      zh:{ name:'商用洗地机', scene:'大面积地面，更少人力，更稳定的清洁标准。手推式或驾驶式，让地板面积决定您的选择。', spec:'手推式/驾驶式 · 最大120cm · 锂电 · CE认证', view:'查看产品 →' },
+      en:{ name:'Commercial Floor Scrubbers', scene:'Large floor areas cleaned faster, with less labor and more consistent results. Walk-behind or ride-on — your floor size decides.', spec:'Walk-behind & Ride-on · Up to 120cm · Battery · CE', view:'View Products →' }
     },
-    { cat:'sweeper', icon:'<span style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:var(--cyan-pale);border-radius:8px;margin-bottom:12px;"><svg width="20" height="20" style="color:var(--cyan);display:block;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg></span>',
-      zh:{ name:'扫地机器人', sub:'激光雷达导航 · 自动回充 · App控制 · 7×24运行', view:'查看产品 →' },
-      en:{ name:'Robotic Sweepers', sub:'LiDAR Navigation · Auto-Charge · App Control · 7×24h', view:'View Products →' }
+    { cat:'sweeper',
+      icon:'<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>',
+      zh:{ name:'商用扫地机器人', scene:'夜间自动运行，无需操作员。班前地面已完成清扫，全天候7×24小时不间断作业。', spec:'激光雷达导航 · 自动回充 · App控制 · 7×24运行', view:'查看产品 →' },
+      en:{ name:'Autonomous Sweeping Robots', scene:'Runs overnight. No operator needed. Your facility is clean before the shift starts — 7×24h, fully autonomous.', spec:'LiDAR Navigation · Auto-Charge · App Control · 7×24h', view:'View Products →' }
     },
   ];
   const catEl = document.getElementById('prodCatGrid');
@@ -395,9 +476,10 @@ function renderHome() {
     const lang = currentLang;
     catEl.innerHTML = PROD_CATS.map(c => `
       <div class="prod-cat-card" onclick="location.href='products.html?cat=${c.cat}'">
-        <div class="prod-cat-icon">${c.icon}</div>
+        <div class="prod-cat-icon-wrap">${c.icon}</div>
         <div class="prod-cat-name">${c[lang].name}</div>
-        <div class="prod-cat-sub">${c[lang].sub}</div>
+        <div class="prod-cat-scene">${c[lang].scene}</div>
+        <div class="prod-cat-spec">${c[lang].spec}</div>
         <div class="prod-cat-link">${c[lang].view}</div>
       </div>`).join('');
   }
@@ -436,14 +518,22 @@ function renderHome() {
     </div>
   `;
 
+  renderLeadMagnet();
+
   // Blog preview (3 posts)
   document.getElementById('blogPreview').innerHTML = getBlogPosts(3).map(b => renderBlogCard(b)).join('');
 
   // Update stat sub label
   const sub = document.getElementById('stat-moq-sub');
-  if (sub) sub.textContent = currentLang === 'zh' ? '最少1台起' : 'From 1 unit';
+  if (sub) sub.textContent = currentLang === 'zh' ? '最低1台起订' : 'MOQ From 1 Unit';
 
   // Update WA float
+  // Hero WhatsApp button
+  const heroWa = document.getElementById('heroWaBtn');
+  if (heroWa) {
+    const msg = encodeURIComponent(T('wa.greeting'));
+    heroWa.onclick = () => window.open('https://wa.me/'+SITE_CONFIG.whatsapp+'?text='+msg,'_blank');
+  }
   const waBtn = document.getElementById('wa-float');
   if (waBtn) {
     const msg = encodeURIComponent(T('wa.greeting'));
@@ -452,11 +542,109 @@ function renderHome() {
   }
 }
 
+async function submitCtaForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.cta-submit-full');
+  const msg = document.getElementById('ctaMsg');
+  const origText = btn.textContent;
+  btn.textContent = currentLang === 'zh' ? '发送中...' : 'Sending...';
+  btn.disabled = true;
+  const data = Object.fromEntries(new FormData(form));
+  data._subject = 'New ELVONIS Enquiry (Homepage)';
+  try {
+    const res = await fetch('https://formspree.io/f/' + SITE_CONFIG.formspree, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    if (res.ok) {
+      msg.textContent = currentLang === 'zh'
+        ? '✓ 报价请求已发送！我们将在24小时内与您联系。'
+        : '✓ Quote request sent! We will contact you within 24 hours.';
+      msg.className = 'cta-msg success';
+      form.reset();
+    } else throw new Error();
+  } catch {
+    msg.textContent = currentLang === 'zh'
+      ? '发送失败，请直接发送邮件至 info@elvonis.com'
+      : 'Send failed. Please email us at info@elvonis.com';
+    msg.className = 'cta-msg error';
+  }
+  msg.style.display = 'block';
+  btn.textContent = origText;
+  btn.disabled = false;
+}
+
+function renderLeadMagnet() {
+  const zh = currentLang === 'zh';
+  const d = {
+    eyebrow: zh ? '免费下载' : 'FREE RESOURCES',
+    title:   zh ? '获取免费资源' : 'Free Downloads for Buyers & Distributors',
+    sub:     zh ? '为采购商和经销商准备的实用资料，输入邮箱即可获取' : 'Practical resources to help you source smarter. Enter your email to download.',
+    cards: [
+      { label: zh ? '🔥 最受欢迎' : '🔥 Most Popular',
+        title: zh ? '2026 ELVONIS 产品价格表' : '2026 ELVONIS Product Price List',
+        desc:  zh ? '全系产品出厂价格参考，含批量折扣说明。采购前必看。' : 'Full product range with factory pricing and bulk discount tiers. Essential before any purchase.',
+        ph:    zh ? '输入邮箱获取价格表' : 'Enter email to get price list',
+        btn:   zh ? '免费获取 →' : 'Get Free Download →' },
+      { label: zh ? '采购必读' : "Buyer's Essential",
+        title: zh ? '商用清洁设备选购指南 2026' : "Commercial Cleaning Equipment Buyer's Guide 2026",
+        desc:  zh ? '洗地机、吸尘器、高压清洗机如何选型？设施管理人员和采购团队的实用指南。' : 'How to choose floor scrubbers, vacuums and pressure washers — practical guide for facility managers.',
+        ph:    zh ? '输入邮箱获取指南' : 'Enter email to get guide',
+        btn:   zh ? '免费获取 →' : 'Get Free Download →' },
+      { label: zh ? '经销商专属' : 'For Distributors',
+        title: zh ? 'ROI计算表：设备采购 vs 人工清洁' : 'ROI Calculator: Equipment vs Manual Cleaning',
+        desc:  zh ? 'Excel表格，输入您的场地面积和人工成本，自动计算设备投资回报周期。' : 'Excel spreadsheet — input floor area and labor costs to calculate your exact payback period.',
+        ph:    zh ? '输入邮箱获取计算表' : 'Enter email to get calculator',
+        btn:   zh ? '免费获取 →' : 'Get Free Download →' },
+    ]
+  };
+  const el = id => document.getElementById(id);
+  if (el('lm-eyebrow')) el('lm-eyebrow').textContent = d.eyebrow;
+  if (el('lm-title'))   el('lm-title').textContent   = d.title;
+  if (el('lm-sub'))     el('lm-sub').textContent     = d.sub;
+  d.cards.forEach((c, i) => {
+    const n = i + 1;
+    if (el('lm'+n+'-label')) el('lm'+n+'-label').textContent = c.label;
+    if (el('lm'+n+'-title')) el('lm'+n+'-title').textContent = c.title;
+    if (el('lm'+n+'-desc'))  el('lm'+n+'-desc').textContent  = c.desc;
+    if (el('lm'+n+'-ph'))    el('lm'+n+'-ph').placeholder    = c.ph;
+    if (el('lm'+n+'-btn'))   el('lm'+n+'-btn').textContent   = c.btn;
+  });
+}
+
+async function submitLeadMagnet(e, resourceType) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.lm-btn');
+  const email = form.querySelector('input[name="email"]').value;
+  const origText = btn.textContent;
+  btn.textContent = currentLang === 'zh' ? '发送中...' : 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/' + SITE_CONFIG.formspree, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ email, resource: resourceType, _subject: 'ELVONIS Resource Download: ' + resourceType })
+    });
+    if (res.ok) {
+      btn.textContent = currentLang === 'zh' ? '✓ 已发送！' : '✓ Sent!';
+      btn.style.background = '#1A7A4A';
+      form.reset();
+      setTimeout(() => { btn.textContent = origText; btn.style.background = ''; btn.disabled = false; }, 3000);
+      return;
+    }
+  } catch(err) {}
+  btn.textContent = currentLang === 'zh' ? '请稍后重试' : 'Please retry';
+  btn.disabled = false;
+}
+
 function toggleMobileNav() {
   document.getElementById('mobileNav').classList.toggle('open');
 }
 
-function onLangChange() { renderHome(); }
+function onLangChange() { renderHome(); renderLeadMagnet(); }
 document.addEventListener('DOMContentLoaded', renderHome);
 </script>
 <script>
@@ -467,6 +655,20 @@ if (window.netlifyIdentity) {
     }
   });
 }
+</script>
+
+<!-- ══ TAWK.TO LIVE CHAT ══ -->
+<!-- Replace 69c0a9a61a2dff1c38b5ba34/1jkc9dd91 after registering at tawk.to -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/69c0a9a61a2dff1c38b5ba34/1jkc9dd91';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+})();
 </script>
 </body>
 </html>

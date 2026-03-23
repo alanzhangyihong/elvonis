@@ -111,12 +111,16 @@ const I18N = {
     'nav.inquiry':  '立即询价',
 
     // HERO
-    'hero.eyebrow': '工业级品质 · 工厂直供 · CE认证',
-    'hero.h1.line1':'专为清洁，',
-    'hero.h1.line2':'专为商用',
-    'hero.desc':    'ELVONIS，用工业级清洁设备，帮助全球企业降低成本、提升运营效率。直接从认证工厂供应高压清洗机、工业吸尘器、商用洗地机和商用扫地机器人，CE认证，工厂直供。',
-    'hero.btn1':    '查看产品系列',
-    'hero.btn2':    '立即询价',
+    'hero.eyebrow': '商用清洁设备制造商 · CE认证 · 工厂直供',
+    'hero.h1.line1':'商用清洁设备',
+    'hero.h1.line2':'制造商与供应商',
+    'hero.desc':    '10年以上OEM/ODM经验 · 全系CE认证 · 工厂直供价格 · 快速交货',
+    'hero.btn1':    '获取免费报价',
+    'hero.btn2':    'WhatsApp咨询',
+    'hero.hook':    '🔥 12小时内获取最优报价 + 免费OEM设计支持',
+    'hero.hook.cta':'立即联系 →',
+    'hero.sub4':    '10年以上OEM/ODM经验 · 全系CE认证 · 工厂直供价格 · 快速交货',
+    'hero.slogan':  'Serious Clean for Serious Business.',
 
     // STATS
     'stat.countries': '已覆盖国家',
@@ -255,6 +259,12 @@ const I18N = {
     'cta.note1':       '无垃圾邮件',
     'cta.note2':       '24小时内回复',
     'cta.note3':       '免费咨询',
+    'cta.note4':       '最低1台起订',
+    'cta.badge':       '免费 · 无义务',
+    'cta.field.name':  '您的姓名 *',
+    'cta.field.email': '电子邮箱 *',
+    'cta.field.company':'公司名称',
+    'cta.field.msg':   '您的需求（产品、数量、应用场景等）',
 
     // BLOG
     'blog.hero.eyebrow':'知识博客',
@@ -355,12 +365,12 @@ const I18N = {
     'nav.contact':  'Contact',
     'nav.inquiry':  'Get Quote',
 
-    'hero.eyebrow': 'INDUSTRIAL-GRADE · FACTORY DIRECT · CE CERTIFIED',
-    'hero.h1.line1':'Serious Clean for',
-    'hero.h1.line2':'Serious Business',
-    'hero.desc':    'ELVONIS empowers businesses worldwide with industrial-grade cleaning equipment that reduces costs and improves operational efficiency. Factory direct, CE certified.',
-    'hero.btn1':    'View Products',
-    'hero.btn2':    'Get a Quote',
+    'hero.eyebrow': 'COMMERCIAL CLEANING EQUIPMENT MANUFACTURER · CE CERTIFIED · FACTORY DIRECT',
+    'hero.h1.line1':'Commercial Cleaning Equipment',
+    'hero.h1.line2':'Manufacturer & Supplier',
+    'hero.desc':    '10+ Years OEM/ODM · CE Certified · Factory Direct Price · Fast Delivery',
+    'hero.btn1':    'Get a Free Quote',
+    'hero.btn2':    'WhatsApp Us Now',
 
     'stat.countries': 'Countries Served',
     'stat.certified': 'CE Certified',
@@ -491,6 +501,12 @@ const I18N = {
     'cta.note1':      'No spam',
     'cta.note2':      'Reply within 24h',
     'cta.note3':      'Free consultation',
+    'cta.note4':      'MOQ from 1 unit',
+    'cta.badge':      'Free · No Obligation',
+    'cta.field.name': 'Your Name *',
+    'cta.field.email':'Email Address *',
+    'cta.field.company':'Company Name',
+    'cta.field.msg':  'Your requirements (product, quantity, application...)',
 
     'blog.hero.eyebrow':'Knowledge Blog',
     'blog.hero.title': 'Knowledge Hub',
