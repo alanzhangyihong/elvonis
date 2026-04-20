@@ -6,9 +6,10 @@ export async function onRequest(context) {
     `https://api.github.com/repos/${owner}/${repo}/contents/_posts`,
     {
       headers: {
-        'User-Agent': 'ELVONIS-CMS',
-        'Accept': 'application/vnd.github.v3+json',
-      }
+  'User-Agent': 'ELVONIS-CMS',
+  'Accept': 'application/vnd.github.v3+json',
+  'Authorization': `Bearer ${context.env.GITHUB_TOKEN}`,
+}
     }
   );
 
