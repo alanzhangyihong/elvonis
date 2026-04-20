@@ -23,8 +23,7 @@ export async function onRequest(context) {
     );
 
     if (!listRes.ok) {
-      const errText = await listRes.text();
-      return new Response('List error: ' + listRes.status + ' - ' + errText, { status: 404 });
+      return new Response('List error: ' + listRes.status, { status: 404 });
     }
 
     const files = await listRes.json();
@@ -59,19 +58,66 @@ export async function onRequest(context) {
 }
 
 function parseMeta(raw) {
-  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-  if (!m) return { _body: raw };
+  // 找到frontmatter的结束位置
+  const lines = raw.split('\n');
+  let frontmatterEnd = -1;
+  let inFrontmatter = false;
+
+  for (let i = 0; i < lines.length; i++) {
+    if (i === 0 && lines[i].trim() === '---') {
+      inFrontmatter = true;
+      continue;
+    }
+    if (inFrontmatter && lines[i].trim() === '---') {
+      frontmatterEnd = i;
+      break;
+    }
+  }
+
+  if (frontmatterEnd === -1) {
+    return { _body: raw };
+  }
+
+  const frontmatterLines = lines.slice(1, frontmatterEnd);
+  const bodyLines = lines.slice(frontmatterEnd + 1);
 
   const meta = {};
-  m[1].split('\n').forEach(line => {
-    const i = line.indexOf(':');
-    if (i < 0) return;
-    const k = line.slice(0, i).trim();
-    const v = line.slice(i + 1).trim().replace(/^["']|["']$/g, '');
-    meta[k] = v;
-  });
+  let currentKey = null;
+  let currentValue = [];
+  let isMultiline = false;
 
-  meta._body = m[2] || '';
+  for (const line of frontmatterLines) {
+    const colonIdx = line.indexOf(':');
+    // 检查是否是新的key（不以空格开头，且有冒号）
+    if (!line.startsWith(' ') && !line.startsWith('\t') && colonIdx > 0) {
+      // 保存上一个key的值
+      if (currentKey) {
+        meta[currentKey] = isMultiline
+          ? currentValue.join(' ').trim()
+          : currentValue.join('').trim();
+      }
+      currentKey = line.slice(0, colonIdx).trim();
+      const val = line.slice(colonIdx + 1).trim();
+      if (val === '>-' || val === '>' || val === '|-' || val === '|') {
+        isMultiline = true;
+        currentValue = [];
+      } else {
+        isMultiline = false;
+        currentValue = [val.replace(/^["']|["']$/g, '')];
+      }
+    } else if (currentKey && (line.startsWith('  ') || line.startsWith('\t'))) {
+      // 多行内容的续行
+      currentValue.push(' ' + line.trim());
+    }
+  }
+  // 保存最后一个key
+  if (currentKey) {
+    meta[currentKey] = isMultiline
+      ? currentValue.join(' ').trim()
+      : currentValue.join('').trim();
+  }
+
+  meta._body = bodyLines.join('\n').trim();
   return meta;
 }
 
@@ -81,10 +127,14 @@ function md(text) {
     .replace(/^## (.+)$/gm, '<h2 style="font-size:1.375rem;font-weight:800;color:#1a2a3a;margin:2rem 0 1rem">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 style="font-size:1.125rem;font-weight:700;color:#1a2a3a;margin:1.5rem 0 0.75rem">$1</h3>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-    .replace(/^- (.+)$/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>\n?)+/g, '<ul style="padding-left:1.5rem;margin:1rem 0">$&</ul>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[hul])(.+)$/gm, '<p>$1</p>');
+    .replace(/^- (.+)$/gm, '<li style="margin-bottom:0.5rem">$1</li>')
+    .replace(/(<li[^>]*>[\s\S]*?<\/li>\n?)+/g, '<ul style="padding-left:1.5rem;margin:1rem 0">$&</ul>')
+    .replace(/\n\n+/g, '</p><p style="margin-bottom:1.25rem">')
+    .replace(/^(?!<[hul])(.+)$/gm, (line) => {
+      if (!line.trim()) return '';
+      if (line.startsWith('<')) return line;
+      return `<p style="margin-bottom:1.25rem">${line}</p>`;
+    });
 }
 
 function buildPage(meta) {
