@@ -1,17 +1,21 @@
 export async function onRequest(context) {
-  const { request, env, params } = context;
+  const { request, params } = context;
+  const url = new URL(request.url);
+
+  // 如果访问的是 blog.html 直接放行，不拦截
+  if (url.pathname === '/blog.html' || url.pathname === '/blog') {
+    return fetch(request);
+  }
+
   const slug = params.slug ? params.slug.join('/') : '';
 
   if (!slug) {
     return Response.redirect('/blog.html', 302);
   }
 
-  // 从GitHub读取对应的markdown文件
   const owner = 'alanzhangyihong';
   const repo = 'elvonis';
-  const branch = 'main';
 
-  // 尝试匹配_posts文件夹里的文件
   const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/_posts`;
 
   const listResponse = await fetch(apiUrl, {
@@ -27,10 +31,8 @@ export async function onRequest(context) {
 
   const files = await listResponse.json();
 
-  // 找到slug匹配的文件
   const matchedFile = files.find(f => {
     const fileName = f.name.replace('.md', '');
-    // 移除日期前缀 2026-04-20-slug -> slug
     const fileSlug = fileName.replace(/^\d{4}-\d{2}-\d{2}-/, '');
     return fileSlug === slug || fileName === slug;
   });
@@ -39,14 +41,10 @@ export async function onRequest(context) {
     return new Response('Post not found', { status: 404 });
   }
 
-  // 获取文件内容
   const fileResponse = await fetch(matchedFile.download_url);
   const rawContent = await fileResponse.text();
 
-  // 解析frontmatter和内容
   const post = parseFrontmatter(rawContent);
-
-  // 生成HTML页面
   const html = renderPost(post, slug);
 
   return new Response(html, {
@@ -55,14 +53,11 @@ export async function onRequest(context) {
 }
 
 function parseFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  const match = content.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if (!match) return { meta: {}, body_en: content, body_zh: '' };
 
-  const frontmatter = match[1];
-  const rest = match[2];
-
   const meta = {};
-  frontmatter.split('\n').forEach(line => {
+  match[1].split('\n').forEach(line => {
     const colonIndex = line.indexOf(':');
     if (colonIndex > -1) {
       const key = line.slice(0, colonIndex).trim();
@@ -71,27 +66,25 @@ function parseFrontmatter(content) {
     }
   });
 
-  // 分离EN和ZH正文（在frontmatter里存储）
-  return { meta, body_en: meta.body_en || rest, body_zh: meta.body_zh || '' };
+  return { meta };
 }
 
 function markdownToHtml(md) {
   if (!md) return '';
   return md
-    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
-    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
-    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+    .replace(/^### (.*$)/gm, '<h3 style="font-size:1.125rem;font-weight:700;color:#1a2a3a;margin:2rem 0 0.75rem;">$1</h3>')
+    .replace(/^## (.*$)/gm, '<h2 style="font-size:1.375rem;font-weight:800;color:#1a2a3a;margin:2.5rem 0 1rem;">$1</h2>')
+    .replace(/^# (.*$)/gm, '<h1 style="font-size:1.75rem;font-weight:800;color:#1a2a3a;margin:2.5rem 0 1rem;">$1</h1>')
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/^\- (.*$)/gm, '<li>$1</li>')
-    .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>')
-    .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/^(?!<[hul])/gm, '')
-    .split('\n').map(line => {
-      if (!line.startsWith('<')) return `<p>${line}</p>`;
-      return line;
-    }).join('\n');
+    .replace(/^- (.*$)/gm, '<li style="margin-bottom:0.5rem;">$1</li>')
+    .replace(/(<li[^>]*>[\s\S]*?<\/li>(\n|$))+/g, '<ul style="padding-left:1.5rem;margin:1rem 0;">$&</ul>')
+    .replace(/\n\n/g, '</p><p style="margin-bottom:1.25rem;">')
+    .replace(/^(?!<[hul])(.*)/gm, (line) => {
+      if (line.trim() === '') return '';
+      if (line.startsWith('<')) return line;
+      return `<p style="margin-bottom:1.25rem;">${line}</p>`;
+    });
 }
 
 function renderPost(post, slug) {
@@ -100,13 +93,18 @@ function renderPost(post, slug) {
   const title_zh = meta.title_zh || title_en;
   const category_en = meta.category_en || 'Insights';
   const category_zh = meta.category_zh || category_en;
-  const date = meta.date ? new Date(meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
-  const date_zh = meta.date ? new Date(meta.date).toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
   const excerpt_en = meta.excerpt_en || '';
   const excerpt_zh = meta.excerpt_zh || '';
-
   const body_en_html = markdownToHtml(meta.body_en || '');
   const body_zh_html = markdownToHtml(meta.body_zh || '');
+
+  let date = '';
+  let date_zh = '';
+  if (meta.date) {
+    const d = new Date(meta.date);
+    date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    date_zh = d.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' });
+  }
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -121,7 +119,7 @@ function renderPost(post, slug) {
   <meta property="og:description" content="${excerpt_en}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="/style.css"/>
 </head>
 <body style="padding-top:68px;">
@@ -188,34 +186,30 @@ function renderPost(post, slug) {
 
 <section class="section" style="background:#fff;">
   <div class="container" style="max-width:48rem;">
-
-    <p style="font-size:1.0625rem;color:#374151;line-height:1.8;margin-bottom:2rem;font-weight:500;">
+    <p style="font-size:1.0625rem;color:#374151;line-height:1.8;margin-bottom:2rem;font-weight:500;border-left:3px solid #2563eb;padding-left:1.25rem;">
       <span class="lang-en">${excerpt_en}</span>
       <span class="lang-zh">${excerpt_zh}</span>
     </p>
-
     <div class="lang-en" style="font-size:0.9375rem;color:#374151;line-height:1.85;">
       ${body_en_html}
     </div>
-    <div class="lang-zh" style="font-size:0.9375rem;color:#374151;line-height:1.85;">
+    <div class="lang-zh" style="font-size:0.9375rem;color:#374151;line-height:1.85;display:none;">
       ${body_zh_html}
     </div>
-
     <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb;">
       <a href="/blog.html" style="font-size:0.875rem;font-weight:700;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #1a2a3a;padding-bottom:2px;">
         <span class="lang-en">← Back to all articles</span>
         <span class="lang-zh">← 返回所有文章</span>
       </a>
     </div>
-
   </div>
 </section>
 
-<div style="background:#1a2a3a;padding:3rem 1.5rem;text-align:center;margin-top:4rem;">
+<footer style="background:#1a2a3a;padding:3rem 1.5rem;text-align:center;margin-top:4rem;">
   <p style="color:rgba(255,255,255,0.5);font-size:0.8125rem;margin:0;">
     © 2026 ELVONIS · <a href="/contact.html" style="color:rgba(255,255,255,0.5);">info@elvonis.com</a>
   </p>
-</div>
+</footer>
 
 <script src="/language.js"></script>
 <script>
