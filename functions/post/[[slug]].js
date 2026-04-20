@@ -7,6 +7,7 @@ export async function onRequest(context) {
   }
 
   const slug = params.slug.join('/');
+return new Response('DEBUG slug: ' + slug + ' | params: ' + JSON.stringify(params.slug), { status: 200 });
 
   try {
     const owner = 'alanzhangyihong';
@@ -22,8 +23,9 @@ export async function onRequest(context) {
 };
 
     if (!listRes.ok) {
-      return new Response('No posts found', { status: 404 });
-    }
+  const errText = await listRes.text();
+  return new Response('List error: ' + listRes.status + ' - ' + errText, { status: 404 });
+}
 
     const files = await listRes.json();
 
