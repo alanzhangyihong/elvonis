@@ -1,0 +1,43 @@
+============================================================
+ELVONIS — 图片下载说明 / Image Download Instructions
+============================================================
+
+【需要您手动下载的图片 / Images to download manually】
+
+请在浏览器中打开 asset-manifest.html，点击每行的
+"View / Download →" 按钮，右键→另存为，保存到此 images/ 目录。
+
+Open asset-manifest.html in your browser, click each
+"View / Download →" link, right-click → Save As into this folder.
+
+── Unsplash 图片（免费商用）──
+sol-manufacturing.jpg  → https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=85
+sol-warehouse.jpg      → https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=85
+sol-retail.jpg         → https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?auto=format&fit=crop&w=1200&q=85
+sol-hospital.jpg       → https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=85
+sol-airport.jpg        → https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=85
+sol-hotel.jpg          → https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85
+oem-factory-bg.jpg     → https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1400&q=85
+home-oem-strip.jpg     → https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=60
+
+── 需要您自己提供的产品照片 ──
+hero-fallback.jpg      (首页Hero视频备用图，建议1920×600px)
+ev-ws65-main.jpg       (EV-WS65正面主图)
+ev-ws65-side.jpg       (EV-WS65侧面)
+ev-ws65-controls.jpg   (EV-WS65控制面板)
+ev-ws65-brush.jpg      (EV-WS65刷盘特写)
+ev-ws45-main.jpg       (EV-WS45主图)
+ev-ws85-main.jpg       (EV-WS85主图)
+ev-dv30-main.jpg       (EV-DV30桶式吸尘器)
+ev-dv70-main.jpg       (EV-DV70重型桶式)
+ev-bp20-main.jpg       (EV-BP20背负式)
+ev-sd430-main.jpg      (EV-SD430单擦机)
+ev-sd530-main.jpg      (EV-SD530单擦机)
+ev-hs1500-main.jpg     (EV-HS1500高速抛光机)
+parts-brushes.jpg      (刷盘与百洁垫)
+parts-squeegee.jpg     (刮水条)
+parts-filters.jpg      (吸尘器滤芯)
+
+── 视频（需放入 videos/ 目录）──
+videos/hero-factory.mp4  (首页Hero视频，建议1920×1080，≤10MB)
+============================================================
