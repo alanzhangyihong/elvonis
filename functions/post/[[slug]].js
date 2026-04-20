@@ -15,8 +15,11 @@ export async function onRequest(context) {
     // 获取_posts文件夹列表
     const listRes = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/_posts`,
-      { headers: { 'User-Agent': 'ELVONIS', 'Accept': 'application/vnd.github.v3+json' } }
-    );
+      headers: {
+  'User-Agent': 'ELVONIS',
+  'Accept': 'application/vnd.github.v3+json',
+  'Authorization': `Bearer ${context.env.GITHUB_TOKEN}`,
+};
 
     if (!listRes.ok) {
       return new Response('No posts found', { status: 404 });
