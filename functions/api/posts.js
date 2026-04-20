@@ -29,7 +29,7 @@ export async function onRequest(context) {
         const meta = parseMeta(content);
         const fileName = file.name.replace('.md', '');
         const slug = fileName.replace(/^\d{4}-\d{2}-\d{2}-/, '');
-        return { ...meta, slug, fileName };
+        return { ...meta, slug, fileName, url: '/post/' + slug };
       })
   );
 
