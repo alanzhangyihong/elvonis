@@ -2,8 +2,6 @@ backend:
   name: github
   repo: alanzhangyihong/elvonis
   branch: main
-  base_url: https://www.elvonis.com
-  auth_endpoint: /admin/auth
 
 media_folder: "images/blog"
 public_folder: "/images/blog"
