@@ -1,53 +1,54 @@
 export async function onRequest(context) {
-  const { params } = context;
+  const { params, env } = context;
 
-  // 没有slug就跳转到博客列表
   if (!params.slug || params.slug.length === 0) {
     return Response.redirect('/blog.html', 302);
   }
 
   const slug = params.slug.join('/');
-return new Response('DEBUG slug: ' + slug + ' | params: ' + JSON.stringify(params.slug), { status: 200 });
 
   try {
     const owner = 'alanzhangyihong';
     const repo = 'elvonis';
 
-    // 获取_posts文件夹列表
     const listRes = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/_posts`,
-      headers: {
-  'User-Agent': 'ELVONIS',
-  'Accept': 'application/vnd.github.v3+json',
-  'Authorization': `Bearer ${context.env.GITHUB_TOKEN}`,
-};
+      {
+        headers: {
+          'User-Agent': 'ELVONIS',
+          'Accept': 'application/vnd.github.v3+json',
+          'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+        }
+      }
+    );
 
     if (!listRes.ok) {
-  const errText = await listRes.text();
-  return new Response('List error: ' + listRes.status + ' - ' + errText, { status: 404 });
-}
+      const errText = await listRes.text();
+      return new Response('List error: ' + listRes.status + ' - ' + errText, { status: 404 });
+    }
 
     const files = await listRes.json();
 
-    // 找匹配的文件
     const matched = files.find(f => {
-  if (!f.name.endsWith('.md')) return false;
-  const clean = f.name.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
-  return clean === slug || f.name.replace('.md', '') === slug;
-});
+      if (!f.name.endsWith('.md')) return false;
+      const clean = f.name.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+      return clean === slug || f.name.replace('.md', '') === slug;
+    });
 
     if (!matched) {
       return new Response('Post not found: ' + slug, { status: 404 });
     }
 
-    // 获取文件内容
-    const fileRes = await fetch(matched.download_url);
-    const raw = await fileRes.text();
+    const fileRes = await fetch(matched.download_url, {
+      headers: {
+        'User-Agent': 'ELVONIS',
+        'Authorization': `Bearer ${env.GITHUB_TOKEN}`,
+      }
+    });
 
-    // 解析frontmatter
+    const raw = await fileRes.text();
     const meta = parseMeta(raw);
 
-    // 返回HTML页面
     return new Response(buildPage(meta), {
       headers: { 'Content-Type': 'text/html; charset=utf-8' }
     });
@@ -59,7 +60,7 @@ return new Response('DEBUG slug: ' + slug + ' | params: ' + JSON.stringify(param
 
 function parseMeta(raw) {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-  if (!m) return { body_en: raw };
+  if (!m) return { _body: raw };
 
   const meta = {};
   m[1].split('\n').forEach(line => {
@@ -70,7 +71,6 @@ function parseMeta(raw) {
     meta[k] = v;
   });
 
-  // 正文存在frontmatter之后
   meta._body = m[2] || '';
   return meta;
 }
@@ -82,9 +82,9 @@ function md(text) {
     .replace(/^### (.+)$/gm, '<h3 style="font-size:1.125rem;font-weight:700;color:#1a2a3a;margin:1.5rem 0 0.75rem">$1</h3>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/^- (.+)$/gm, '<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/g, '<ul style="padding-left:1.5rem;margin:1rem 0">$&</ul>')
     .replace(/\n\n/g, '</p><p>')
-    .replace(/^([^<\n].+)$/gm, '<p>$1</p>')
-    .replace(/(<li>[\s\S]+?<\/li>)/g, '<ul style="padding-left:1.5rem;margin:1rem 0">$1</ul>');
+    .replace(/^(?!<[hul])(.+)$/gm, '<p>$1</p>');
 }
 
 function buildPage(meta) {
@@ -94,8 +94,6 @@ function buildPage(meta) {
   const czh = meta.category_zh || cen;
   const een = meta.excerpt_en || '';
   const ezh = meta.excerpt_zh || '';
-
-  // 正文：优先用frontmatter里的body_en/body_zh，否则用文件正文
   const ben = md(meta.body_en || meta._body || '');
   const bzh = md(meta.body_zh || '');
 
@@ -185,26 +183,22 @@ function buildPage(meta) {
 
 <section class="section" style="background:#fff;">
   <div class="container" style="max-width:48rem;">
-
     <p style="font-size:1.0625rem;color:#374151;line-height:1.8;margin-bottom:2rem;font-weight:500;border-left:3px solid #2563eb;padding-left:1.25rem;">
       <span class="lang-en">${een}</span>
       <span class="lang-zh">${ezh}</span>
     </p>
-
     <div class="lang-en" style="font-size:0.9375rem;color:#374151;line-height:1.85;">
       ${ben}
     </div>
     <div class="lang-zh" style="font-size:0.9375rem;color:#374151;line-height:1.85;display:none;">
       ${bzh}
     </div>
-
     <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb;">
       <a href="/blog.html" style="font-size:0.875rem;font-weight:700;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #1a2a3a;padding-bottom:2px;">
         <span class="lang-en">← Back to all articles</span>
         <span class="lang-zh">← 返回所有文章</span>
       </a>
     </div>
-
   </div>
 </section>
 
