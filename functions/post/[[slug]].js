@@ -6,7 +6,7 @@ export async function onRequest(context) {
     return Response.redirect('/blog.html', 302);
   }
 
-  const slug = params.slug[params.slug.length - 1];
+  const slug = params.slug.join('/');
 
   try {
     const owner = 'alanzhangyihong';
@@ -29,10 +29,10 @@ export async function onRequest(context) {
 
     // 找匹配的文件
     const matched = files.find(f => {
-      if (!f.name.endsWith('.md')) return false;
-      const clean = f.name.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
-      return clean === slug;
-    });
+  if (!f.name.endsWith('.md')) return false;
+  const clean = f.name.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+  return clean === slug || f.name.replace('.md', '') === slug;
+});
 
     if (!matched) {
       return new Response('Post not found: ' + slug, { status: 404 });
