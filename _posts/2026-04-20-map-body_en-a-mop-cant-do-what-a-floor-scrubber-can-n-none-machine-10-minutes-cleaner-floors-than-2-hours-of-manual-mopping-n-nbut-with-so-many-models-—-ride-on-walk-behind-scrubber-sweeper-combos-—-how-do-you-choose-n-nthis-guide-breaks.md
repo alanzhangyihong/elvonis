@@ -1,6 +1,6 @@
 ---
-title_en: "Best Commercial Floor Scrubber in 2024: The Complete Buyer's Guide"
-title_zh: 商用洗地机哪款好？2024年商用洗地机选购完全指南
+title_en: "Best Commercial Floor Scrubber in 2026: The Complete Buyer's Guide"
+title_zh: 商用洗地机哪款好？2026年商用洗地机选购完全指南
 category_en: Buying Guide
 category_zh: 选购指南
 excerpt_en: " best commercial floor scrubber | hospital floor cleaning machine |
