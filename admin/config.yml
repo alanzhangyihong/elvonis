@@ -1,27 +1,50 @@
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # e.g. elvonis/elvonis-website
+  repo: alanzhangyihong/elvonis
   branch: main
+  base_url: https://www.elvonis.com
+  auth_endpoint: /admin/auth
 
-media_folder: images/blog
-public_folder: /images/blog
+media_folder: "images/blog"
+public_folder: "/images/blog"
 
 collections:
-  - name: blog
-    label: Blog Posts
-    folder: _posts
+  - name: "blog"
+    label: "Blog Posts / 博客文章"
+    folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Title (EN)", name: title_en, widget: string }
-      - { label: "Title (ZH)", name: title_zh, widget: string }
-      - { label: "Category (EN)", name: cat_en, widget: string, default: "Industry Guide" }
-      - { label: "Category (ZH)", name: cat_zh, widget: string, default: "行业指南" }
-      - { label: "Publish Date", name: date, widget: datetime }
-      - { label: "Read Time (EN)", name: read_time_en, widget: string, default: "5 min read" }
-      - { label: "Read Time (ZH)", name: read_time_zh, widget: string, default: "阅读约5分钟" }
-      - { label: "Excerpt (EN)", name: excerpt_en, widget: text }
-      - { label: "Excerpt (ZH)", name: excerpt_zh, widget: text }
-      - { label: "Body (EN)", name: body_en, widget: markdown }
-      - { label: "Body (ZH)", name: body_zh, widget: markdown }
-      - { label: "Featured Image", name: image, widget: image, required: false }
+      - label: "Title (EN)"
+        name: "title_en"
+        widget: "string"
+      - label: "Title (ZH) 中文标题"
+        name: "title_zh"
+        widget: "string"
+      - label: "Category (EN)"
+        name: "category_en"
+        widget: "select"
+        options: ["Expert Guide", "Maintenance", "Industry Trends", "OEM Insights", "Application", "Buying Guide"]
+      - label: "Category (ZH) 分类"
+        name: "category_zh"
+        widget: "select"
+        options: ["专家指南", "维护指南", "行业趋势", "代工洞察", "应用案例", "选购指南"]
+      - label: "Excerpt (EN) 摘要"
+        name: "excerpt_en"
+        widget: "text"
+      - label: "Excerpt (ZH) 中文摘要"
+        name: "excerpt_zh"
+        widget: "text"
+      - label: "Publish Date 发布日期"
+        name: "date"
+        widget: "datetime"
+      - label: "Featured Article 是否精选"
+        name: "featured"
+        widget: "boolean"
+        default: false
+      - label: "Body EN (English Content)"
+        name: "body_en"
+        widget: "markdown"
+      - label: "Body ZH 中文正文"
+        name: "body_zh"
+        widget: "markdown"
