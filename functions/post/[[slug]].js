@@ -118,8 +118,8 @@ function buildPage(meta) {
   const czh = meta.category_zh || cen;
   const een = meta.excerpt_en || '';
   const ezh = meta.excerpt_zh || '';
-  const ben = md(meta._body || meta.body_en || '');
-  const bzh = md(meta.body_zh || '');
+  const ben = md(meta._body_en || '');
+const bzh = md(meta._body_zh || '');
 
   let date = '', datezh = '';
   if (meta.date) {
