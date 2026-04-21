@@ -58,7 +58,6 @@ export async function onRequest(context) {
 }
 
 function parseMeta(raw) {
-  // 找到frontmatter的结束位置
   const lines = raw.split('\n');
   let frontmatterEnd = -1;
   let inFrontmatter = false;
@@ -84,38 +83,51 @@ function parseMeta(raw) {
   const meta = {};
   let currentKey = null;
   let currentValue = [];
-  let isMultiline = false;
+  let blockStyle = null; // 'fold' = >- (折叠换行), 'literal' = |- (保留换行)
+
+  function saveCurrentKey() {
+    if (!currentKey) return;
+    if (blockStyle === 'fold') {
+      // >- 模式：把所有行合并，段落之间保留换行
+      meta[currentKey] = currentValue
+        .map(v => v.trim())
+        .join(' ')
+        .trim();
+    } else if (blockStyle === 'literal') {
+      // |- 模式：保留换行
+      meta[currentKey] = currentValue
+        .map(v => v.replace(/^  /, '')) // 去掉两个空格的缩进
+        .join('\n')
+        .trim();
+    } else {
+      meta[currentKey] = currentValue.join('').trim();
+    }
+  }
 
   for (const line of frontmatterLines) {
     const colonIdx = line.indexOf(':');
-    // 检查是否是新的key（不以空格开头，且有冒号）
-    if (!line.startsWith(' ') && !line.startsWith('\t') && colonIdx > 0) {
-      // 保存上一个key的值
-      if (currentKey) {
-        meta[currentKey] = isMultiline
-          ? currentValue.join(' ').trim()
-          : currentValue.join('').trim();
-      }
+    const isNewKey = !line.startsWith(' ') && !line.startsWith('\t') && colonIdx > 0;
+
+    if (isNewKey) {
+      saveCurrentKey();
       currentKey = line.slice(0, colonIdx).trim();
       const val = line.slice(colonIdx + 1).trim();
-      if (val === '>-' || val === '>' || val === '|-' || val === '|') {
-        isMultiline = true;
+
+      if (val === '>-' || val === '>') {
+        blockStyle = 'fold';
+        currentValue = [];
+      } else if (val === '|-' || val === '|') {
+        blockStyle = 'literal';
         currentValue = [];
       } else {
-        isMultiline = false;
+        blockStyle = null;
         currentValue = [val.replace(/^["']|["']$/g, '')];
       }
-    } else if (currentKey && (line.startsWith('  ') || line.startsWith('\t'))) {
-      // 多行内容的续行
-      currentValue.push(' ' + line.trim());
+    } else if (currentKey && blockStyle) {
+      currentValue.push(line);
     }
   }
-  // 保存最后一个key
-  if (currentKey) {
-    meta[currentKey] = isMultiline
-      ? currentValue.join(' ').trim()
-      : currentValue.join('').trim();
-  }
+  saveCurrentKey();
 
   meta._body = bodyLines.join('\n').trim();
   return meta;
