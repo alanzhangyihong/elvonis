@@ -239,6 +239,29 @@ const bzh = md(meta._body_zh || '');
     var c = document.getElementById('nav-cta-desktop');
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
+
+    // 语言切换处理
+    function applyLang(lang) {
+      var enEls = document.querySelectorAll('.lang-en');
+      var zhEls = document.querySelectorAll('.lang-zh');
+      if (lang === 'zh') {
+        enEls.forEach(function(el) { el.style.display = 'none'; });
+        zhEls.forEach(function(el) { el.style.display = ''; });
+      } else {
+        enEls.forEach(function(el) { el.style.display = ''; });
+        zhEls.forEach(function(el) { el.style.display = 'none'; });
+      }
+    }
+
+    // 读取当前语言
+    var savedLang = localStorage.getItem('elvonis_lang') || 'en';
+    applyLang(savedLang);
+
+    // 监听语言切换事件
+    document.addEventListener('elvonis:langchange', function(e) {
+      var lang = e.detail && e.detail.lang ? e.detail.lang : 'en';
+      applyLang(lang);
+    });
   })();
 </script>
 </body>
