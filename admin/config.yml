@@ -43,8 +43,9 @@ collections:
         widget: "boolean"
         default: false
       - label: "Body EN (English Content)"
-        name: "body_en"
+        name: "body"
         widget: "markdown"
       - label: "Body ZH 中文正文"
         name: "body_zh"
         widget: "markdown"
+        required: false
