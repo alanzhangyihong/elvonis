@@ -60,76 +60,38 @@ export async function onRequest(context) {
 function parseMeta(raw) {
   const lines = raw.split('\n');
   let frontmatterEnd = -1;
-  let inFrontmatter = false;
 
   for (let i = 0; i < lines.length; i++) {
-    if (i === 0 && lines[i].trim() === '---') {
-      inFrontmatter = true;
-      continue;
-    }
-    if (inFrontmatter && lines[i].trim() === '---') {
+    if (i === 0 && lines[i].trim() === '---') continue;
+    if (i > 0 && lines[i].trim() === '---') {
       frontmatterEnd = i;
       break;
     }
   }
 
-  if (frontmatterEnd === -1) {
-    return { _body: raw };
-  }
+  if (frontmatterEnd === -1) return { _body_en: raw, _body_zh: '' };
 
   const frontmatterLines = lines.slice(1, frontmatterEnd);
-  const bodyLines = lines.slice(frontmatterEnd + 1);
+  const bodyRaw = lines.slice(frontmatterEnd + 1).join('\n').trim();
+
+  // 用 <!-- ZH --> 分隔英中正文
+  const zhSplit = bodyRaw.indexOf('<!-- ZH -->');
+  const _body_en = zhSplit > -1 ? bodyRaw.slice(0, zhSplit).trim() : bodyRaw;
+  const _body_zh = zhSplit > -1 ? bodyRaw.slice(zhSplit + 11).trim() : '';
 
   const meta = {};
-  let currentKey = null;
-  let currentValue = [];
-  let blockStyle = null; // 'fold' = >- (折叠换行), 'literal' = |- (保留换行)
-
-  function saveCurrentKey() {
-    if (!currentKey) return;
-    if (blockStyle === 'fold') {
-      // >- 模式：把所有行合并，段落之间保留换行
-      meta[currentKey] = currentValue
-        .map(v => v.trim())
-        .join(' ')
-        .trim();
-    } else if (blockStyle === 'literal') {
-      // |- 模式：保留换行
-      meta[currentKey] = currentValue
-        .map(v => v.replace(/^  /, '')) // 去掉两个空格的缩进
-        .join('\n')
-        .trim();
-    } else {
-      meta[currentKey] = currentValue.join('').trim();
-    }
-  }
-
   for (const line of frontmatterLines) {
     const colonIdx = line.indexOf(':');
-    const isNewKey = !line.startsWith(' ') && !line.startsWith('\t') && colonIdx > 0;
-
-    if (isNewKey) {
-      saveCurrentKey();
-      currentKey = line.slice(0, colonIdx).trim();
-      const val = line.slice(colonIdx + 1).trim();
-
-      if (val === '>-' || val === '>') {
-        blockStyle = 'fold';
-        currentValue = [];
-      } else if (val === '|-' || val === '|') {
-        blockStyle = 'literal';
-        currentValue = [];
-      } else {
-        blockStyle = null;
-        currentValue = [val.replace(/^["']|["']$/g, '')];
-      }
-    } else if (currentKey && blockStyle) {
-      currentValue.push(line);
+    if (colonIdx < 1 || line.startsWith(' ')) continue;
+    const k = line.slice(0, colonIdx).trim();
+    const v = line.slice(colonIdx + 1).trim().replace(/^["']|["']$/g, '');
+    if (v && v !== '>-' && v !== '|-' && v !== '>' && v !== '|') {
+      meta[k] = v;
     }
   }
-  saveCurrentKey();
 
-  meta._body = bodyLines.join('\n').trim();
+  meta._body_en = _body_en;
+  meta._body_zh = _body_zh;
   return meta;
 }
 
