@@ -117,8 +117,6 @@ Use the wrong vacuum cleaner and you risk equipment failure — or worse, a dust
 
 Here's how to choose the right industrial vacuum cleaner.
 
- 
-
 ## **Industrial Vacuum vs. Consumer Vacuum: What's the Difference?**
 
 Industrial vacuums are engineered for demanding environments:
@@ -208,3 +206,5 @@ The right industrial vacuum protects your workers, your equipment, and your faci
 The wrong one creates risk — and costs more in the long run.
 
 Need help selecting the right model? Contact us for a free consultation.
+
+<!-- ZH -->
