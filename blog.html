@@ -331,43 +331,38 @@
 })();
 
 </script>
-  <script>
-// 动态加载博客文章列表
+<script>
 (function() {
   fetch('/api/posts')
-    .then(r => r.json())
-    .then(posts => {
-      if (!posts.length) return;
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      var grid = document.querySelector('[data-blog-grid]');
+      if (!grid || !posts.length) return;
 
-      var lang = document.documentElement.getAttribute('lang') || 'en';
-
-      // 更新文章网格（全部文章）
-var grid = document.querySelector('[data-blog-grid]');
-if (!grid) return;
-
-grid.innerHTML = posts.map(function(post) {
+      grid.innerHTML = posts.map(function(post) {
         var url = post.url || ('/post/' + post.slug);
-        return '<a href="' + url + '" class="reveal" style="background:#f8f9fb;border:1px solid #e5e7eb;padding:1.75rem;text-decoration:none;display:block;transition:box-shadow 0.25s;" onmouseenter="this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.08)\'" onmouseleave="this.style.boxShadow=\'\'">' +
-          '<span style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#2563eb;display:block;margin-bottom:0.625rem;">' +
+        return '<a href="' + url + '" style="background:#f8f9fb;border:1px solid #e5e7eb;padding:1.75rem;text-decoration:none;display:block;transition:box-shadow 0.25s;" onmouseenter="this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.08)\'" onmouseleave="this.style.boxShadow=\'\'">' +
+          '<span style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#2563eb;display:block;margin-bottom:0.75rem;">' +
             '<span class="lang-en">' + (post.category_en || '') + '</span>' +
             '<span class="lang-zh">' + (post.category_zh || '') + '</span>' +
           '</span>' +
-          '<h3 style="font-size:1.0625rem;font-weight:700;color:#1a2a3a;margin-bottom:0.625rem;line-height:1.35;">' +
+          '<h3 style="font-size:1.0625rem;font-weight:700;color:#1a2a3a;margin-bottom:0.75rem;line-height:1.35;">' +
             '<span class="lang-en">' + (post.title_en || '') + '</span>' +
             '<span class="lang-zh">' + (post.title_zh || '') + '</span>' +
           '</h3>' +
-          '<p style="font-size:0.8125rem;color:#6b7280;line-height:1.7;margin-bottom:1rem;">' +
+          '<p style="font-size:0.8125rem;color:#6b7280;line-height:1.7;margin-bottom:1.25rem;">' +
             '<span class="lang-en">' + (post.excerpt_en || '') + '</span>' +
             '<span class="lang-zh">' + (post.excerpt_zh || '') + '</span>' +
           '</p>' +
-          '<span style="font-size:0.75rem;font-weight:700;color:#1a2a3a;letter-spacing:0.06em;border-bottom:1px solid #1a2a3a;padding-bottom:1px;">' +
-            '<span class="lang-en">Read →</span><span class="lang-zh">阅读 →</span>' +
+          '<span style="font-size:0.75rem;font-weight:700;color:#1a2a3a;border-bottom:1px solid #1a2a3a;padding-bottom:1px;">' +
+            '<span class="lang-en">Read →</span>' +
+            '<span class="lang-zh">阅读 →</span>' +
           '</span>' +
         '</a>';
       }).join('');
     })
     .catch(function(err) {
-      console.log('Blog posts API not available yet:', err);
+      console.log('Blog API error:', err);
     });
 })();
 </script>
