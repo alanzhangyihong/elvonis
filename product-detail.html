@@ -1087,61 +1087,75 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div class="flex flex-col justify-center">
                     <h2 class="text-4xl font-light mb-6">
-                        <span class="lang-en">Ready to build your fleet? <br><strong class="font-extrabold">Let's talk OEM.</strong></span>
-                        <span class="lang-zh">准备好组建清洁车队了吗？ <br><strong class="font-extrabold">来谈谈代工合作吧。</strong></span>
+                        <span class="lang-en">Ready to spec your next order? <br><strong class="font-extrabold">Let's talk OEM.</strong></span>
+                        <span class="lang-zh">准备好确认下一批设备的零部件规格了吗？ <br><strong class="font-extrabold">来谈谈代工合作吧。</strong></span>
                     </h2>
                     <p class="text-gray-400 mb-10 leading-relaxed">
-                        <span class="lang-en">Connect directly with our factory engineering and sales team. We offer aggressive tiered pricing, full NDA protection, and comprehensive technical support for your brand.</span>
-                        <span class="lang-zh">直接与我们的工厂工程师和销售团队对接。我们为您的品牌提供极具竞争力的阶梯报价、完整的NDA保密协议以及全面的技术支持。</span>
+                        <span class="lang-en">Connect directly with our engineering team. We specify what goes inside every machine before production begins — and we'll tell you exactly what's in yours. Full NDA protection and 24-hour response.</span>
+                        <span class="lang-zh">直接与我们的工程团队对接。我们在生产开始前就定义每台机器的内部零部件规格，并向您完整披露。提供完整NDA保密协议，24小时内回复。</span>
                     </p>
                     <div class="space-y-4 text-sm text-gray-300 font-medium">
                         <div class="flex items-center gap-3"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="lang-en">Guaranteed 24-Hour Response Time</span><span class="lang-zh">承诺 24 小时内快速响应</span></div>
-                        <div class="flex items-center gap-3"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="lang-en">Factory-Direct B2B Pricing Tier</span><span class="lang-zh">B2B 源头大厂直供阶梯报价</span></div>
+                        <div class="flex items-center gap-3"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="lang-en">Component Spec Disclosed Before Production</span><span class="lang-zh">生产前完整披露零部件规格</span></div>
                         <div class="flex items-center gap-3"><svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> <span class="lang-en">Free Initial Customization Assessment</span><span class="lang-zh">免费的初步定制需求评估</span></div>
                     </div>
                 </div>
 
                 <div class="bg-white rounded-sm p-8 shadow-2xl text-[#1a2a3a]">
-                    <h3 class="text-xl font-bold mb-6">
-                        <span class="lang-en">Request a Quote</span><span class="lang-zh">申请获取报价</span>
+                    <h3 class="text-xl font-bold mb-2">
+                        <span class="lang-en">Request Engineering Quote</span><span class="lang-zh">申请工程报价</span>
                     </h3>
-                    <form class="space-y-4">
+                    <p class="text-sm text-gray-500 mb-6">
+                        <span class="lang-en">Our engineering team reviews every inquiry and responds within 24 hours — no automated replies.</span>
+                        <span class="lang-zh">工程团队逐条审阅每份询盘，24小时内人工回复，无自动化回复。</span>
+                    </p>
+                    <form action="https://formspree.io/f/xlgpzqpq" method="POST" class="space-y-4">
+                        <input type="hidden" name="product" value="EV-WS65 Walk-Behind Scrubber"/>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
                                 <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Full Name *</span><span class="lang-zh">姓名 *</span></label>
-                                <input type="text" required class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
+                                <input type="text" name="name" required class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Company *</span><span class="lang-zh">公司名称 *</span></label>
-                                <input type="text" required class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
+                                <input type="text" name="company" required class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
                             </div>
                         </div>
                         <div>
                             <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Business Email *</span><span class="lang-zh">工作邮箱 *</span></label>
-                            <input type="email" required class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
+                            <input type="email" name="_replyto" required class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
                         </div>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Target MOQ *</span><span class="lang-zh">目标采购量 *</span></label>
-                                <select class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
-                                    <option><span class="lang-en">Sample (1-5 units)</span><span class="lang-zh">样品 (1-5台)</span></option>
-                                    <option><span class="lang-en">Small Batch (20-50 units)</span><span class="lang-zh">小批试产 (20-50台)</span></option>
-                                    <option><span class="lang-en">Container Load (50+ units)</span><span class="lang-zh">整柜装运 (50台以上)</span></option>
+                                <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Order Quantity *</span><span class="lang-zh">采购数量 *</span></label>
+                                <select id="sel-moq" name="order_quantity" class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
+                                    <option value="sample">Sample (1–5 units)</option>
+                                    <option value="small">Small Batch (6–20 units)</option>
+                                    <option value="medium">Medium Batch (20–50 units)</option>
+                                    <option value="large">Container Load (50+ units)</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Region</span><span class="lang-zh">所在国家/地区</span></label>
-                                <input type="text" placeholder="e.g. Europe" class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
+                                <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Country / Region</span><span class="lang-zh">所在国家/地区</span></label>
+                                <input type="text" name="region" placeholder="e.g. Germany" class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Customization Needs / Message</span><span class="lang-zh">定制需求与留言</span></label>
-                            <textarea rows="4" class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm resize-none"></textarea>
+                            <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">WhatsApp (optional)</span><span class="lang-zh">WhatsApp（可选）</span></label>
+                            <input type="tel" name="whatsapp" class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm">
                         </div>
-<input type="hidden" name="_next" value="https://www.elvonis.com/thanks.html">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1 uppercase tracking-wide"><span class="lang-en">Requirements / Message</span><span class="lang-zh">需求说明与留言</span></label>
+                            <textarea name="message" rows="3" class="w-full border border-gray-300 p-3 bg-gray-50 text-sm focus:outline-none focus:border-blue-600 rounded-sm resize-none"></textarea>
+                        </div>
+                        <input type="hidden" name="_next" value="https://www.elvonis.com/thanks.html">
                         <button type="submit" class="w-full bg-[#1a2a3a] text-white py-4 text-sm font-bold uppercase tracking-wide hover:bg-gray-800 transition rounded-sm mt-2">
-                            <span class="lang-en">Submit Inquiry ➔</span><span class="lang-zh">提交询盘 ➔</span>
+                            <span class="lang-en">Submit Inquiry →</span><span class="lang-zh">提交询盘 →</span>
                         </button>
+                        <p class="text-xs text-gray-400 text-center">
+                            <span class="lang-en">🔒 Confidential. Engineering team responds within 24 hours.</span>
+                            <span class="lang-zh">🔒 严格保密，工程团队24小时内人工回复。</span>
+                        </p>
                     </form>
                 </div>
             </div>
@@ -1328,6 +1342,22 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
         {v:'oem',    t:'OEM / ODM 代工合作'},
         {v:'visit',  t:'工厂参观 / 视频参观'},
         {v:'other',  t:'其他'}
+      ]
+    },
+
+    /* ── Product detail quote form (product-detail.html) ── */
+    'sel-moq': {
+      en: [
+        {v:'sample', t:'Sample (1–5 units)'},
+        {v:'small',  t:'Small Batch (6–20 units)'},
+        {v:'medium', t:'Medium Batch (20–50 units)'},
+        {v:'large',  t:'Container Load (50+ units)'}
+      ],
+      zh: [
+        {v:'sample', t:'样品（1–5台）'},
+        {v:'small',  t:'小批试产（6–20台）'},
+        {v:'medium', t:'中批采购（20–50台）'},
+        {v:'large',  t:'整柜装运（50台以上）'}
       ]
     },
 
