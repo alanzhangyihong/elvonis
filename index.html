@@ -23,12 +23,12 @@
   <style>
 .hero-section {
   position: relative;
-  min-height: 88vh;
+  min-height: 92vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: #1a2a3a;
+  background: #111d30;
   overflow: hidden;
 }
 .hero-section video {
@@ -37,44 +37,51 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.28;
+  opacity: 0.38;
 }
 .hero-section::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(26,42,58,0.4) 0%, rgba(26,42,58,0.7) 100%);
+  background:
+    linear-gradient(to bottom,
+      rgba(17,29,48,0.35) 0%,
+      rgba(17,29,48,0.55) 50%,
+      rgba(17,29,48,0.82) 100%);
 }
-.hero-content { position: relative; z-index: 1; max-width: 56rem; padding: 2rem 1.5rem; }
+.hero-content { position: relative; z-index: 1; max-width: 60rem; padding: 2rem 1.5rem; }
 .hero-eyebrow {
-  display: inline-block;
-  background: rgba(37,99,235,0.18);
-  border: 1px solid rgba(59,130,246,0.5);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(37,99,235,0.15);
+  border: 1px solid rgba(59,130,246,0.4);
   color: rgba(191,219,254,1);
-  padding: 0.3rem 1rem;
+  padding: 0.35rem 1.1rem;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 html[lang="zh"] .hero-eyebrow { text-transform: none; letter-spacing: 0.08em; font-size: 0.8rem; }
 .hero-title {
-  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-size: clamp(2.75rem, 7.5vw, 5.25rem);
   font-weight: 900;
   color: #fff;
-  line-height: 1.05;
+  line-height: 1.0;
   letter-spacing: -0.02em;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
 }
 html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 0.02em; line-height: 1.15; }
 .hero-sub {
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(0.9375rem, 2.2vw, 1.125rem);
   font-weight: 300;
-  color: rgba(255,255,255,0.65);
-  max-width: 40rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 42rem;
   margin: 0 auto 2.5rem;
-  line-height: 1.75;
+  line-height: 1.85;
 }
 .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
 
@@ -187,27 +194,41 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   </video>
   <div class="hero-content">
     <div class="hero-eyebrow">
+      <span style="width:0.4rem;height:0.4rem;border-radius:50%;background:#3b82f6;display:inline-block;flex-shrink:0;"></span>
       <span class="lang-en">Specification-Driven Equipment Partner</span>
       <span class="lang-zh">规格驱动型设备合作伙伴</span>
     </div>
     <h1 class="hero-title">
-      <span class="lang-en">Downtime starts inside the machine. <br>So does the fix.
-</span>
-      <span class="lang-zh">停机从机器内部开始。<br>解决方案也是。</span>
+      <span class="lang-en">Eliminate Downtime<br>at the Component Level.</span>
+      <span class="lang-zh">从零部件层面，<br>彻底消除设备停机。</span>
     </h1>
     <p class="hero-sub">
-      <span class="lang-en">We provide reliability-focused commercial cleaning equipment through engineered standards and controlled component selection.</span>
-      <span class="lang-zh">我们通过工程标准体系与严格的零部件筛选机制，提供以可靠性为核心的商用清洁设备。</span>
+      <span class="lang-en">
+        No fragile electronics.&nbsp; No proprietary parts.&nbsp; No supply chain guessing.<br>
+        Every component specified before production begins —<br>
+        disclosed before you sign.
+      </span>
+      <span class="lang-zh">
+        拒绝脆弱电子件，拒绝专属配件，拒绝供应链盲区。<br>
+        每台设备的零部件规格在生产开始前确定，签约前完整披露。
+      </span>
     </p>
     <div class="hero-ctas">
       <a href="distributor-kit.html" class="btn btn-white">
-        <span class="lang-en">Get Distributor Kit</span>
-<span class="lang-zh">获取经销商资料包</span>
+        <span class="lang-en">Request Specification Sheet</span>
+        <span class="lang-zh">获取规格资料包</span>
       </a>
-      <a href="#rec-tool" class="btn btn-outline-white">
-        <span class="lang-en">Find My Machine</span>
-        <span class="lang-zh">智能推荐设备</span>
+      <a href="contact.html" class="btn btn-outline-white">
+        <span class="lang-en">Talk to Engineer →</span>
+        <span class="lang-zh">直接联系工程团队 →</span>
       </a>
+    </div>
+    <div style="margin-top:2rem;display:inline-flex;align-items:center;gap:0.625rem;border:1px solid rgba(245,197,66,0.3);background:rgba(245,197,66,0.06);padding:0.5rem 1.125rem;">
+      <span style="color:#f5c542;font-size:0.9rem;flex-shrink:0;">◆</span>
+      <span style="font-size:0.78125rem;color:rgba(255,255,255,0.55);line-height:1.5;letter-spacing:0.01em;">
+        <span class="lang-en">We do not sell into your accounts. We do not compete in your market. Your customers remain yours.</span>
+        <span class="lang-zh">我们不向您的终端客户直接销售，不在您的市场参与竞争。您的客户，永远是您的客户。</span>
+      </span>
     </div>
   </div>
 </section>
@@ -238,6 +259,110 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
     </div>
   </div>
 </div>
+
+<!-- WHY MOST MACHINES FAIL — comparison module -->
+<section style="background:#fff;padding:4rem 1.5rem;border-bottom:1px solid #f3f4f6;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;" class="reveal">
+      <span class="section-label"><span class="lang-en">The Industry Problem</span><span class="lang-zh">行业痛点</span></span>
+      <h2 class="section-heading" style="margin-bottom:0.75rem;">
+        <span class="lang-en">Why Most Cleaning Machines<br>Fail Within 18 Months.</span>
+        <span class="lang-zh">为什么大多数清洁设备<br>在18个月内就开始故障频发。</span>
+      </h2>
+      <p class="section-sub" style="max-width:38rem;margin:0 auto;">
+        <span class="lang-en">Most failures are not mechanical. They are electronic — and preventable. The difference is what goes inside.</span>
+        <span class="lang-zh">大多数故障不是机械问题，而是电子件问题——而且本可避免。区别在于内部装了什么。</span>
+      </p>
+    </div>
+
+    <!-- Comparison table -->
+    <div class="reveal" style="max-width:52rem;margin:0 auto;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid #e5e7eb;overflow:hidden;">
+
+        <!-- Header row -->
+        <div style="background:#f3f4f6;padding:0.875rem 1.5rem;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#6b7280;border-bottom:1px solid #e5e7eb;">
+          <span class="lang-en">Standard Supplier</span><span class="lang-zh">普通供应商</span>
+        </div>
+        <div style="background:#1a2a3a;padding:0.875rem 1.5rem;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#93c5fd;border-bottom:1px solid #2a3a4a;">
+          ELVONIS
+        </div>
+
+        <!-- Row 1 -->
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#1a2a3a;margin-bottom:0.25rem;"><span class="lang-en">PCB control boards</span><span class="lang-zh">PCB 控制板</span></p>
+            <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Corrode in humid environments. A single board failure stops the machine.</span><span class="lang-zh">在高湿度环境下腐蚀失效。一块控制板故障即导致整机停机。</span></p>
+          </div>
+        </div>
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Mechanical relay control</span><span class="lang-zh">纯机械继电器控制</span></p>
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">IP54-sealed. No exposed circuitry. Designed for wet, high-humidity operation.</span><span class="lang-zh">IP54密封，无裸露电路，专为潮湿高湿度作业环境设计。</span></p>
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#1a2a3a;margin-bottom:0.25rem;"><span class="lang-en">Proprietary parts</span><span class="lang-zh">专有配件</span></p>
+            <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Only sourced from the original supplier. 4–6 week wait. Operations halted.</span><span class="lang-zh">只能向原厂采购。等待4–6周，作业被迫停止。</span></p>
+          </div>
+        </div>
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Global standard components</span><span class="lang-zh">全球标准通用部件</span></p>
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">IEC-frame motors. Standard metric gears. Sourceable locally in most markets.</span><span class="lang-zh">IEC标准机座电机，标准公制齿轮，大多数市场可就地采购。</span></p>
+          </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#1a2a3a;margin-bottom:0.25rem;"><span class="lang-en">Opaque specifications</span><span class="lang-zh">不透明规格</span></p>
+            <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">You receive a spec sheet. You do not know what motor or gear grade is actually inside.</span><span class="lang-zh">你拿到的是规格表，但实际装了什么电机、什么齿轮等级，你无从得知。</span></p>
+          </div>
+        </div>
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Full hardware disclosure</span><span class="lang-zh">完整硬件披露</span></p>
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">Motor brand, gear material, sealing grade — all documented and disclosed before you purchase.</span><span class="lang-zh">电机品牌、齿轮材质、密封等级——全部记录在案，采购前向您完整披露。</span></p>
+          </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div style="padding:1rem 1.5rem;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#1a2a3a;margin-bottom:0.25rem;"><span class="lang-en">Batch inconsistency</span><span class="lang-zh">批次规格不一致</span></p>
+            <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Same model number. Different motor grade. You only find out when something breaks.</span><span class="lang-zh">相同型号，不同电机等级。等到出了故障才发现规格已经悄悄变了。</span></p>
+          </div>
+        </div>
+        <div style="padding:1rem 1.5rem;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+          <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
+          <div>
+            <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Managed supply chain</span><span class="lang-zh">被管理的供应链</span></p>
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">Factories manufacture. ELVONIS controls. Every batch, same spec. No surprises.</span><span class="lang-zh">工厂负责生产，ELVONIS负责管控。每一批次，规格如一，没有意外。</span></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA under table -->
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="contact.html" class="btn btn-primary">
+          <span class="lang-en">Ask What's Inside Your Next Machine →</span>
+          <span class="lang-zh">询问您下一台设备的内部零部件配置 →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- STATS STRIP -->
 <div class="stats-strip">
@@ -323,10 +448,10 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
 <section class="section" style="background:#fff;">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem;" class="reveal">
-      <span class="section-label"><span class="lang-en">Our Fleet</span><span class="lang-zh">产品矩阵</span></span>
+      <span class="section-label"><span class="lang-en">Three Product Lines</span><span class="lang-zh">三大产品线</span></span>
       <h2 class="section-heading">
-        <span class="lang-en">Engineered for Performance.</span>
-        <span class="lang-zh">为极致性能而生。</span>
+        <span class="lang-en">Choose the Right Machine<br>for Your Environment.</span>
+        <span class="lang-zh">为您的场地，<br>选择最合适的设备。</span>
       </h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
@@ -340,6 +465,7 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">HEPA H13 / H14</span><span class="lang-zh">HEPA H13 / H14</span></p>
     <p class="product-card-title"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For continuous heavy-duty dust environments where downtime is not acceptable.</span><span class="lang-zh">适合不容许停机的持续重负荷粉尘作业环境。</span></p>
     <p class="product-card-sub"><span class="lang-en">HEPA H13/H14 wet/dry systems. Drum, backpack and centralised configurations.</span><span class="lang-zh">HEPA H13/H14 干湿两用系统，提供桶式、背负式与集中式配置。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
@@ -354,6 +480,7 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">150 – 1,500 RPM</span><span class="lang-zh">150 – 1,500 RPM</span></p>
     <p class="product-card-title"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For controlled surface treatment and polishing with maximum torque stability.</span><span class="lang-zh">适合需要精确地面处理与抛光护理、对扭矩稳定性要求高的场所。</span></p>
     <p class="product-card-sub"><span class="lang-en">150–1,500 RPM single-disc for scrubbing, polishing, buffing and stripping on all hard floors.</span><span class="lang-zh">150–1,500 RPM 单擦机，适合各类硬质地面的清洗、抛光与起蜡。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
@@ -368,6 +495,7 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">45 – 85 cm Width</span><span class="lang-zh">清洁宽度 45 – 85 cm</span></p>
     <p class="product-card-title"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">步行式洗地机</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For large-area cleaning with minimal labor and predictable drying performance.</span><span class="lang-zh">适合以最少人力实现大面积高效清洁、对即干效果有要求的场所。</span></p>
     <p class="product-card-sub"><span class="lang-en">Compact 45–85 cm models. LFP battery, ultra-quiet. For retail, hotel, healthcare and light industrial.</span><span class="lang-zh">45–85 cm 紧凑机型，磷酸铁锂电池，超低噪音，适合零售、酒店、医疗及轻工业场所。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
@@ -382,6 +510,7 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">24-hr Global Ship</span><span class="lang-zh">24小时全球发货</span></p>
     <p class="product-card-title"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For facilities that cannot afford to wait weeks for a replacement part.</span><span class="lang-zh">适合无法承受等待数周才能拿到替换件的设施运营方。</span></p>
     <p class="product-card-sub"><span class="lang-en">Brushes &amp; pads, squeegee blades, and vacuum filters. OEM-grade, globally shipped.</span><span class="lang-zh">刷盘与百洁垫、刮水条、吸尘器滤芯，OEM品质，全球直发。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
@@ -419,28 +548,32 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.952 11.952 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
   <div>
     <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Zero Fragile Electronics</span><span class="lang-zh">拒绝脆弱电子件</span></p>
-    <p class="feature-desc"><span class="lang-en">We specify the control system type and IP protection rating for every machine — and document both. Mechanical relay architecture eliminates circuit board failure in high-humidity cleaning environments.</span><span class="lang-zh">我们为每台设备明确规定控制系统类型与防护等级，并双双记录在案。纯机械继电器架构彻底消除高湿度清洁环境下的电路板故障风险。</span></p>
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Electronics → Failure Risk</span><span class="lang-zh">电子件 → 故障风险</span></p>
+    <p class="feature-desc"><span class="lang-en">Mechanical relay architecture eliminates circuit board failure in high-humidity environments. IP54-sealed. No exposed circuitry. No PCB to corrode.</span><span class="lang-zh">纯机械继电器架构彻底消除高湿度环境下的电路板腐蚀故障。IP54密封，无裸露电路，无PCB隐患。</span></p>
   </div>
 </div>
           <div class="feature-card reveal">
   <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
   <div>
     <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Serviceable-First Design</span><span class="lang-zh">易维修优先设计</span></p>
-    <p class="feature-desc"><span class="lang-en">Globally standardized, commercially available components — not proprietary parts that lock you into a single source. When a machine breaks down, replacement parts are locally sourceable.</span><span class="lang-zh">全球标准化通用部件，而非将您锁定于单一来源的专属配件。设备故障时，替换件可就地采购，无需等待六周进口。</span></p>
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Parts → Replacement Speed</span><span class="lang-zh">配件 → 替换速度</span></p>
+    <p class="feature-desc"><span class="lang-en">Globally standardized components — not proprietary parts that lock you into a single source. When a machine breaks, replacement parts are locally sourceable. No 6-week wait.</span><span class="lang-zh">全球标准化通用部件，非专属锁定配件。设备故障时，替换件可就地采购，无需等待六周进口。</span></p>
   </div>
 </div>
           <div class="feature-card reveal">
   <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
   <div>
     <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Hardware Transparency</span><span class="lang-zh">硬件透明化</span></p>
-    <p class="feature-desc"><span class="lang-en">We disclose gear material, motor type and sealing grade in product documentation — verifiable, not decorative. Ask us what's inside. We'll tell you.</span><span class="lang-zh">我们在产品文件中主动披露齿轮材质、电机类型与密封等级——可供核实，而非装饰性描述。问我们内部装什么，我们会告诉你。</span></p>
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Transparency → Decision Confidence</span><span class="lang-zh">透明度 → 决策信心</span></p>
+    <p class="feature-desc"><span class="lang-en">Motor brand, gear material and sealing grade — documented and disclosed before you purchase. Ask us what's inside. We'll tell you. Verifiable, not decorative.</span><span class="lang-zh">电机品牌、齿轮材质与密封等级——记录在案，采购前完整披露。问我们内部装什么，我们会告诉你。可核实，非装饰。</span></p>
   </div>
 </div>
           <div class="feature-card reveal">
   <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div>
   <div>
     <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Managed Supply Chain</span><span class="lang-zh">被管理的供应链</span></p>
-    <p class="feature-desc"><span class="lang-en">We define what components go in before production begins and hold manufacturing partners to those specifications. Every batch, same spec. No surprises.</span><span class="lang-zh">我们在生产开始前定义零部件配置，并要求合作工厂严格执行。每一批次，规格如一，没有意外。</span></p>
+    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Consistency → Long-term Stability</span><span class="lang-zh">一致性 → 长期稳定</span></p>
+    <p class="feature-desc"><span class="lang-en">Factories manufacture. ELVONIS controls. We define what components go in before production begins — and hold partners to those specs. Every batch, same spec. No surprises.</span><span class="lang-zh">工厂负责生产，ELVONIS负责管控。在生产开始前定义零部件配置，并要求合作工厂严格执行。每一批次，规格如一，没有意外。</span></p>
   </div>
 </div>
         </div>
@@ -458,22 +591,23 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
 </section>
 
 <!-- FINAL CTA -->
-<section class="section-sm" style="background:#f8f9fb;border-top:1px solid #f3f4f6;">
-  <div class="container" style="text-align:center;">
+<section class="section-sm" style="background:#111d30;border-top:1px solid rgba(255,255,255,0.06);position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(37,99,235,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="container" style="text-align:center;position:relative;z-index:1;">
     <div class="reveal">
-      <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;color:#1a2a3a;margin-bottom:1rem;">
-        <span class="lang-en">Ready to spec your next order?</span>
-        <span class="lang-zh">准备好确认您下一批设备的零部件规格了吗？</span>
+      <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;color:#fff;margin-bottom:1rem;">
+        <span class="lang-en">Start a More Predictable Equipment Supply.</span>
+        <span class="lang-zh">建立更可预期的设备供应关系。</span>
       </h2>
-      <p style="color:#6b7280;font-size:1rem;margin-bottom:2rem;">
+      <p style="color:rgba(255,255,255,0.5);font-size:1rem;margin-bottom:2rem;max-width:36rem;margin-left:auto;margin-right:auto;">
         <span class="lang-en">Our engineering team reviews every inquiry — and tells you exactly what goes inside the machine you're considering.</span>
         <span class="lang-zh">我们的工程团队逐条审阅每一份询盘，并向您完整说明目标机型的内部零部件配置。</span>
       </p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-primary">
+        <a href="contact.html" class="btn btn-white">
           <span class="lang-en">Get Engineering Quote</span><span class="lang-zh">获取工程报价</span>
         </a>
-        <a href="distributor-kit.html" class="btn btn-outline">
+        <a href="distributor-kit.html" class="btn btn-outline-white">
           <span class="lang-en">Download Specification Guide</span><span class="lang-zh">下载产品规格指南</span>
         </a>
       </div>
