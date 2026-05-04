@@ -9,183 +9,122 @@
   <meta property="og:site_name" content="ELVONIS"/>
   <meta property="og:title" content="Specification-Driven Commercial Cleaning Equipment | ELVONIS"/>
   <meta property="og:description" content="ELVONIS defines what goes inside the machine — not just which factory makes it. CE-certified floor scrubbers, industrial vacuums and single-disc machines for global distributors."/>
-  <!-- Preconnect for speed -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <!--
-    Fonts — all SIL Open Font Licence, free for commercial use worldwide:
-      Plus Jakarta Sans  (EN headings & body)
-      Noto Sans SC       (ZH body — covers all CJK ideographs)
-      DM Mono            (labels, monospace accents)
-  -->
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="elvonis-style.css"/>
   <style>
-.hero-section {
-  position: relative;
-  min-height: 92vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: #111d30;
-  overflow: hidden;
-}
-.hero-section video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.38;
-}
-.hero-section::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom,
-      rgba(17,29,48,0.35) 0%,
-      rgba(17,29,48,0.55) 50%,
-      rgba(17,29,48,0.82) 100%);
-}
-.hero-content { position: relative; z-index: 1; max-width: 60rem; padding: 2rem 1.5rem; }
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(37,99,235,0.15);
-  border: 1px solid rgba(59,130,246,0.4);
-  color: rgba(191,219,254,1);
-  padding: 0.35rem 1.1rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-bottom: 1.75rem;
-}
-html[lang="zh"] .hero-eyebrow { text-transform: none; letter-spacing: 0.08em; font-size: 0.8rem; }
-.hero-title {
-  font-size: clamp(2.75rem, 7.5vw, 5.25rem);
-  font-weight: 900;
-  color: #fff;
-  line-height: 1.0;
-  letter-spacing: -0.02em;
-  margin-bottom: 1.75rem;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.35);
-}
-html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 0.02em; line-height: 1.15; }
-.hero-sub {
-  font-size: clamp(0.9375rem, 2.2vw, 1.125rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.72);
-  max-width: 42rem;
-  margin: 0 auto 2.5rem;
-  line-height: 1.85;
-}
-.hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
-
-/* Stats strip */
-.stats-strip {
-  background: #fff;
-  border-bottom: 1px solid #f3f4f6;
-  padding: 2.5rem 1.5rem;
-}
-.stats-inner {
-  max-width: 80rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-@media(min-width:640px) { .stats-inner { grid-template-columns: repeat(4, 1fr); } }
-.stat-item { text-align: center; }
-
-/* Recommendation tool */
-.rec-tool {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.07);
-  padding: 2.5rem;
-  max-width: 56rem;
-  margin: 0 auto;
-}
-.rec-selects {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-}
-@media(min-width:640px) { .rec-selects { grid-template-columns: repeat(3,1fr); } }
-#rec-output {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 1.5rem;
-  margin-top: 1.5rem;
-  animation: fadeIn 0.4s ease;
-}
-@keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-
-/* OEM strip */
-.oem-strip {
-  background: #1a2a3a;
-  position: relative;
-  overflow: hidden;
-}
-.oem-strip-bg {
-  position: absolute;
-  inset: 0;
-  background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=60&w=1200') center/cover no-repeat;
-  opacity: 0.08;
-}
-</style>
+    :root { --gold-accent: #f5c542; }
+    .hero-section {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #111d30;
+      overflow: hidden;
+    }
+    .hero-section video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.38;
+    }
+    .hero-section::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(17,29,48,0.35) 0%, rgba(17,29,48,0.55) 50%, rgba(17,29,48,0.82) 100%);
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 60rem; padding: 2rem 1.5rem; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(37,99,235,0.15); border: 1px solid rgba(59,130,246,0.4);
+      color: rgba(191,219,254,1); padding: 0.35rem 1.1rem;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    html[lang="zh"] .hero-eyebrow { text-transform: none; letter-spacing: 0.08em; font-size: 0.8rem; }
+    .hero-title {
+      font-size: clamp(2.75rem, 7.5vw, 5.25rem); font-weight: 900; color: #fff;
+      line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 1.75rem;
+      text-shadow: 0 2px 24px rgba(0,0,0,0.35);
+    }
+    html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 0.02em; line-height: 1.15; }
+    .hero-sub {
+      font-size: clamp(0.9375rem, 2.2vw, 1.125rem); font-weight: 300;
+      color: rgba(255,255,255,0.72); max-width: 42rem; margin: 0 auto 2.5rem; line-height: 1.85;
+    }
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .stats-strip { background: #fff; border-bottom: 1px solid #f3f4f6; padding: 2.5rem 1.5rem; }
+    .stats-inner { max-width: 80rem; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+    @media(min-width:640px) { .stats-inner { grid-template-columns: repeat(4, 1fr); } }
+    .stat-item { text-align: center; }
+    .rec-tool { background: #fff; border: 1px solid #e5e7eb; box-shadow: 0 8px 40px rgba(0,0,0,0.07); padding: 2.5rem; max-width: 56rem; margin: 0 auto; }
+    .rec-selects { display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2rem; }
+    @media(min-width:640px) { .rec-selects { grid-template-columns: repeat(3,1fr); } }
+    #rec-output { border-top: 1px solid #e5e7eb; padding-top: 1.5rem; margin-top: 1.5rem; animation: fadeIn 0.4s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    .oem-strip { background: #1a2a3a; position: relative; overflow: hidden; }
+    .oem-strip-bg { position: absolute; inset: 0; background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=60&w=1200') center/cover no-repeat; opacity: 0.08; }
+    .eng-card { border-left: 2px solid var(--gold-accent); padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.25rem; }
+    .eng-card-title { font-size: 0.9375rem; font-weight: 700; color: #fff; margin-bottom: 0.25rem; }
+    .eng-card-tag { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; color: var(--gold-accent); margin-bottom: 0.5rem; }
+    .eng-card-desc { font-size: 0.8125rem; color: rgba(255,255,255,0.42); line-height: 1.6; max-width: 28ch; }
+    html[lang="zh"] .eng-card-desc { max-width: none; }
+    @media (max-width: 640px) {
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .btn { padding: 0.75rem 1.25rem; font-size: 0.7rem; }
+      .product-card-body { padding: 1.25rem; }
+    }
+  </style>
 </head>
 <body style="padding-top:68px;">
 
 <header id="main-nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">ELVONIS</a>
-
     <ul class="nav-links">
-      <li><a href="products.html" ><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a></li>
-      <li><a href="solutions.html" ><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a></li>
-      <li><a href="oem-factory.html" ><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a></li>
-      <li><a href="blog.html" ><span class="lang-en">Insights</span><span class="lang-zh">行业资讯</span></a></li>
+      <li class="nav-item-dropdown">
+        <a href="products.html" class="nav-link-dropdown"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="products.html#vacuums"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></a></li>
+          <li><a href="products.html#scrubbers"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">手推式洗地机</span></a></li>
+          <li><a href="products.html#singledisc"><span class="lang-en">Single Disc Machines</span><span class="lang-zh">单擦机/抛光机</span></a></li>
+          <li><a href="products.html#parts"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></a></li>
+        </ul>
+      </li>
+      <li><a href="solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a></li>
+      <li><a href="distributor.html"><span class="lang-en">Distributors</span><span class="lang-zh">经销商</span></a></li>
+      <li class="nav-item-dropdown">
+        <a href="about-partners.html" class="nav-link-dropdown"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a>
+        <ul class="nav-dropdown"></ul>
+      </li>
+      <li><a href="blog.html"><span class="lang-en">Insights</span><span class="lang-zh">行业资讯</span></a></li>
     </ul>
-
     <div style="display:flex;align-items:center;gap:0.75rem;">
-      <!-- Language pill switcher (desktop) -->
-      <div style="display:none;gap:0;" class="lang-pills-desktop" id="lang-pills-desktop">
-        <button class="lang-pill lang-pill-inactive" data-lang="en">EN</button>
-        <button class="lang-pill lang-pill-inactive" data-lang="zh">中文</button>
-      </div>
-      <a href="contact.html" class="nav-cta" style="display:none;" id="nav-cta-desktop">
-        <span class="lang-en">Technical Quote</span><span class="lang-zh">获取技术报价</span>
-      </a>
-      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle menu">
-        <span id="menu-icon-open" style="display:flex;flex-direction:column;gap:5px;">
-          <span></span><span></span><span></span>
-        </span>
-        <span id="menu-icon-close" class="hidden" style="font-size:1.375rem;line-height:1;color:#1a2a3a;">✕</span>
-      </button>
+      <div style="display:none;gap:0;" class="lang-pills-desktop" id="lang-pills-desktop"><button class="lang-pill lang-pill-inactive" data-lang="en">EN</button><button class="lang-pill lang-pill-inactive" data-lang="zh">中文</button></div>
+      <a href="contact.html" class="nav-cta" id="nav-cta-desktop"><span class="lang-en">Request Quote</span><span class="lang-zh">获取报价</span></a>
+      <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle menu"><span id="menu-icon-open" style="display:flex;flex-direction:column;gap:5px;"><span></span><span></span><span></span></span><span id="menu-icon-close" class="hidden" style="font-size:1.375rem;line-height:1;color:#1a2a3a;">✕</span></button>
     </div>
   </div>
 </header>
 
-<!-- Mobile Drawer -->
 <div id="mobile-drawer" class="hidden">
   <nav>
     <a href="products.html"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a>
     <a href="solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a>
-    <a href="oem-factory.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a>
+    <a href="distributor.html"><span class="lang-en">Distributors</span><span class="lang-zh">经销商</span></a>
+    <a href="about-partners.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a>
     <a href="blog.html"><span class="lang-en">Insights</span><span class="lang-zh">行业资讯</span></a>
-    <a href="contact.html"><span class="lang-en">Technical Quote</span><span class="lang-zh">获取技术报价</span></a>
+    <a href="contact.html"><span class="lang-en">Request Quote</span><span class="lang-zh">获取报价</span></a>
   </nav>
-  <div class="drawer-lang-row">
-    <button data-lang-drawer="en" class="lang-pill">EN — English</button>
-    <button data-lang-drawer="zh" class="lang-pill">中文</button>
-  </div>
+  <div class="drawer-lang-row"><button data-lang-drawer="en" class="lang-pill">EN — English</button><button data-lang-drawer="zh" class="lang-pill">中文</button></div>
 </div>
-
 
 <!-- HERO -->
 <section class="hero-section">
@@ -205,16 +144,15 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
     <p class="hero-sub">
       <span class="lang-en">
         No fragile electronics.&nbsp; No proprietary parts.&nbsp; No supply chain guessing.<br>
-        Every component specified before production begins —<br>
-        disclosed before you sign.
+        Runs in dust, humidity, and continuous operation — without waiting weeks for a replacement.
       </span>
       <span class="lang-zh">
         拒绝脆弱电子件，拒绝专属配件，拒绝供应链盲区。<br>
-        每台设备的零部件规格在生产开始前确定，签约前完整披露。
+        在粉尘、潮湿和持续作业中稳定运行——无需等待数周替换零件。
       </span>
     </p>
     <div class="hero-ctas">
-      <a href="distributor-kit.html" class="btn btn-white">
+      <a href="distributor.html#kit-form" class="btn btn-white">
         <span class="lang-en">Request Specification Sheet</span>
         <span class="lang-zh">获取规格资料包</span>
       </a>
@@ -223,11 +161,11 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
         <span class="lang-zh">直接联系工程团队 →</span>
       </a>
     </div>
-    <div style="margin-top:2rem;display:inline-flex;align-items:center;gap:0.625rem;border:1px solid rgba(245,197,66,0.3);background:rgba(245,197,66,0.06);padding:0.5rem 1.125rem;">
-      <span style="color:#f5c542;font-size:0.9rem;flex-shrink:0;">◆</span>
-      <span style="font-size:0.78125rem;color:rgba(255,255,255,0.55);line-height:1.5;letter-spacing:0.01em;">
-        <span class="lang-en">We do not sell into your accounts. We do not compete in your market. Your customers remain yours.</span>
-        <span class="lang-zh">我们不向您的终端客户直接销售，不在您的市场参与竞争。您的客户，永远是您的客户。</span>
+    <div style="margin-top:2rem;display:inline-flex;align-items:center;gap:0.625rem;border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);padding:0.5rem 1.125rem;">
+      <span style="color:var(--gold-accent);font-size:0.9rem;flex-shrink:0;">◆</span>
+      <span style="font-size:0.8125rem;color:rgba(255,255,255,0.7);line-height:1.5;">
+        <span class="lang-en">CE-LVD · CE-EMC · ISO 9001 · RoHS — Certified for EU &amp; Global Markets</span>
+        <span class="lang-zh">CE-LVD · CE-EMC · ISO 9001 · RoHS — 认证覆盖欧盟及全球市场</span>
       </span>
     </div>
   </div>
@@ -237,25 +175,32 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
 <div class="trust-bar">
   <div class="trust-bar-inner">
     <span class="trust-divider"><span class="lang-en">Trusted globally:</span><span class="lang-zh">全球认可标准：</span></span>
-    <div class="trust-item">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      ISO 9001
+    <div class="trust-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> ISO 9001</div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span class="lang-en">CE-LVD &amp; CE-EMC</span><span class="lang-zh">CE-LVD &amp; CE-EMC 双认证</span></div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> RoHS</div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span class="lang-en">40+ Countries</span><span class="lang-zh">出口40余国</span></div>
+    <div class="trust-item"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> <span class="lang-en">Global OEM</span><span class="lang-zh">全球代工</span></div>
+  </div>
+</div>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num">1<span style="font-size:60%;color:#1a2a3a;">+</span></div>
+      <div class="stat-label"><span class="lang-en">Unit MOQ</span><span class="lang-zh">台起订</span></div>
     </div>
-    <div class="trust-item">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      CE <span class="lang-en">Certified</span><span class="lang-zh">认证</span>
+    <div class="stat-item reveal">
+      <div class="stat-num">24<span style="font-size:60%;color:#1a2a3a;">h</span></div>
+      <div class="stat-label"><span class="lang-en">Global Ship</span><span class="lang-zh">24小时全球发货</span></div>
     </div>
-    <div class="trust-item">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      RoHS
+    <div class="stat-item reveal">
+      <div class="stat-num">50<span style="font-size:60%;color:#1a2a3a;">+</span></div>
+      <div class="stat-label"><span class="lang-en">MOQ for OEM</span><span class="lang-zh">OEM起订量</span></div>
     </div>
-    <div class="trust-item">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <span class="lang-en">40+ Countries</span><span class="lang-zh">出口40余国</span>
-    </div>
-    <div class="trust-item">
-      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <span class="lang-en">Global OEM</span><span class="lang-zh">全球代工</span>
+    <div class="stat-item reveal">
+      <div class="stat-num">14<span style="font-size:60%;color:#1a2a3a;">d</span></div>
+      <div class="stat-label"><span class="lang-en">Lead Time</span><span class="lang-zh">交货周期</span></div>
     </div>
   </div>
 </div>
@@ -266,44 +211,41 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
     <div style="text-align:center;margin-bottom:2.5rem;" class="reveal">
       <span class="section-label"><span class="lang-en">The Industry Problem</span><span class="lang-zh">行业痛点</span></span>
       <h2 class="section-heading" style="margin-bottom:0.75rem;">
-        <span class="lang-en">Why Most Cleaning Machines<br>Fail Within 18 Months.</span>
-        <span class="lang-zh">为什么大多数清洁设备<br>在18个月内就开始故障频发。</span>
+        <span class="lang-en">Why Most Machines Fail Before Their Time</span>
+        <span class="lang-zh">为什么大多数设备提前失效</span>
       </h2>
+      <p style="font-size:0.875rem;font-weight:600;color:var(--gold-accent);margin-bottom:1rem;">
+        <span class="lang-en">Downtime is not a maintenance issue. It is an operational risk.</span>
+        <span class="lang-zh">停机不是维修问题，而是运营风险。</span>
+      </p>
       <p class="section-sub" style="max-width:38rem;margin:0 auto;">
         <span class="lang-en">Most failures are not mechanical. They are electronic — and preventable. The difference is what goes inside.</span>
         <span class="lang-zh">大多数故障不是机械问题，而是电子件问题——而且本可避免。区别在于内部装了什么。</span>
       </p>
     </div>
 
-    <!-- Comparison table -->
     <div class="reveal" style="max-width:52rem;margin:0 auto;">
       <div style="display:grid;grid-template-columns:1fr 1fr;border:1px solid #e5e7eb;overflow:hidden;">
-
-        <!-- Header row -->
         <div style="background:#f3f4f6;padding:0.875rem 1.5rem;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#6b7280;border-bottom:1px solid #e5e7eb;">
           <span class="lang-en">Standard Supplier</span><span class="lang-zh">普通供应商</span>
         </div>
         <div style="background:#1a2a3a;padding:0.875rem 1.5rem;font-size:0.75rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#93c5fd;border-bottom:1px solid #2a3a4a;">
           ELVONIS
         </div>
-
-        <!-- Row 1 -->
         <div style="padding:1rem 1.5rem;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
           <div>
-            <p style="font-size:0.875rem;font-weight:600;color:#1a2a3a;margin-bottom:0.25rem;"><span class="lang-en">PCB control boards</span><span class="lang-zh">PCB 控制板</span></p>
-            <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Corrode in humid environments. A single board failure stops the machine.</span><span class="lang-zh">在高湿度环境下腐蚀失效。一块控制板故障即导致整机停机。</span></p>
+            <p style="font-size:0.875rem;font-weight:600;color:#1a2a3a;margin-bottom:0.25rem;"><span class="lang-en">PCB control boards</span><span class="lang-zh">传统PCB控制板</span></p>
+            <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Corrode in humid environments. A single board failure stops the machine.</span><span class="lang-zh">高湿度环境下腐蚀失效。一块控制板故障即导致整机停机。</span></p>
           </div>
         </div>
-        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#1a2a3a;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
           <div>
             <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Mechanical relay control</span><span class="lang-zh">纯机械继电器控制</span></p>
             <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">IP54-sealed. No exposed circuitry. Designed for wet, high-humidity operation.</span><span class="lang-zh">IP54密封，无裸露电路，专为潮湿高湿度作业环境设计。</span></p>
           </div>
         </div>
-
-        <!-- Row 2 -->
         <div style="padding:1rem 1.5rem;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
           <div>
@@ -311,15 +253,13 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
             <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Only sourced from the original supplier. 4–6 week wait. Operations halted.</span><span class="lang-zh">只能向原厂采购。等待4–6周，作业被迫停止。</span></p>
           </div>
         </div>
-        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#1a2a3a;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
           <div>
             <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Global standard components</span><span class="lang-zh">全球标准通用部件</span></p>
             <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">IEC-frame motors. Standard metric gears. Sourceable locally in most markets.</span><span class="lang-zh">IEC标准机座电机，标准公制齿轮，大多数市场可就地采购。</span></p>
           </div>
         </div>
-
-        <!-- Row 3 -->
         <div style="padding:1rem 1.5rem;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
           <div>
@@ -327,15 +267,13 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
             <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">You receive a spec sheet. You do not know what motor or gear grade is actually inside.</span><span class="lang-zh">你拿到的是规格表，但实际装了什么电机、什么齿轮等级，你无从得知。</span></p>
           </div>
         </div>
-        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+        <div style="padding:1rem 1.5rem;border-bottom:1px solid #2a3a4a;background:#1a2a3a;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
           <div>
             <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Full hardware disclosure</span><span class="lang-zh">完整硬件披露</span></p>
             <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">Motor brand, gear material, sealing grade — all documented and disclosed before you purchase.</span><span class="lang-zh">电机品牌、齿轮材质、密封等级——全部记录在案，采购前向您完整披露。</span></p>
           </div>
         </div>
-
-        <!-- Row 4 -->
         <div style="padding:1rem 1.5rem;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#ef4444;font-size:1rem;flex-shrink:0;">✕</span>
           <div>
@@ -343,17 +281,14 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
             <p style="font-size:0.8125rem;color:#6b7280;"><span class="lang-en">Same model number. Different motor grade. You only find out when something breaks.</span><span class="lang-zh">相同型号，不同电机等级。等到出了故障才发现规格已经悄悄变了。</span></p>
           </div>
         </div>
-        <div style="padding:1rem 1.5rem;background:#0f1c2d;display:flex;align-items:flex-start;gap:0.75rem;">
+        <div style="padding:1rem 1.5rem;background:#1a2a3a;display:flex;align-items:flex-start;gap:0.75rem;">
           <span style="color:#22c55e;font-size:1rem;flex-shrink:0;">✓</span>
           <div>
             <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Managed supply chain</span><span class="lang-zh">被管理的供应链</span></p>
             <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">Factories manufacture. ELVONIS controls. Every batch, same spec. No surprises.</span><span class="lang-zh">工厂负责生产，ELVONIS负责管控。每一批次，规格如一，没有意外。</span></p>
           </div>
         </div>
-
       </div>
-
-      <!-- CTA under table -->
       <div style="text-align:center;margin-top:2rem;">
         <a href="contact.html" class="btn btn-primary">
           <span class="lang-en">Ask What's Inside Your Next Machine →</span>
@@ -364,45 +299,22 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-item reveal">
-      <div class="stat-num">3<span style="font-size:60%;color:#2563eb;">+</span></div>
-      <div class="stat-label"><span class="lang-en">Product Lines</span><span class="lang-zh">核心产品线</span></div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-num">40<span style="font-size:60%;color:#2563eb;">+</span></div>
-      <div class="stat-label"><span class="lang-en">Countries Served</span><span class="lang-zh">出口目的地</span></div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-num">CE<span style="font-size:60%;color:#2563eb;">+</span></div>
-      <div class="stat-label"><span class="lang-en">Certified Equipment</span><span class="lang-zh">认证设备</span></div>
-    </div>
-    <div class="stat-item reveal">
-      <div class="stat-num">1</div>
-      <div class="stat-label"><span class="lang-en">Unit MOQ</span><span class="lang-zh">台起订</span></div>
-    </div>
-  </div>
-</div>
-
 <!-- RECOMMENDATION TOOL -->
 <section id="rec-tool" style="background:#f8f9fb;padding:5rem 1.5rem;">
   <div class="container-md">
     <div style="text-align:center;margin-bottom:2.5rem;" class="reveal">
       <span class="section-label"><span class="lang-en">Smart Selector</span><span class="lang-zh">智能选型助手</span></span>
       <h2 class="section-heading" style="margin-bottom:0.75rem;">
-        <span class="lang-en">Not sure which machine fits your site?</span>
-        <span class="lang-zh">不确定哪款设备最适合您？</span>
+        <span class="lang-en">Start Your Equipment Decision in 30 Seconds</span>
+        <span class="lang-zh">30秒开启您的设备选型决策</span>
       </h2>
       <p class="section-sub" style="margin:0 auto;">
-        <span class="lang-en">Answer three quick questions and get an instant recommendation from our engineering team.</span>
-        <span class="lang-zh">回答三个简单问题，即刻获取我们工程团队的专属推荐方案。</span>
+        <span class="lang-en">Answer three questions. Get a specification-based recommendation — not a generic model list.</span>
+        <span class="lang-zh">回答三个问题，获得基于规格的推荐——而非通用型号列表。</span>
       </p>
     </div>
     <div class="rec-tool reveal">
       <div class="rec-selects">
-
         <div class="form-group">
           <label class="form-label"><span class="lang-en">1. Application</span><span class="lang-zh">1. 应用场景</span></label>
           <select id="sel-app" class="form-select">
@@ -413,7 +325,6 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
             <option value="hotel">Hotel / Hospitality</option>
           </select>
         </div>
-
         <div class="form-group">
           <label class="form-label"><span class="lang-en">2. Floor Size</span><span class="lang-zh">2. 场地面积</span></label>
           <select id="sel-size" class="form-select">
@@ -423,7 +334,6 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
             <option value="xlarge">Over 5,000 m² (Industrial)</option>
           </select>
         </div>
-
         <div class="form-group">
           <label class="form-label"><span class="lang-en">3. Primary Goal</span><span class="lang-zh">3. 核心诉求</span></label>
           <select id="sel-goal" class="form-select">
@@ -433,8 +343,11 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
             <option value="Polish">Floor Polish &amp; Stone Care</option>
           </select>
         </div>
-
       </div>
+      <p style="text-align:center;font-size:0.75rem;color:#6b7280;margin-bottom:1rem;">
+        <span class="lang-en">Get a specification-based recommendation — not a generic model list.</span>
+        <span class="lang-zh">获得基于规格的推荐——而非通用型号列表。</span>
+      </p>
       <button id="rec-btn" class="btn btn-primary" style="width:100%;">
         <span class="lang-en">Get My Recommendation →</span>
         <span class="lang-zh">获取专属推荐方案 →</span>
@@ -455,62 +368,59 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
       </h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
-      <a href="products.html#vacuums" class="product-card reveal" style="text-decoration:none;">
+      <a href="product-detail-ev-v100p-40.html" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <div class="img-placeholder">
-      <svg style="width:2.5rem;height:2.5rem;color:rgba(255,255,255,0.28);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-      <span style="font-size:0.625rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Industrial Vacuums</span>
-    </div>
+    <img src="images/ev-v100p-40-main.jpg" alt="EV-V100P-40 Industrial Vacuum" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">HEPA H13 / H14</span><span class="lang-zh">HEPA H13 / H14</span></p>
     <p class="product-card-title"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></p>
-    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For continuous heavy-duty dust environments where downtime is not acceptable.</span><span class="lang-zh">适合不容许停机的持续重负荷粉尘作业环境。</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#1a2a3a;margin:0 0 0.375rem;">
+      <span class="lang-en">When dust exposure cannot be avoided — and downtime is not an option.</span>
+      <span class="lang-zh">当粉尘无法避免——而停机不可接受。</span>
+    </p>
     <p class="product-card-sub"><span class="lang-en">HEPA H13/H14 wet/dry systems. Drum, backpack and centralised configurations.</span><span class="lang-zh">HEPA H13/H14 干湿两用系统，提供桶式、背负式与集中式配置。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
 </a>
-      <a href="products.html#polishers" class="product-card reveal" style="text-decoration:none;">
+      <a href="product-detail-ev-s56-60t.html" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <div class="img-placeholder">
-      <svg style="width:2.5rem;height:2.5rem;color:rgba(255,255,255,0.28);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-      <span style="font-size:0.625rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Single-Disc Machines</span>
-    </div>
-  </div>
-  <div class="product-card-body">
-    <p class="product-card-cat"><span class="lang-en">150 – 1,500 RPM</span><span class="lang-zh">150 – 1,500 RPM</span></p>
-    <p class="product-card-title"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机</span></p>
-    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For controlled surface treatment and polishing with maximum torque stability.</span><span class="lang-zh">适合需要精确地面处理与抛光护理、对扭矩稳定性要求高的场所。</span></p>
-    <p class="product-card-sub"><span class="lang-en">150–1,500 RPM single-disc for scrubbing, polishing, buffing and stripping on all hard floors.</span><span class="lang-zh">150–1,500 RPM 单擦机，适合各类硬质地面的清洗、抛光与起蜡。</span></p>
-    <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
-  </div>
-</a>
-      <a href="products.html#scrubbers" class="product-card reveal" style="text-decoration:none;">
-  <div class="product-card-img">
-    <div class="img-placeholder">
-      <svg style="width:2.5rem;height:2.5rem;color:rgba(255,255,255,0.28);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4a8 8 0 100 16A8 8 0 0012 4zm0 2a6 6 0 110 12A6 6 0 0112 6zm0 3a3 3 0 100 6 3 3 0 000-6z"/></svg>
-      <span style="font-size:0.625rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Walk-Behind Scrubbers</span>
-    </div>
+    <img src="images/ev-s56-60t-main.jpg" alt="EV-S56-60T Walk-Behind Scrubber" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">45 – 85 cm Width</span><span class="lang-zh">清洁宽度 45 – 85 cm</span></p>
     <p class="product-card-title"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">步行式洗地机</span></p>
-    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For large-area cleaning with minimal labor and predictable drying performance.</span><span class="lang-zh">适合以最少人力实现大面积高效清洁、对即干效果有要求的场所。</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#1a2a3a;margin:0 0 0.375rem;">
+      <span class="lang-en">When large floors must be cleaned fast — and left dry in one pass.</span>
+      <span class="lang-zh">当大面积地面必须快速清洁——且一次走过即干。</span>
+    </p>
     <p class="product-card-sub"><span class="lang-en">Compact 45–85 cm models. LFP battery, ultra-quiet. For retail, hotel, healthcare and light industrial.</span><span class="lang-zh">45–85 cm 紧凑机型，磷酸铁锂电池，超低噪音，适合零售、酒店、医疗及轻工业场所。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
 </a>
-      <a href="products.html#parts" class="product-card reveal" style="text-decoration:none;border-top:3px solid #c8a06e;">
+      <a href="product-detail-ev-d17-175.html" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <div class="img-placeholder">
-      <svg style="width:2.5rem;height:2.5rem;color:rgba(255,255,255,0.28);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
-      <span style="font-size:0.625rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Parts &amp; Consumables</span>
-    </div>
+    <img src="images/ev-d17-175-main.jpg" alt="EV-D17-175 Single-Disc Machine" style="width:100%;height:100%;object-fit:cover;"/>
+  </div>
+  <div class="product-card-body">
+    <p class="product-card-cat"><span class="lang-en">150 – 1,500 RPM</span><span class="lang-zh">150 – 1,500 RPM</span></p>
+    <p class="product-card-title"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#1a2a3a;margin:0 0 0.375rem;">
+      <span class="lang-en">When surface mistakes mean costly damage — and torque control is non-negotiable.</span>
+      <span class="lang-zh">当地面损伤代价高昂——扭矩控制不容妥协。</span>
+    </p>
+    <p class="product-card-sub"><span class="lang-en">150–1,500 RPM single-disc for scrubbing, polishing, buffing and stripping on all hard floors.</span><span class="lang-zh">150–1,500 RPM 单擦机，适合各类硬质地面的清洗、抛光与起蜡。</span></p>
+    <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
+  </div>
+</a>
+      <a href="products.html#parts" class="product-card reveal" style="text-decoration:none;border-top:3px solid var(--gold-accent);">
+  <div class="product-card-img">
+    <img src="images/parts-brushes.jpg" alt="Parts &amp; Consumables" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">24-hr Global Ship</span><span class="lang-zh">24小时全球发货</span></p>
     <p class="product-card-title"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></p>
-    <p style="font-size:0.75rem;font-weight:600;color:#2563eb;margin:0 0 0.375rem;"><span class="lang-en">For facilities that cannot afford to wait weeks for a replacement part.</span><span class="lang-zh">适合无法承受等待数周才能拿到替换件的设施运营方。</span></p>
+    <p style="font-size:0.75rem;font-weight:600;color:#1a2a3a;margin:0 0 0.375rem;"><span class="lang-en">When a machine stops — and waiting weeks for parts is not acceptable.</span><span class="lang-zh">当设备停机——等待数周替换件不可接受。</span></p>
     <p class="product-card-sub"><span class="lang-en">Brushes &amp; pads, squeegee blades, and vacuum filters. OEM-grade, globally shipped.</span><span class="lang-zh">刷盘与百洁垫、刮水条、吸尘器滤芯，OEM品质，全球直发。</span></p>
     <span class="product-card-arrow"><span class="lang-en">View Models</span><span class="lang-zh">查看机型</span><svg style="width:1rem;height:1rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
   </div>
@@ -524,7 +434,6 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
     </div>
   </div>
 </section>
-
 
 <!-- OEM STRIP -->
 <section class="oem-strip section">
@@ -540,50 +449,20 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
           <span class="lang-zh">为零停机而生的工程设计。</span>
         </h2>
         <p style="color:rgba(255,255,255,0.6);font-size:0.9375rem;line-height:1.8;margin-bottom:2rem;max-width:36rem;">
-          <span class="lang-en">We work upstream of the factory floor — specifying components before production begins, not after problems surface. Every unit we ship has its motor type, gear grade and control architecture documented — and disclosed to you before purchase.</span>
-          <span class="lang-zh">我们在生产开始前定义零部件规格，而不是等到问题出现之后才补救。每台出货设备的电机型号、齿轮等级与控制架构均有文件记录，并在采购前向您完整披露。</span>
+          <span class="lang-en">We specify what goes inside — before production begins.
+Motor type, gear grade and control architecture: documented, disclosed, verifiable.</span>
+          <span class="lang-zh">在生产开始之前，我们就明确规定了内部组件。
+电机类型、齿轮等级和控制架构：均有记录、公开透明、可验证。</span>
         </p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem;">
-          <div class="feature-card reveal">
-  <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.952 11.952 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
-  <div>
-    <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Zero Fragile Electronics</span><span class="lang-zh">拒绝脆弱电子件</span></p>
-    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Electronics → Failure Risk</span><span class="lang-zh">电子件 → 故障风险</span></p>
-    <p class="feature-desc"><span class="lang-en">Mechanical relay architecture eliminates circuit board failure in high-humidity environments. IP54-sealed. No exposed circuitry. No PCB to corrode.</span><span class="lang-zh">纯机械继电器架构彻底消除高湿度环境下的电路板腐蚀故障。IP54密封，无裸露电路，无PCB隐患。</span></p>
-  </div>
-</div>
-          <div class="feature-card reveal">
-  <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-  <div>
-    <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Serviceable-First Design</span><span class="lang-zh">易维修优先设计</span></p>
-    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Parts → Replacement Speed</span><span class="lang-zh">配件 → 替换速度</span></p>
-    <p class="feature-desc"><span class="lang-en">Globally standardized components — not proprietary parts that lock you into a single source. When a machine breaks, replacement parts are locally sourceable. No 6-week wait.</span><span class="lang-zh">全球标准化通用部件，非专属锁定配件。设备故障时，替换件可就地采购，无需等待六周进口。</span></p>
-  </div>
-</div>
-          <div class="feature-card reveal">
-  <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
-  <div>
-    <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Hardware Transparency</span><span class="lang-zh">硬件透明化</span></p>
-    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Transparency → Decision Confidence</span><span class="lang-zh">透明度 → 决策信心</span></p>
-    <p class="feature-desc"><span class="lang-en">Motor brand, gear material and sealing grade — documented and disclosed before you purchase. Ask us what's inside. We'll tell you. Verifiable, not decorative.</span><span class="lang-zh">电机品牌、齿轮材质与密封等级——记录在案，采购前完整披露。问我们内部装什么，我们会告诉你。可核实，非装饰。</span></p>
-  </div>
-</div>
-          <div class="feature-card reveal">
-  <div class="feature-icon"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></div>
-  <div>
-    <p class="feature-title" style="color:#fff !important;"><span class="lang-en">Managed Supply Chain</span><span class="lang-zh">被管理的供应链</span></p>
-    <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.08em;color:#f5c542;margin:0.25rem 0 0.5rem;"><span class="lang-en">Consistency → Long-term Stability</span><span class="lang-zh">一致性 → 长期稳定</span></p>
-    <p class="feature-desc"><span class="lang-en">Factories manufacture. ELVONIS controls. We define what components go in before production begins — and hold partners to those specs. Every batch, same spec. No surprises.</span><span class="lang-zh">工厂负责生产，ELVONIS负责管控。在生产开始前定义零部件配置，并要求合作工厂严格执行。每一批次，规格如一，没有意外。</span></p>
-  </div>
-</div>
+          <div class="reveal" style="display:flex;"><div class="eng-card"><p class="eng-card-title"><span class="lang-en">Zero Fragile Electronics</span><span class="lang-zh">拒绝脆弱电子件</span></p><p class="eng-card-tag"><span class="lang-en">Electronics → Failure Risk</span><span class="lang-zh">电子件 → 故障风险</span></p><p class="eng-card-desc"><span class="lang-en">Mechanical relay. IP54-sealed. No PCB to corrode.</span><span class="lang-zh">纯机械继电器架构，IP54密封，无裸露电路。</span></p></div></div>
+          <div class="reveal" style="display:flex;"><div class="eng-card"><p class="eng-card-title"><span class="lang-en">Serviceable-First Design</span><span class="lang-zh">易维修优先设计</span></p><p class="eng-card-tag"><span class="lang-en">Parts → Replacement Speed</span><span class="lang-zh">配件 → 替换速度</span></p><p class="eng-card-desc"><span class="lang-en">Globally standardized components — not proprietary parts. Source locally, fix fast.</span><span class="lang-zh">全球标准通用部件，非专属锁定配件。就地采购，快速修复。</span></p></div></div>
+          <div class="reveal" style="display:flex;"><div class="eng-card"><p class="eng-card-title"><span class="lang-en">Hardware Transparency</span><span class="lang-zh">硬件透明化</span></p><p class="eng-card-tag"><span class="lang-en">Transparency → Decision Confidence</span><span class="lang-zh">透明度 → 决策信心</span></p><p class="eng-card-desc"><span class="lang-en">Motor brand, gear grade, sealing spec — disclosed before you sign.</span><span class="lang-zh">电机品牌、齿轮材质、密封等级——采购前完整披露。</span></p></div></div>
+          <div class="reveal" style="display:flex;"><div class="eng-card"><p class="eng-card-title"><span class="lang-en">Managed Supply Chain</span><span class="lang-zh">被管理的供应链</span></p><p class="eng-card-tag"><span class="lang-en">Consistency → Long-term Stability</span><span class="lang-zh">一致性 → 长期稳定</span></p><p class="eng-card-desc"><span class="lang-en">Factories manufacture. ELVONIS controls. Every batch, same spec. No surprises.</span><span class="lang-zh">工厂负责生产，ELVONIS负责管控。每一批次，规格如一。</span></p></div></div>
         </div>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-white">
-            <span class="lang-en">Ask What's Inside</span><span class="lang-zh">询问内部零部件配置</span>
-          </a>
-          <a href="oem-factory.html" class="btn btn-outline-white">
-            <span class="lang-en">Explore OEM Services</span><span class="lang-zh">了解代工服务</span>
-          </a>
+          <a href="contact.html" class="btn btn-white"><span class="lang-en">Ask What's Inside</span><span class="lang-zh">询问内部零部件配置</span></a>
+          <a href="about-partners.html" class="btn btn-outline-white"><span class="lang-en">Explore OEM Services</span><span class="lang-zh">了解代工服务</span></a>
         </div>
       </div>
     </div>
@@ -595,77 +474,50 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(37,99,235,0.08) 0%,transparent 70%);pointer-events:none;"></div>
   <div class="container" style="text-align:center;position:relative;z-index:1;">
     <div class="reveal">
-      <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;color:#fff;margin-bottom:1rem;">
-        <span class="lang-en">Start a More Predictable Equipment Supply.</span>
-        <span class="lang-zh">建立更可预期的设备供应关系。</span>
-      </h2>
-      <p style="color:rgba(255,255,255,0.5);font-size:1rem;margin-bottom:2rem;max-width:36rem;margin-left:auto;margin-right:auto;">
-        <span class="lang-en">Our engineering team reviews every inquiry — and tells you exactly what goes inside the machine you're considering.</span>
-        <span class="lang-zh">我们的工程团队逐条审阅每一份询盘，并向您完整说明目标机型的内部零部件配置。</span>
-      </p>
+      <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;color:#fff;margin-bottom:1rem;"><span class="lang-en">Start with One Unit. Test It. Then Scale.</span><span class="lang-zh">从一台试起，验证后规模化。</span></h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:1rem;margin-bottom:2rem;max-width:36rem;margin-left:auto;margin-right:auto;"><span class="lang-en">Our engineering team reviews every inquiry — and tells you exactly what goes inside.</span><span class="lang-zh">我们的工程团队逐条审阅每一份询盘，并完整说明内部配置。</span></p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-        <a href="contact.html" class="btn btn-white">
-          <span class="lang-en">Get Engineering Quote</span><span class="lang-zh">获取工程报价</span>
-        </a>
-        <a href="distributor-kit.html" class="btn btn-outline-white">
-          <span class="lang-en">Download Specification Guide</span><span class="lang-zh">下载产品规格指南</span>
-        </a>
+        <a href="contact.html" class="btn btn-white"><span class="lang-en">Get Your Equipment Recommendation</span><span class="lang-zh">获取您的设备推荐方案</span></a>
+        <a href="distributor.html#kit-form" class="btn btn-outline-white"><span class="lang-en">Apply for Specification Kit →</span><span class="lang-zh">申请规格资料包 →</span></a>
       </div>
     </div>
   </div>
 </section>
 
-
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-grid">
-
-      <!-- Brand col -->
       <div>
         <a href="index.html" class="footer-logo">ELVONIS</a>
         <p class="footer-tagline">
           <span class="lang-en">Specification-Driven Equipment Partner. We define what goes inside the machine — not just which factory makes it.</span>
           <span class="lang-zh">规格驱动型设备合作伙伴。我们决定机器内部装什么，而不只是选哪家工厂来做。</span>
         </p>
-        <div class="cert-pills">
-          <span class="cert-pill">ISO 9001</span>
-          <span class="cert-pill">CE</span>
-          <span class="cert-pill">RoHS</span>
-        </div>
+        <div class="cert-pills"><span class="cert-pill">ISO 9001</span><span class="cert-pill">CE</span><span class="cert-pill">RoHS</span></div>
         <div class="social-icons">
-          <a href="#" class="social-icon" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-          </a>
-          <a href="#" class="social-icon" aria-label="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
+          <a href="https://www.linkedin.com/company/elvonis" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+          <a href="https://www.youtube.com/channel/UCkMgcGqms-o9_5U7unH9cvw" class="social-icon" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
         </div>
       </div>
-
-            <!-- Equipment -->
       <div>
         <p class="footer-col-title"><span class="lang-en">Equipment</span><span class="lang-zh">设备中心</span></p>
         <ul class="footer-links">
           <li><a href="products.html#vacuums"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></a></li>
-          <li><a href="products.html#polishers"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机/抛光机</span></a></li>
+          <li><a href="products.html#singledisc"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机/抛光机</span></a></li>
           <li><a href="products.html#scrubbers"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">手推式洗地机</span></a></li>
           <li><a href="products.html#parts"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></a></li>
         </ul>
       </div>
-
-<!-- Support -->
       <div>
         <p class="footer-col-title"><span class="lang-en">Engineering & Support</span><span class="lang-zh">工程与技术支持</span></p>
         <ul class="footer-links">
-          <li><a href="oem-factory.html"><span class="lang-en">OEM / ODM Services</span><span class="lang-zh">贴牌代工服务</span></a></li>
-          <li><a href="distributor-kit.html"><span class="lang-en">Distributor Application</span><span class="lang-zh">经销商申请</span></a></li>
+          <li><a href="about-partners.html"><span class="lang-en">OEM / ODM Services</span><span class="lang-zh">贴牌代工服务</span></a></li>
+          <li><a href="distributor.html"><span class="lang-en">Distributor Application</span><span class="lang-zh">经销商申请</span></a></li>
           <li><a href="solutions.html"><span class="lang-en">Industry Solutions</span><span class="lang-zh">行业解决方案</span></a></li>
           <li><a href="blog.html"><span class="lang-en">Knowledge Base</span><span class="lang-zh">行业知识库</span></a></li>
-          <li><a href="contact.html"><span class="lang-en">Contact Sales Team</span><span class="lang-zh">联系销售团队</span></a></li>
+          <li><a href="contact.html"><span class="lang-en">Contact Engineering Team</span><span class="lang-zh">联系工程团队</span></a></li>
         </ul>
       </div>
-
-      <!-- Email capture -->
       <div>
         <p class="footer-col-title"><span class="lang-en">Partner Intelligence</span><span class="lang-zh">获取合作伙伴简报</span></p>
         <p style="font-size:0.8125rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;line-height:1.65;">
@@ -673,179 +525,82 @@ html[lang="zh"] .hero-title { font-size: clamp(2rem, 6vw, 4rem); letter-spacing:
           <span class="lang-zh">获取 ELVONIS 工程团队发布的设备规格指南、维护清单与采购决策框架。</span>
         </p>
         <form action="https://formspree.io/f/xlgpzqpq" method="POST" class="footer-email-form">
-          <input type="email" name="_replyto" class="footer-email-input"
-                 placeholder="Work email…" required/>
+          <input type="email" name="_replyto" class="footer-email-input" placeholder="Work email…" required/>
           <button type="submit" class="footer-email-btn" aria-label="Subscribe">→</button>
         </form>
         <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.8125rem;color:rgba(255,255,255,0.45);">
           <span>✉ info@elvonis.com</span>
-          <span>📍 <span class="lang-en">Hangzhou, Zhejiang, China</span><span class="lang-zh">杭州 · 浙江 · 中国</span></span>
+          <span>📍 <span class="lang-en">Zhejiang, China</span><span class="lang-zh">浙江 · 中国</span></span>
         </div>
       </div>
-
-    </div><!-- /footer-grid -->
-
+    </div>
     <div class="footer-bottom">
       <p>© 2026 ELVONIS. <span class="lang-en">All rights reserved.</span><span class="lang-zh">保留所有权利。</span></p>
       <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
-        <a href="#"><span class="lang-en">Privacy Policy</span><span class="lang-zh">隐私政策</span></a>
-        <a href="#"><span class="lang-en">Terms of Service</span><span class="lang-zh">服务条款</span></a>
-        <a href="oem-factory.html"><span class="lang-en">Specification-Driven Equipment Partner</span><span class="lang-zh">规格驱动型设备合作伙伴</span></a>
+        <a href="about-partners.html"><span class="lang-en">Specification-Driven Equipment Partner</span><span class="lang-zh">规格驱动型设备合作伙伴</span></a>
       </div>
     </div>
   </div>
 </footer>
 <div class="wa-float">
-  <div class="wa-tooltip">
-    <span class="lang-en">Direct WhatsApp Support</span>
-    <span class="lang-zh">WhatsApp 专线支持</span>
-  </div>
+  <div class="wa-tooltip"><span class="lang-en">Direct WhatsApp Support</span><span class="lang-zh">WhatsApp 专线支持</span></div>
   <a href="https://wa.me/+8618057039893?text=Hi" class="wa-float-btn wa-link" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="elvonis-core.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="elvonis-core.js"></script>
 <script>
-  /* Nav desktop items */
   (function() {
     var p = document.getElementById('lang-pills-desktop');
     var c = document.getElementById('nav-cta-desktop');
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
-
-    /* OEM grid responsive */
     var g = document.querySelector('.oem-grid');
-    function setGrid() {
-      if (!g) return;
-      g.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr';
-    }
+    function setGrid() { if (!g) return; g.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr'; }
     setGrid();
     window.addEventListener('resize', setGrid);
   })();
 
-/* ============================================================
-   ELVONIS — Bilingual select option sync
-   Runs once on load, then on every elvonis:langchange event.
-   Keeps all <select> option texts in sync with active language.
-============================================================ */
-(function() {
-  var SELECTS = {
-
-    /* ── Recommendation tool (index.html) ── */
-        'sel-app': {
-  en: [
-    {v:'factory',   t:'Manufacturing / Factory'},
-    {v:'warehouse', t:'Warehouse / Logistics'},
-    {v:'retail',    t:'Retail / Supermarket'},
-    {v:'hospital',  t:'Healthcare / Hospital'},
-    {v:'hotel',     t:'Hotel / Hospitality'}
-  ],
-  zh: [
-    {v:'factory',   t:'工业制造 / 工厂车间'},
-    {v:'warehouse', t:'仓储 / 物流中心'},
-    {v:'retail',    t:'商业零售 / 大型商超'},
-    {v:'hospital',  t:'医疗机构 / 医院'},
-    {v:'hotel',     t:'酒店 / 餐饮与服务业'}
-  ]
-},
-'sel-size': {
-  en: [
-    {v:'small',  t:'Under 500 m² (Small)'},
-    {v:'medium', t:'500 – 2,000 m² (Medium)'},
-    {v:'large',  t:'2,000 – 5,000 m² (Large)'},
-    {v:'xlarge', t:'Over 5,000 m² (Industrial)'}
-  ],
-  zh: [
-    {v:'small',  t:'500 m² 以内（小型）'},
-    {v:'medium', t:'500 – 2,000 m²（中型）'},
-    {v:'large',  t:'2,000 – 5,000 m²（大型）'},
-    {v:'xlarge', t:'5,000 m² 以上（超大工业级）'}
-  ]
-},
-'sel-goal': {
-  en: [
-    {v:'Grease',  t:'Heavy Grease / Stain Removal'},
-    {v:'Labor',   t:'Reduce Labor Costs / Efficiency'},
-    {v:'Hygiene', t:'Strict Hygiene / Low Noise'},
-    {v:'Polish',  t:'Floor Polish & Stone Care'}
-  ],
-  zh: [
-    {v:'Grease',  t:'去除重度油污与顽固污渍'},
-    {v:'Labor',   t:'提升效率 / 降低人工成本'},
-    {v:'Hygiene', t:'严苛卫生标准与静音要求'},
-    {v:'Polish',  t:'地面抛光与石材护理'}
-  ]
-},
-
-    /* ── Contact form (contact.html) ── */
-    'sel-inquiry': {
-      en: [
-        {v:'',       t:'Select…'},
-        {v:'quote',  t:'Product Quote (Direct Purchase)'},
-        {v:'tech',   t:'Technical Specification'},
-        {v:'dist',   t:'Distributor Partnership'},
-        {v:'oem',    t:'OEM / ODM Manufacturing'},
-        {v:'visit',  t:'Factory Visit / Video Tour'},
-        {v:'other',  t:'Other'}
-      ],
-      zh: [
-        {v:'',       t:'请选择…'},
-        {v:'quote',  t:'产品采购报价'},
-        {v:'tech',   t:'技术规格咨询'},
-        {v:'dist',   t:'经销商合作申请'},
-        {v:'oem',    t:'OEM / ODM 代工合作'},
-        {v:'visit',  t:'工厂参观 / 视频参观'},
-        {v:'other',  t:'其他'}
-      ]
-    },
-
-    /* ── Distributor kit form (distributor-kit.html) ── */
-    'sel-role': {
-      en: [
-        {v:'dist',  t:'Distributor / Reseller'},
-        {v:'oem',   t:'OEM Brand Owner'},
-        {v:'fm',    t:'End-User / Facility Manager'},
-        {v:'pm',    t:'Procurement Manager'},
-        {v:'other', t:'Other'}
-      ],
-      zh: [
-        {v:'dist',  t:'经销商 / 分销商'},
-        {v:'oem',   t:'OEM 品牌主'},
-        {v:'fm',    t:'终端用户 / 设施管理者'},
-        {v:'pm',    t:'采购经理'},
-        {v:'other', t:'其他'}
-      ]
-    }
-  };
-
-  function syncAllSelects(lang) {
-    var L = (lang === 'zh') ? 'zh' : 'en';
-    Object.keys(SELECTS).forEach(function(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      var saved = el.value;
-      var opts  = SELECTS[id][L];
-      el.innerHTML = '';
-      opts.forEach(function(o) {
-        var opt = document.createElement('option');
-        opt.value       = o.v;
-        opt.textContent = o.t;
-        el.appendChild(opt);
+  (function() {
+    var SELECTS = {
+      'sel-app': {
+        en: [{v:'factory',t:'Manufacturing (continuous dust / multi-shift operation)'},{v:'warehouse',t:'Warehouse / Logistics (large area / forklift traffic)'},{v:'retail',t:'Retail / Supermarket (open hours / low noise)'},{v:'hospital',t:'Healthcare / Hospital (strict hygiene / quiet)'},{v:'hotel',t:'Hotel / Hospitality (guest areas / appearance)'}],
+        zh: [{v:'factory',t:'工业制造（持续粉尘 / 多班运行）'},{v:'warehouse',t:'仓储 / 物流（大面积 / 叉车交通）'},{v:'retail',t:'零售 / 商超（营业时段 / 低噪音）'},{v:'hospital',t:'医疗机构 / 医院（严格卫生 / 静音）'},{v:'hotel',t:'酒店 / 餐饮（宾客区域 / 形象要求）'}]
+      },
+      'sel-size': {
+        en: [{v:'small',t:'Under 500 m² (Small)'},{v:'medium',t:'500 – 2,000 m² (Medium)'},{v:'large',t:'2,000 – 5,000 m² (Large)'},{v:'xlarge',t:'Over 5,000 m² (Industrial)'}],
+        zh: [{v:'small',t:'500 m² 以内（小型）'},{v:'medium',t:'500 – 2,000 m²（中型）'},{v:'large',t:'2,000 – 5,000 m²（大型）'},{v:'xlarge',t:'5,000 m² 以上（超大工业级）'}]
+      },
+      'sel-goal': {
+        en: [{v:'Grease',t:'Heavy Grease / Stain Removal'},{v:'Labor',t:'Reduce Labor Costs / Efficiency'},{v:'Hygiene',t:'Strict Hygiene / Low Noise'},{v:'Polish',t:'Floor Polish &amp; Stone Care'}],
+        zh: [{v:'Grease',t:'去除重度油污与顽固污渍'},{v:'Labor',t:'提升效率 / 降低人工成本'},{v:'Hygiene',t:'严苛卫生标准与静音要求'},{v:'Polish',t:'地面抛光与石材护理'}]
+      },
+      'sel-inquiry': {
+        en: [{v:'',t:'Select…'},{v:'quote',t:'Product Quote (Direct Purchase)'},{v:'tech',t:'Technical Specification'},{v:'dist',t:'Distributor Partnership'},{v:'oem',t:'OEM / ODM Manufacturing'},{v:'visit',t:'Factory Visit / Video Tour'},{v:'other',t:'Other'}],
+        zh: [{v:'',t:'请选择…'},{v:'quote',t:'产品采购报价'},{v:'tech',t:'技术规格咨询'},{v:'dist',t:'经销商合作申请'},{v:'oem',t:'OEM / ODM 代工合作'},{v:'visit',t:'工厂参观 / 视频参观'},{v:'other',t:'其他'}]
+      },
+      'sel-role': {
+        en: [{v:'dist',t:'Distributor / Reseller'},{v:'oem',t:'OEM Brand Owner'},{v:'fm',t:'End-User / Facility Manager'},{v:'pm',t:'Procurement Manager'},{v:'other',t:'Other'}],
+        zh: [{v:'dist',t:'经销商 / 分销商'},{v:'oem',t:'OEM 品牌主'},{v:'fm',t:'终端用户 / 设施管理者'},{v:'pm',t:'采购经理'},{v:'other',t:'其他'}]
+      }
+    };
+    function syncAllSelects(lang) {
+      var L = (lang === 'zh') ? 'zh' : 'en';
+      Object.keys(SELECTS).forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        var saved = el.value;
+        var opts = SELECTS[id][L];
+        el.innerHTML = '';
+        opts.forEach(function(o) { var opt = document.createElement('option'); opt.value = o.v; opt.textContent = o.t; el.appendChild(opt); });
+        if (saved) el.value = saved;
       });
-      if (saved) el.value = saved;
-    });
-  }
-
-  /* Run immediately with current page language */
-  var initLang = document.documentElement.getAttribute('lang') || 'en';
-  syncAllSelects(initLang);
-
-  /* Re-run whenever language changes */
-  document.addEventListener('elvonis:langchange', function(e) {
-    syncAllSelects(e.detail && e.detail.lang ? e.detail.lang : 'en');
-  });
-})();
-
+    }
+    var initLang = document.documentElement.getAttribute('lang') || 'en';
+    syncAllSelects(initLang);
+    document.addEventListener('elvonis:langchange', function(e) { syncAllSelects(e.detail && e.detail.lang ? e.detail.lang : 'en'); });
+  })();
 </script>
 </body>
 </html>
