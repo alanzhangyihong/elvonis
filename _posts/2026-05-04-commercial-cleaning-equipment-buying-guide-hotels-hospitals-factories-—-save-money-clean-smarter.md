@@ -1,6 +1,6 @@
 ---
 title_en: "Commercial Cleaning Equipment Buying Guide: Hotels, Hospitals &
-  Factories — Save Money, Clean Smarter"
+  Factories - Save Money, Clean Smarter"
 title_zh: 商用清洁设备采购攻略：酒店、医院、工厂如何选对机器省钱又高效
 category_en: Buying Guide
 category_zh: 选购指南
