@@ -161,7 +161,7 @@ const bzh = md(meta._body_zh || '');
         <button class="lang-pill lang-pill-inactive" data-lang="zh">中文</button>
       </div>
       <a href="/contact.html" class="nav-cta" style="display:none;" id="nav-cta-desktop">
-        <span class="lang-en">Technical Quote</span><span class="lang-zh">获取技术报价</span>
+        <span class="lang-en">Request Quote</span><span class="lang-zh">获取报价</span>
       </a>
       <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle menu">
         <span id="menu-icon-open" style="display:flex;flex-direction:column;gap:5px;">
