@@ -19,8 +19,6 @@ The reason is almost always the same: wrong machine for the wrong space.
 
 This guide helps you avoid every common mistake before you spend a dollar.
 
- 
-
 ## **5 Questions to Answer Before You Buy**
 
 **① What is your cleaning area?**
@@ -137,8 +135,6 @@ Contact us today for a free facility cleaning solution report.
 
 这篇文章，帮你在采购前把坑踩完，让每一分钱都花在刀刃上。
 
- 
-
 ## **一、采购前必须回答的5个问题**
 
 **① 清洁面积有多大？**
@@ -163,7 +159,7 @@ Contact us today for a free facility cleaning solution report.
 
 ## **二、不同行业推荐设备组合**
 
-**�� 酒店行业**
+**酒店行业**
 
 推荐配置：商用洗地机（大堂/宴会厅）+ 手持式吸尘器（客房）+ 低噪音扫地机器人（走廊）
 
@@ -181,19 +177,19 @@ Contact us today for a free facility cleaning solution report.
 
 核心诉求：耐用、大吸力、适合重污染环境。
 
-**��️ 商场/超市**
+**商场/超市**
 
 推荐配置：驾驶式洗地机 + 商用扫地机器人 + 手推洗地机（边角）
 
 核心诉求：高效率、覆盖大面积、维护简单。
 
-**��️ 餐饮行业**
+**餐饮行业**
 
 推荐配置：热水高压清洗机（厨房）+ 手推洗地机（大厅）+ 工业吸尘器（干货区）
 
 核心诉求：去油效果强、符合食品安全规范。
 
-**�� 学校/展馆/图书馆**
+**学校/展馆/图书馆**
 
 推荐配置：商用扫地机器人 + 手推洗地机 + 小型工业吸尘器
 
