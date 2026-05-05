@@ -218,7 +218,8 @@
     syncAllSelects(initLang);
     document.addEventListener('elvonis:langchange', function(e) { syncAllSelects(e.detail && e.detail.lang ? e.detail.lang : 'en'); });
   })();
-  <script>
+</script>
+<script>
 (function() {
   fetch('/api/posts')
     .then(function(r) { return r.json(); })
