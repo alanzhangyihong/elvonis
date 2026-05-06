@@ -6,11 +6,11 @@ export async function onRequest(context) {
   }
 
   const slug = params.slug.join('/');
+  const owner = 'alanzhangyihong';
+  const repo = 'elvonis';
 
   try {
-    const owner = 'alanzhangyihong';
-    const repo = 'elvonis';
-
+    // 1. 列出 _posts 目录下所有文章
     const listRes = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/_posts`,
       {
@@ -28,16 +28,18 @@ export async function onRequest(context) {
 
     const files = await listRes.json();
 
+    // 2. 通过 slug 匹配文章文件
     const matched = files.find(f => {
       if (!f.name.endsWith('.md')) return false;
-      const clean = f.name.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
-      return clean === slug || f.name.replace('.md', '') === slug;
+      const cleanSlug = f.name.replace(/\.md$/, '');
+      return cleanSlug === slug || cleanSlug.includes(slug) || slug.includes(cleanSlug);
     });
 
     if (!matched) {
       return new Response('Post not found: ' + slug, { status: 404 });
     }
 
+    // 3. 获取文章内容
     const fileRes = await fetch(matched.download_url, {
       headers: {
         'User-Agent': 'ELVONIS',
@@ -48,7 +50,13 @@ export async function onRequest(context) {
     const raw = await fileRes.text();
     const meta = parseMeta(raw);
 
-    return new Response(buildPage(meta), {
+    // 4. 检测访客语言偏好（优先级：Cookie > 浏览器语言 > 英文默认）
+    const cookieLang = context.request.headers.get('Cookie')?.match(/elvonis_lang=([^;]+)/)?.[1];
+    const acceptLang = context.request.headers.get('Accept-Language') || '';
+    const browserLang = acceptLang.includes('zh') ? 'zh' : 'en';
+    const lang = cookieLang || browserLang || 'en';
+
+    return new Response(buildPage(meta, lang), {
       headers: { 'Content-Type': 'text/html; charset=utf-8' }
     });
 
@@ -111,7 +119,7 @@ function md(text) {
     });
 }
 
-function buildPage(meta) {
+function buildPage(meta, lang) {
   const ten = meta.title_en || 'Article';
   const tzh = meta.title_zh || ten;
   const cen = meta.category_en || 'Insights';
@@ -119,7 +127,7 @@ function buildPage(meta) {
   const een = meta.excerpt_en || '';
   const ezh = meta.excerpt_zh || '';
   const ben = md(meta._body_en || '');
-const bzh = md(meta._body_zh || '');
+  const bzh = md(meta._body_zh || '');
 
   let date = '', datezh = '';
   if (meta.date) {
@@ -129,7 +137,7 @@ const bzh = md(meta._body_zh || '');
   }
 
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="${lang}">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -293,62 +301,6 @@ const bzh = md(meta._body_zh || '');
   </a>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="elvonis-core.js"></script>
-<script>
-  (function() {
-    var p = document.getElementById('lang-pills-desktop');
-    var c = document.getElementById('nav-cta-desktop');
-    if (p) p.style.display = 'flex';
-    if (c) c.style.display = 'flex';
-    var g = document.querySelector('.oem-grid');
-    function setGrid() { if (!g) return; g.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr'; }
-    setGrid();
-    window.addEventListener('resize', setGrid);
-  })();
-
-  (function() {
-    var SELECTS = {
-      'sel-app': {
-        en: [{v:'factory',t:'Manufacturing (continuous dust / multi-shift operation)'},{v:'warehouse',t:'Warehouse / Logistics (large area / forklift traffic)'},{v:'retail',t:'Retail / Supermarket (open hours / low noise)'},{v:'hospital',t:'Healthcare / Hospital (strict hygiene / quiet)'},{v:'hotel',t:'Hotel / Hospitality (guest areas / appearance)'}],
-        zh: [{v:'factory',t:'工业制造（持续粉尘 / 多班运行）'},{v:'warehouse',t:'仓储 / 物流（大面积 / 叉车交通）'},{v:'retail',t:'零售 / 商超（营业时段 / 低噪音）'},{v:'hospital',t:'医疗机构 / 医院（严格卫生 / 静音）'},{v:'hotel',t:'酒店 / 餐饮（宾客区域 / 形象要求）'}]
-      },
-      'sel-size': {
-        en: [{v:'small',t:'Under 500 m² (Small)'},{v:'medium',t:'500 – 2,000 m² (Medium)'},{v:'large',t:'2,000 – 5,000 m² (Large)'},{v:'xlarge',t:'Over 5,000 m² (Industrial)'}],
-        zh: [{v:'small',t:'500 m² 以内（小型）'},{v:'medium',t:'500 – 2,000 m²（中型）'},{v:'large',t:'2,000 – 5,000 m²（大型）'},{v:'xlarge',t:'5,000 m² 以上（超大工业级）'}]
-      },
-      'sel-goal': {
-        en: [{v:'Grease',t:'Heavy Grease / Stain Removal'},{v:'Labor',t:'Reduce Labor Costs / Efficiency'},{v:'Hygiene',t:'Strict Hygiene / Low Noise'},{v:'Polish',t:'Floor Polish &amp; Stone Care'}],
-        zh: [{v:'Grease',t:'去除重度油污与顽固污渍'},{v:'Labor',t:'提升效率 / 降低人工成本'},{v:'Hygiene',t:'严苛卫生标准与静音要求'},{v:'Polish',t:'地面抛光与石材护理'}]
-      },
-      'sel-inquiry': {
-        en: [{v:'',t:'Select…'},{v:'quote',t:'Product Quote (Direct Purchase)'},{v:'tech',t:'Technical Specification'},{v:'dist',t:'Distributor Partnership'},{v:'oem',t:'OEM / ODM Manufacturing'},{v:'visit',t:'Factory Visit / Video Tour'},{v:'other',t:'Other'}],
-        zh: [{v:'',t:'请选择…'},{v:'quote',t:'产品采购报价'},{v:'tech',t:'技术规格咨询'},{v:'dist',t:'经销商合作申请'},{v:'oem',t:'OEM / ODM 代工合作'},{v:'visit',t:'工厂参观 / 视频参观'},{v:'other',t:'其他'}]
-      },
-      'sel-role': {
-        en: [{v:'dist',t:'Distributor / Reseller'},{v:'oem',t:'OEM Brand Owner'},{v:'fm',t:'End-User / Facility Manager'},{v:'pm',t:'Procurement Manager'},{v:'other',t:'Other'}],
-        zh: [{v:'dist',t:'经销商 / 分销商'},{v:'oem',t:'OEM 品牌主'},{v:'fm',t:'终端用户 / 设施管理者'},{v:'pm',t:'采购经理'},{v:'other',t:'其他'}]
-      }
-    };
-    function syncAllSelects(lang) {
-      var L = (lang === 'zh') ? 'zh' : 'en';
-      Object.keys(SELECTS).forEach(function(id) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        var saved = el.value;
-        var opts = SELECTS[id][L];
-        el.innerHTML = '';
-        opts.forEach(function(o) { var opt = document.createElement('option'); opt.value = o.v; opt.textContent = o.t; el.appendChild(opt); });
-        if (saved) el.value = saved;
-      });
-    }
-    var initLang = document.documentElement.getAttribute('lang') || 'en';
-    syncAllSelects(initLang);
-    document.addEventListener('elvonis:langchange', function(e) { syncAllSelects(e.detail && e.detail.lang ? e.detail.lang : 'en'); });
-  })();
-</script>
-</body>
-</html>
-
 <script src="/elvonis-core.js"></script>
 <script>
   (function() {
@@ -356,29 +308,6 @@ const bzh = md(meta._body_zh || '');
     var c = document.getElementById('nav-cta-desktop');
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
-
-    // 语言切换处理
-    function applyLang(lang) {
-      var enEls = document.querySelectorAll('.lang-en');
-      var zhEls = document.querySelectorAll('.lang-zh');
-      if (lang === 'zh') {
-        enEls.forEach(function(el) { el.style.display = 'none'; });
-        zhEls.forEach(function(el) { el.style.display = ''; });
-      } else {
-        enEls.forEach(function(el) { el.style.display = ''; });
-        zhEls.forEach(function(el) { el.style.display = 'none'; });
-      }
-    }
-
-    // 读取当前语言
-    var savedLang = localStorage.getItem('elvonis_lang') || 'en';
-    applyLang(savedLang);
-
-    // 监听语言切换事件
-    document.addEventListener('elvonis:langchange', function(e) {
-      var lang = e.detail && e.detail.lang ? e.detail.lang : 'en';
-      applyLang(lang);
-    });
   })();
 </script>
 </body>
