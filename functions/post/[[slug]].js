@@ -11,7 +11,7 @@ export async function onRequest(context) {
     const owner = 'alanzhangyihong';
     const repo = 'elvonis';
 
-    // 1. 获取 _posts 目录文件列表
+    // 1. 列出 _posts 文件列表
     const listRes = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/_posts`,
       {
@@ -29,11 +29,12 @@ export async function onRequest(context) {
 
     const files = await listRes.json();
 
-    // 2. 根据 slug 匹配文章文件
+    // 2. 使用原先的、已被验证成功的 slug 匹配逻辑
     const matched = files.find(f => {
       if (!f.name.endsWith('.md')) return false;
-      const clean = f.name.replace('.md', '');
-      return clean === slug;
+      // 先尝试去掉日期前缀后的名称匹配，再尝试完全匹配
+      const clean = f.name.replace('.md', '').replace(/^\d{4}-\d{2}-\d{2}-/, '');
+      return clean === slug || f.name.replace('.md', '') === slug;
     });
 
     if (!matched) {
@@ -51,7 +52,7 @@ export async function onRequest(context) {
     const raw = await fileRes.text();
     const meta = parseMeta(raw);
 
-    // 4. 检测访客语言偏好
+    // 4. 检测访客语言
     const cookieLang = context.request.headers.get('Cookie')?.match(/elvonis_lang=([^;]+)/)?.[1];
     const acceptLang = context.request.headers.get('Accept-Language') || '';
     const browserLang = acceptLang.includes('zh') ? 'zh' : 'en';
@@ -69,8 +70,7 @@ export async function onRequest(context) {
 function parseMeta(raw) {
   const lines = raw.split('\n');
   let frontmatterEnd = -1;
-
-  // 寻找 frontmatter 结束位置（第二个 ---）
+  // 寻找第二个 --- 作为 frontmatter 结束标志
   let dashes = 0;
   for (let i = 0; i < lines.length; i++) {
     if (lines[i].trim() === '---') {
@@ -87,7 +87,7 @@ function parseMeta(raw) {
   const frontmatterLines = lines.slice(1, frontmatterEnd);
   const bodyRaw = lines.slice(frontmatterEnd + 1).join('\n').trim();
 
-  // 用 <!-- ZH --> 分隔中英文正文
+  // 用 <!-- ZH --> 分隔英中正文
   const zhSplit = bodyRaw.indexOf('<!-- ZH -->');
   const _body_en = zhSplit > -1 ? bodyRaw.slice(0, zhSplit).trim() : bodyRaw;
   const _body_zh = zhSplit > -1 ? bodyRaw.slice(zhSplit + 11).trim() : '';
