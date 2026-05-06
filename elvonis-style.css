@@ -895,3 +895,14 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
 html[lang="zh"] .eng-card-desc {
   max-width: none;
 }
+/* ── 手机端禁用 Hero 视频，用静态图替代 ── */
+@media (max-width: 768px) {
+  .hero-section video {
+    display: none;
+  }
+  .hero-section {
+    background-image: url('images/hero-fallback.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
