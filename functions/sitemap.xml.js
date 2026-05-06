@@ -1,8 +1,6 @@
 export async function onRequest(context) {
-  // 从环境变量获取当前部署的域名
-  const domain = context.env.DOMAIN || 'https://elvonis.com';
+  const domain = 'https://elvonis.com';
 
-  // 固定页面列表（手动维护一次，以后不用动）
   const staticPages = [
     { loc: '/', priority: '1.0', changefreq: 'weekly' },
     { loc: '/products.html', priority: '0.9', changefreq: 'weekly' },
@@ -13,10 +11,9 @@ export async function onRequest(context) {
     { loc: '/distributor.html', priority: '0.8', changefreq: 'monthly' },
     { loc: '/about-partners.html', priority: '0.7', changefreq: 'monthly' },
     { loc: '/contact.html', priority: '0.6', changefreq: 'yearly' },
-    { loc: '/blog.html', priority: '0.8', changefreq: 'weekly' },
+    { loc: '/blog.html', priority: '0.8', changefreq: 'weekly' }
   ];
 
-  // 从 blog-index.json 获取博客文章列表
   let blogPosts = [];
   try {
     const response = await fetch(`${domain}/blog-index.json`);
@@ -24,28 +21,31 @@ export async function onRequest(context) {
       blogPosts = await response.json();
     }
   } catch (e) {
-    // blog-index.json 不存在或读取失败，跳过
+    // 忽略
   }
 
-  // 生成 XML
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+  const today = new Date().toISOString().split('T')[0];
 
   // 固定页面
   for (const page of staticPages) {
     xml += '  <url>\n';
     xml += `    <loc>${domain}${page.loc}</loc>\n`;
+    xml += `    <lastmod>${today}</lastmod>\n`;
     xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
     xml += `    <priority>${page.priority}</priority>\n`;
     xml += '  </url>\n';
   }
 
-  // 博客文章（动态部分）
+  // 博客文章（对应 functions/post/[[slug]].js）
   if (blogPosts && blogPosts.length > 0) {
-    const today = new Date().toISOString().split('T')[0];
     for (const post of blogPosts) {
+      const slug = post.slug || '';
+      if (!slug) continue;
       xml += '  <url>\n';
-      xml += `    <loc>${domain}/blog/${post.slug || post.id}</loc>\n`;
+      xml += `    <loc>${domain}/post/${slug}</loc>\n`;
       xml += `    <lastmod>${post.date || today}</lastmod>\n`;
       xml += '    <changefreq>monthly</changefreq>\n';
       xml += '    <priority>0.6</priority>\n';
@@ -58,7 +58,7 @@ export async function onRequest(context) {
   return new Response(xml, {
     headers: {
       'Content-Type': 'application/xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600',
-    },
+      'Cache-Control': 'public, max-age=3600'
+    }
   });
 }
