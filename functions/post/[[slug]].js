@@ -6,11 +6,12 @@ export async function onRequest(context) {
   }
 
   const slug = params.slug.join('/');
-  const owner = 'alanzhangyihong';
-  const repo = 'elvonis';
 
   try {
-    // 1. 列出 _posts 目录下所有文章
+    const owner = 'alanzhangyihong';
+    const repo = 'elvonis';
+
+    // 1. 获取 _posts 目录文件列表
     const listRes = await fetch(
       `https://api.github.com/repos/${owner}/${repo}/contents/_posts`,
       {
@@ -28,11 +29,11 @@ export async function onRequest(context) {
 
     const files = await listRes.json();
 
-    // 2. 通过 slug 匹配文章文件
+    // 2. 根据 slug 匹配文章文件
     const matched = files.find(f => {
       if (!f.name.endsWith('.md')) return false;
-      const cleanSlug = f.name.replace(/\.md$/, '');
-      return cleanSlug === slug || cleanSlug.includes(slug) || slug.includes(cleanSlug);
+      const clean = f.name.replace('.md', '');
+      return clean === slug;
     });
 
     if (!matched) {
@@ -50,7 +51,7 @@ export async function onRequest(context) {
     const raw = await fileRes.text();
     const meta = parseMeta(raw);
 
-    // 4. 检测访客语言偏好（优先级：Cookie > 浏览器语言 > 英文默认）
+    // 4. 检测访客语言偏好
     const cookieLang = context.request.headers.get('Cookie')?.match(/elvonis_lang=([^;]+)/)?.[1];
     const acceptLang = context.request.headers.get('Accept-Language') || '';
     const browserLang = acceptLang.includes('zh') ? 'zh' : 'en';
@@ -69,11 +70,15 @@ function parseMeta(raw) {
   const lines = raw.split('\n');
   let frontmatterEnd = -1;
 
+  // 寻找 frontmatter 结束位置（第二个 ---）
+  let dashes = 0;
   for (let i = 0; i < lines.length; i++) {
-    if (i === 0 && lines[i].trim() === '---') continue;
-    if (i > 0 && lines[i].trim() === '---') {
-      frontmatterEnd = i;
-      break;
+    if (lines[i].trim() === '---') {
+      dashes++;
+      if (dashes === 2) {
+        frontmatterEnd = i;
+        break;
+      }
     }
   }
 
@@ -82,7 +87,7 @@ function parseMeta(raw) {
   const frontmatterLines = lines.slice(1, frontmatterEnd);
   const bodyRaw = lines.slice(frontmatterEnd + 1).join('\n').trim();
 
-  // 用 <!-- ZH --> 分隔英中正文
+  // 用 <!-- ZH --> 分隔中英文正文
   const zhSplit = bodyRaw.indexOf('<!-- ZH -->');
   const _body_en = zhSplit > -1 ? bodyRaw.slice(0, zhSplit).trim() : bodyRaw;
   const _body_zh = zhSplit > -1 ? bodyRaw.slice(zhSplit + 11).trim() : '';
@@ -308,6 +313,20 @@ function buildPage(meta, lang) {
     var c = document.getElementById('nav-cta-desktop');
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
+
+    // 根据页面 lang 属性初始化语言显示
+    var htmlEl = document.documentElement;
+    var initLang = htmlEl.getAttribute('lang') || 'en';
+    var enEls = document.querySelectorAll('.lang-en');
+    var zhEls = document.querySelectorAll('.lang-zh');
+    
+    if (initLang === 'zh') {
+      enEls.forEach(function(el) { el.style.display = 'none'; });
+      zhEls.forEach(function(el) { el.style.display = ''; });
+    } else {
+      enEls.forEach(function(el) { el.style.display = ''; });
+      zhEls.forEach(function(el) { el.style.display = 'none'; });
+    }
   })();
 </script>
 </body>
