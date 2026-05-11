@@ -14,23 +14,23 @@
 /* ── VARIABLES ─────────────────────────────────────────────── */
 :root {
   --navy:       #1a2a3a;
-  --navy-lt:    #223347;
-  --navy-dk:    #0f1b27;
-  --blue:       #2563eb;   /* accent / CTA hover */
-  --blue-lt:    #3b82f6;
-  --gold:       #c8a06e;
-  --gold-lt:    #dbb98a;
+  --navy-lt:    #1a2a3a;
+  --navy-dk:    #1a2a3a;
+  --blue:       #3a6ea8;   /* accent / CTA hover */
+  --blue-lt:    #3a6ea8;
+  --gold:       #3a6ea8;
+  --gold-lt:    #3a6ea8;
   --white:      #ffffff;
-  --off-white:  #f8f9fb;
-  --gray-50:    #f9fafb;
-  --gray-100:   #f3f4f6;
-  --gray-200:   #e5e7eb;
-  --gray-400:   #9ca3af;
-  --gray-500:   #6b7280;
-  --gray-600:   #4b5563;
-  --gray-700:   #374151;
-  --gray-900:   #111827;
-  --green:      #16a34a;
+  --off-white:  #f4f6f9;
+  --gray-50:    #f4f6f9;
+  --gray-100:   #e2eaf0;
+  --gray-200:   #e2eaf0;
+  --gray-400:   #4a6275;
+  --gray-500:   #4a6275;
+  --gray-600:   #4a6275;
+  --gray-700:   #1a2a3a;
+  --gray-900:   #1a2a3a;
+  --green:      #3a6ea8;
   --wa-green:   #25d366;
 
   /* Typography scale */
@@ -713,7 +713,7 @@ html[lang="zh"] .btn {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  background: linear-gradient(135deg, var(--navy-dk) 0%, var(--navy) 100%);
+  background: #1a2a3a;
 }
 /* 🔧 视觉降噪：占位图标统一为品牌深海军蓝 */
 .img-placeholder svg { color: #1a2a3a !important; opacity: 0.3; }
