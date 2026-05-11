@@ -134,6 +134,9 @@
   <video autoplay loop muted playsinline poster="images/hero-fallback.jpg">
   <source src="videos/hero-factory.webm" type="video/webm">
   <source src="videos/hero-factory.mp4" type="video/mp4">
+  <section class="hero-section">
+  <link rel="preload" as="image" href="images/hero-fallback.jpg" media="(max-width: 768px)">
+  <video autoplay loop muted playsinline poster="images/hero-fallback.jpg">
 </video>
   <div class="hero-content">
     <h1 class="hero-title">
@@ -261,7 +264,7 @@
           <span style="color:#3a6ea8;font-size:1rem;flex-shrink:0;">→</span>
           <div>
             <p style="font-size:0.875rem;font-weight:600;color:#fff;margin-bottom:0.25rem;"><span class="lang-en">Managed supply chain</span><span class="lang-zh">被管理的供应链</span></p>
-            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">very batch, same spec. Verified.</span><span class="lang-zh">每批次规格一致，可验证。</span></p>
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.55);"><span class="lang-en">Every batch, same spec. Verified.</span><span class="lang-zh">每批次规格一致，可验证。</span></p>
           </div>
         </div>
       </div>
@@ -341,7 +344,7 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;">
       <a href="product-detail-ev-v100p-40.html" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <img src="images/ev-v100p-40-main.jpg" alt="EV-V100P-40 Industrial Vacuum" style="width:100%;height:100%;object-fit:cover;"/>
+    <img src="images/ev-v100p-40-main.jpg" alt="EV-V100P-40 Industrial Vacuum" width="600" height="338" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">HEPA H13 / H14</span><span class="lang-zh">HEPA H13 / H14</span></p>
@@ -352,7 +355,7 @@
 </a>
       <a href="product-detail-ev-s56-60t.html" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <img src="images/ev-s56-60t-main.jpg" alt="EV-S56-60T Walk-Behind Scrubber" style="width:100%;height:100%;object-fit:cover;"/>
+    <img src="images/ev-s56-60t-main.jpg" alt="EV-S56-60T Walk-Behind Scrubber" width="600" height="338" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">45 – 85 cm Width</span><span class="lang-zh">清洁宽度 45 – 85 cm</span></p>
@@ -363,7 +366,7 @@
 </a>
       <a href="product-detail-ev-d17-175.html" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <img src="images/ev-d17-175-main.jpg" alt="EV-D17-175 Single-Disc Machine" style="width:100%;height:100%;object-fit:cover;"/>
+    <img src="images/ev-d17-175-main.jpg" alt="EV-D17-175 Single-Disc Machine" width="600" height="338" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">150 – 1,500 RPM</span><span class="lang-zh">150 – 1,500 RPM</span></p>
@@ -374,7 +377,7 @@
 </a>
       <a href="products.html#parts" class="product-card reveal" style="text-decoration:none;">
   <div class="product-card-img">
-    <img src="images/parts-brushes.jpg" alt="Parts &amp; Consumables" style="width:100%;height:100%;object-fit:cover;"/>
+    <img src="images/parts-brushes.jpg" alt="Parts &amp; Consumables" width="600" height="338" loading="lazy" style="width:100%;height:100%;object-fit:cover;"/>
   </div>
   <div class="product-card-body">
     <p class="product-card-cat"><span class="lang-en">24-hr Global Ship</span><span class="lang-zh">24小时全球发货</span></p>
@@ -503,7 +506,7 @@
   </a>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="elvonis-core.js"></script>
+<script src="elvonis-core.js" defer></script>
 <script>
   (function() {
     var p = document.getElementById('lang-pills-desktop');
