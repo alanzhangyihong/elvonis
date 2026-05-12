@@ -596,7 +596,7 @@ html[lang="zh"] .page-hero .eyebrow {
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #6b7280; /* 原 var(--blue) */
+  color: #4a6275;
   display: block;
   margin-bottom: 0.75rem;
 }
@@ -610,6 +610,7 @@ html[lang="zh"] .section-label {
   font-weight: 800;
   color: var(--navy);
   line-height: 1.15;
+  text-align: center;
 }
 .section-sub {
   font-size: var(--text-lg);
@@ -617,6 +618,9 @@ html[lang="zh"] .section-label {
   color: var(--gray-500);
   line-height: 1.75;
   max-width: 38rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── BUTTONS ─────────────────────────────────────────────── */
@@ -727,7 +731,7 @@ html[lang="zh"] .btn {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #6b7280; /* 原 var(--blue) */
+  color: #4a6275;
   margin-bottom: 0.5rem;
 }
 html[lang="zh"] .product-card-cat {
@@ -905,4 +909,43 @@ html[lang="zh"] .eng-card-desc {
     background-size: cover;
     background-position: center;
   }
+}
+/* ── OEM STRIP — light background override ── */
+.oem-strip {
+  background: #F4F6F9 !important;
+}
+.oem-strip .oem-strip-bg {
+  display: none;
+}
+.oem-strip .section-heading {
+  color: #1a2a3a;
+}
+.oem-strip p {
+  color: #4a6275 !important;
+}
+.oem-strip .eng-card-title {
+  color: #1a2a3a;
+}
+.oem-strip .eng-card-desc {
+  color: #4a6275;
+}
+.oem-strip .eng-card {
+  border-left-color: #3a6ea8;
+}
+.oem-strip .btn-white {
+  background: #1a2a3a;
+  color: #ffffff;
+  border-color: #1a2a3a;
+}
+.oem-strip .btn-white:hover {
+  background: #3a6ea8;
+  border-color: #3a6ea8;
+}
+.oem-strip .btn-outline-white {
+  color: #1a2a3a;
+  border-color: #1a2a3a;
+}
+.oem-strip .btn-outline-white:hover {
+  background: #1a2a3a;
+  color: #ffffff;
 }
