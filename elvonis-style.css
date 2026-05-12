@@ -323,7 +323,7 @@ html[lang="zh"] .nav-link-dropdown {
 .site-footer {
   background: var(--navy);
   color: rgba(255,255,255,0.65);
-  border-top: 4px solid var(--blue);
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 .footer-inner {
   max-width: 80rem;
