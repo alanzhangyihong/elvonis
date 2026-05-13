@@ -320,9 +320,9 @@
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
     var g = document.querySelector('.oem-grid');
-    function setGrid() { if (!g) return; g.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr'; }
-    setGrid();
-    window.addEventListener('resize', setGrid);
+function setGrid() { if (!g) return; g.style.gridTemplateColumns = '1fr'; }
+setGrid();
+window.addEventListener('resize', setGrid);
   })();
 
   (function() {
