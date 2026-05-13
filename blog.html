@@ -106,8 +106,8 @@
       <div>
         <a href="index.html" class="footer-logo">ELVONIS</a>
         <p class="footer-tagline">
-          <span class="lang-en">We define what goes inside the machine — not just which factory makes it.</span>
-          <span class="lang-zh">我们决定机器内部装什么，而不只是选哪家工厂来做。</span>
+          <span class="lang-en">Specification-Driven Equipment Partner. We define what goes inside the machine — not just which factory makes it.</span>
+          <span class="lang-zh">规格驱动型设备合作伙伴。我们决定机器内部装什么，而不只是选哪家工厂来做。</span>
         </p>
         <div class="cert-pills"><span class="cert-pill">ISO 9001</span><span class="cert-pill">CE</span><span class="cert-pill">RoHS</span></div>
         <div class="social-icons">
@@ -137,8 +137,8 @@
       <div>
         <p class="footer-col-title"><span class="lang-en">Partner Intelligence</span><span class="lang-zh">获取合作伙伴简报</span></p>
         <p style="font-size:0.8125rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;line-height:1.65;">
-          <span class="lang-en">Specification guides and procurement frameworks from our engineering team.</span>
-          <span class="lang-zh">获取工程团队发布的规格指南与采购框架。</span>
+          <span class="lang-en">Receive specification guides, maintenance checklists and procurement frameworks from the ELVONIS engineering team.</span>
+          <span class="lang-zh">获取 ELVONIS 工程团队发布的设备规格指南、维护清单与采购决策框架。</span>
         </p>
         <form action="https://formspree.io/f/xlgpzqpq" method="POST" class="footer-email-form">
           <input type="email" name="_replyto" class="footer-email-input" placeholder="Work email…" required/>
@@ -165,7 +165,7 @@
   </a>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="elvonis-core.js" defer></script>
+<script src="elvonis-core.js"></script>
 <script>
   (function() {
     var p = document.getElementById('lang-pills-desktop');
@@ -173,9 +173,9 @@
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
     var g = document.querySelector('.oem-grid');
-function setGrid() { if (!g) return; g.style.gridTemplateColumns = '1fr'; }
-setGrid();
-window.addEventListener('resize', setGrid);
+    function setGrid() { if (!g) return; g.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr'; }
+    setGrid();
+    window.addEventListener('resize', setGrid);
   })();
 
   (function() {
@@ -218,5 +218,40 @@ window.addEventListener('resize', setGrid);
     document.addEventListener('elvonis:langchange', function(e) { syncAllSelects(e.detail && e.detail.lang ? e.detail.lang : 'en'); });
   })();
 </script>
+<script>
+(function() {
+  fetch('/api/posts')
+    .then(function(r) { return r.json(); })
+    .then(function(posts) {
+      var grid = document.querySelector('[data-blog-grid]');
+      if (!grid || !posts.length) return;
+
+      grid.innerHTML = posts.map(function(post) {
+        var url = post.url || ('/post/' + post.slug);
+        return '<a href="' + url + '" style="background:#f8f9fb;border:1px solid #e5e7eb;padding:1.75rem;text-decoration:none;display:block;transition:box-shadow 0.25s;" onmouseenter="this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.08)\'" onmouseleave="this.style.boxShadow=\'\'">' +
+          '<span style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#3a6ea8;display:block;margin-bottom:0.75rem;">' +
+            '<span class="lang-en">' + (post.category_en || '') + '</span>' +
+            '<span class="lang-zh">' + (post.category_zh || '') + '</span>' +
+          '</span>' +
+          '<h3 style="font-size:1.0625rem;font-weight:700;color:#1a2a3a;margin-bottom:0.75rem;line-height:1.35;">' +
+            '<span class="lang-en">' + (post.title_en || '') + '</span>' +
+            '<span class="lang-zh">' + (post.title_zh || '') + '</span>' +
+          '</h3>' +
+          '<p style="font-size:0.8125rem;color:#6b7280;line-height:1.7;margin-bottom:1.25rem;">' +
+            '<span class="lang-en">' + (post.excerpt_en || '') + '</span>' +
+            '<span class="lang-zh">' + (post.excerpt_zh || '') + '</span>' +
+          '</p>' +
+          '<span style="font-size:0.75rem;font-weight:700;color:#1a2a3a;border-bottom:1px solid #1a2a3a;padding-bottom:1px;">' +
+            '<span class="lang-en">Read →</span>' +
+            '<span class="lang-zh">阅读 →</span>' +
+          '</span>' +
+        '</a>';
+      }).join('');
+    })
+    .catch(function(err) {
+      console.log('Blog API error:', err);
+    });
+})();
+</script> 
 </body>
 </html>
