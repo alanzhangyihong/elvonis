@@ -548,7 +548,7 @@ html[lang="zh"] .trust-item {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(37,99,235,0.12) 0%, transparent 70%);
+  background: radial-gradient(ellipse 80% 60% at 65% 40%, rgba(58,110,168,0.12) 0%, transparent 70%);
 }
 .page-hero-inner {
   position: relative;
@@ -791,8 +791,8 @@ html[lang="zh"] .product-card-arrow {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: rgba(37,99,235,0.08);
-  border: 1px solid rgba(37,99,235,0.15);
+  background: rgba(58,110,168,0.08);
+  border: 1px solid rgba(58,110,168,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -883,9 +883,9 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
 }
 /* 🔧 视觉降噪：徽章文字颜色从蓝色改为蓝灰 */
 .badge-blue {
-  background: rgba(37,99,235,0.1);
+  background: rgba(58,110,168,0.1);
   color: #6b7280; /* 原 var(--blue) */
-  border: 1px solid rgba(37,99,235,0.2);
+  border: 1px solid rgba(58,110,168,0.2);
 }
 .badge-navy {
   background: rgba(26,42,58,0.08);
@@ -949,4 +949,8 @@ html[lang="zh"] .eng-card-desc {
 .oem-strip .btn-outline-white:hover {
   background: #1a2a3a;
   color: #ffffff;
+}
+.distributor-strip .dist-point,
+.distributor-strip .dist-point span {
+  color: #1a2a3a !important;
 }
