@@ -582,6 +582,7 @@ html[lang="zh"] .page-hero .eyebrow {
   line-height: 1.7;
   max-width: 36rem;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* ── SECTION UTILITY ─────────────────────────────────────── */
