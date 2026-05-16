@@ -36,11 +36,11 @@
     .app-card { background: #fff; border: 1px solid #e5e7eb; padding: 1.75rem; }
     .app-card h3 { font-size: 1rem; font-weight: 800; color: #1a2a3a; margin-bottom: 0.5rem; }
     .app-card p { font-size: 0.8125rem; color: #4a6275; }
-    .risk-strip { background: #1a2a3a; border: 1px solid rgba(255,255,255,0.08); padding: 2.5rem; text-align: center; }
-    .risk-strip h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 1rem; }
+    .risk-strip { background: #f4f6f9; border: 1px solid #e5e7eb; padding: 2.5rem; text-align: center; }
+    .risk-strip h2 { color: #1a2a3a; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; margin-bottom: 1rem; }
     .risk-strip .risk-row { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 1.5rem; }
-    .risk-strip .risk-point { font-size: 0.875rem; color: rgba(255,255,255,0.65); line-height: 1.6; max-width: 16rem; }
-    .risk-strip .risk-point strong { color: var(--gold-accent); display: block; margin-bottom: 0.25rem; }
+    .risk-strip .risk-point { font-size: 0.875rem; color: #4a6275; line-height: 1.6; max-width: 16rem; }
+    .risk-strip .risk-point strong { color: #1a2a3a; display: block; margin-bottom: 0.25rem; }
     .distributor-strip { background: #f8f9fb; border: 1px solid #e5e7eb; padding: 2.5rem; text-align: center; }
     .distributor-strip h2 { font-size: 1.5rem; font-weight: 800; color: #1a2a3a; margin-bottom: 1rem; }
     .distributor-strip .dist-row { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 1.25rem; }
@@ -232,14 +232,13 @@
 <section class="section" style="background:#fff;">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem;" class="reveal">
-      <span class="section-label"><span class="lang-en">Application Fit</span><span class="lang-zh">适用场景</span></span>
       <h2 class="section-heading"><span class="lang-en">Where the <span data-product-model>EV-V100P-40</span> Fits</span><span class="lang-zh"><span data-product-model>EV-V100P-40</span> 适用场景</span></h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr;gap:1.25rem;" class="app-grid reveal">
-      <div class="app-card"><h3><span class="lang-en">Heavy Manufacturing</span><span class="lang-zh">重型制造</span></h3><p><span class="lang-en">Continuous dust from metalworking, welding, and grinding — cleaned without stopping the line.</span><span class="lang-zh">金属加工、焊接与研磨产生的持续粉尘——无需停线即可清洁。</span></p></div>
-      <div class="app-card"><h3><span class="lang-en">Chemical & Pharmaceutical</span><span class="lang-zh">化工与制药</span></h3><p><span class="lang-en">Fine dust control with high filtration standards for compliance-sensitive environments.</span><span class="lang-zh">细粉尘控制满足合规敏感环境的高过滤标准。</span></p></div>
-      <div class="app-card"><h3><span class="lang-en">Large Warehouses</span><span class="lang-zh">大型仓库</span></h3><p><span class="lang-en">100 L tank for extended operation. Consistent uptime without proprietary parts.</span><span class="lang-zh">100升大容量桶体，超长续航作业。无专属配件，稳定运行。</span></p></div>
-      <div class="app-card"><h3><span class="lang-en">Foundries & High-Temp</span><span class="lang-zh">铸造与高温车间</span></h3><p><span class="lang-en">Handles high-temperature dust and abrasive particles. Built for extreme environments.</span><span class="lang-zh">处理高温粉尘与研磨颗粒，专为极端环境打造。</span></p></div>
+      <div class="app-card"><h3><span class="lang-en">Heavy Manufacturing</span><span class="lang-zh">重型制造</span></h3><p style="color:#4a6275 !important;"><span class="lang-en">Metalworking, welding, and grinding dust — cleaned without stopping the line.</span><span class="lang-zh">金属加工、焊接与研磨粉尘——无需停线即可清洁。</span></p></div>
+      <div class="app-card"><h3><span class="lang-en">Chemical & Pharmaceutical</span><span class="lang-zh">化工与制药</span></h3><p style="color:#4a6275 !important;"><span class="lang-en">Fine dust control for compliance-sensitive environments.</span><span class="lang-zh">满足合规敏感环境的细粉尘控制。</span></p></div>
+      <div class="app-card"><h3><span class="lang-en">Large Warehouses</span><span class="lang-zh">大型仓库</span></h3><p style="color:#4a6275 !important;"><span class="lang-en">100 L tank for extended operation. No proprietary parts.</span><span class="lang-zh">100升桶体超长续航，无专属配件。</span></p></div>
+      <div class="app-card"><h3><span class="lang-en">Foundries & High-Temp</span><span class="lang-zh">铸造与高温车间</span></h3><p style="color:#4a6275 !important;"><span class="lang-en">High-temperature dust and abrasive particles — built for extreme environments.</span><span class="lang-zh">处理高温粉尘与研磨颗粒，专为极端环境打造。</span></p></div>
     </div>
   </div>
 </section>
@@ -248,7 +247,6 @@
 <section class="section" style="background:#f8f9fb;">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem;" class="reveal">
-      <span class="section-label"><span class="lang-en">Specifications</span><span class="lang-zh">技术规格</span></span>
       <h2 class="section-heading"><span class="lang-en">Specifications That Matter</span><span class="lang-zh">关键规格参数</span></h2>
     </div>
           <div class="reveal" style="max-width:42rem;margin:0 auto;">
@@ -312,7 +310,7 @@
   <div class="container" style="text-align:center;position:relative;z-index:1;">
     <div class="reveal">
       <h2 style="font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;color:#fff;margin-bottom:1rem;"><span class="lang-en">Start with One Unit. Test It. Then Scale.</span><span class="lang-zh">从一台试起，验证后规模化。</span></h2>
-      <p style="color:rgba(255,255,255,0.5);font-size:1rem;margin-bottom:2rem;max-width:36rem;margin-left:auto;margin-right:auto;"><span class="lang-en">Our engineering team reviews every inquiry — and tells you exactly what goes inside the machine you're considering.</span><span class="lang-zh">我们的工程团队逐条审阅每一份询盘，并向您完整说明目标机型的内部零部件配置。</span></p>
+      <p style="color:rgba(255,255,255,0.5);font-size:1rem;margin-bottom:2rem;max-width:36rem;margin-left:auto;margin-right:auto;"><span class="lang-en">Our engineering team reviews every inquiry and tells you exactly what's inside.</span><span class="lang-zh">我们的工程团队审核每一份询盘，并告知您机器的内部配置。</span></p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
         <a href="contact.html" class="btn btn-white"><span class="lang-en">Request Quote</span><span class="lang-zh">申请报价</span></a>
         <a href="products.html" class="btn btn-outline-white"><span class="lang-en">Get Full Catalog</span><span class="lang-zh">查看完整产品目录</span></a>
