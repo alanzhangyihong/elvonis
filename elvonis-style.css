@@ -528,7 +528,7 @@ html[lang="zh"] .trust-item {
   letter-spacing: 0.05em;
   font-size: var(--text-sm);
 }
-.trust-item svg { width: 1rem; height: 1rem; color: var(--green); }
+.trust-item svg { width: 1rem; height: 1rem; color: #1a2a3a; }
 .trust-divider {
   font-size: var(--text-xs);
   font-weight: 700;
