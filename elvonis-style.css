@@ -954,3 +954,8 @@ html[lang="zh"] .eng-card-desc {
 .distributor-strip .dist-point span {
   color: #1a2a3a !important;
 }
+.risk-strip { background: #f4f6f9; border: 1px solid #e5e7eb; padding: 2.5rem; text-align: center; }
+.risk-strip h2 { color: #1a2a3a; font-size: clamp(1.5rem,3vw,2rem); font-weight: 800; margin-bottom: 1rem; }
+.risk-strip .risk-row { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 1.5rem; }
+.risk-strip .risk-point { font-size: 0.875rem; color: #4a6275 !important; line-height: 1.6; max-width: 16rem; }
+.risk-strip .risk-point strong { color: #1a2a3a !important; display: block; margin-bottom: 0.25rem; }
