@@ -228,7 +228,7 @@
 
       grid.innerHTML = posts.map(function(post) {
         var url = post.url || ('/post/' + post.slug);
-        return '<a href="' + url + '" style="background:#f8f9fb;border:1px solid #e5e7eb;padding:1.75rem;text-decoration:none;display:block;transition:box-shadow 0.25s;" onmouseenter="this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.08)\'" onmouseleave="this.style.boxShadow=\'\'">' +
+        return '<a href="' + url + '" style="background:#f4f6f9;border:1px solid #e2eaf0;padding:1.75rem;text-decoration:none;display:block;transition:box-shadow 0.25s;" onmouseenter="this.style.boxShadow=\'0 8px 32px rgba(0,0,0,0.08)\'" onmouseleave="this.style.boxShadow=\'\'">' +
           '<span style="font-size:0.625rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#3a6ea8;display:block;margin-bottom:0.75rem;">' +
             '<span class="lang-en">' + (post.category_en || '') + '</span>' +
             '<span class="lang-zh">' + (post.category_zh || '') + '</span>' +
@@ -237,7 +237,7 @@
             '<span class="lang-en">' + (post.title_en || '') + '</span>' +
             '<span class="lang-zh">' + (post.title_zh || '') + '</span>' +
           '</h3>' +
-          '<p style="font-size:0.8125rem;color:#6b7280;line-height:1.7;margin-bottom:1.25rem;">' +
+          '<p style="font-size:0.8125rem;color:#4a6275;line-height:1.7;margin-bottom:1.25rem;">' +
             '<span class="lang-en">' + (post.excerpt_en || '') + '</span>' +
             '<span class="lang-zh">' + (post.excerpt_zh || '') + '</span>' +
           '</p>' +
