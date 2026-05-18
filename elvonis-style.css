@@ -678,8 +678,8 @@ html[lang="zh"] .btn {
   border-color: #1a2a3a;
 }
 .btn-blue:hover {
-  background: #1a2a3a;
-  border-color: #1a2a3a;
+  background: #3a6ea8;
+  border-color: #3a6ea8;
 }
 
 /* ── PRODUCT CARD ────────────────────────────────────────── */
@@ -721,8 +721,8 @@ html[lang="zh"] .btn {
   background: #1a2a3a;
 }
 /* 🔧 视觉降噪：占位图标统一为品牌深海军蓝 */
-.img-placeholder svg { color: #1a2a3a !important; opacity: 0.3; }
-.img-placeholder span { color: #1a2a3a !important; }
+.img-placeholder svg { color: #ffffff !important; opacity: 0.3; }
+.img-placeholder span { color: #ffffff !important; }
 
 .product-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
 
@@ -870,7 +870,7 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
 
 /* ── UTILITY ─────────────────────────────────────────────── */
 /* 🔧 视觉降噪：分隔线颜色从蓝色改为蓝灰 */
-.divider { width: 2.5rem; height: 2px; background: #6b7280; margin: 1rem 0; }
+.divider { width: 2.5rem; height: 2px; background: #4a6275; margin: 1rem 0; }
 .badge {
   display: inline-flex;
   align-items: center;
@@ -884,7 +884,7 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
 /* 🔧 视觉降噪：徽章文字颜色从蓝色改为蓝灰 */
 .badge-blue {
   background: rgba(58,110,168,0.1);
-  color: #6b7280; /* 原 var(--blue) */
+  color: #3a6ea8; /* 原 var(--blue) */
   border: 1px solid rgba(58,110,168,0.2);
 }
 .badge-navy {
@@ -893,9 +893,9 @@ html[lang="zh"] .stat-label { text-transform: none; letter-spacing: 0.05em; font
   border: 1px solid rgba(26,42,58,0.15);
 }
 .badge-green {
-  background: rgba(22,163,74,0.08);
+  background: rgba(58,110,168,0.08);
   color: var(--green);
-  border: 1px solid rgba(22,163,74,0.2);
+  border: 1px solid rgba(58,110,168,0.2);
 }
 html[lang="zh"] .eng-card-desc {
   max-width: none;
