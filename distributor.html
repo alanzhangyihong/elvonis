@@ -283,8 +283,7 @@
         <div style="background:#fff;border:1px solid #e2eaf0;padding:2rem;">
           <h3 style="font-size:1.125rem;font-weight:800;color:#1a2a3a;margin-bottom:0.5rem;"><span class="lang-en">Send Me the Kit</span><span class="lang-zh">发送资料包</span></h3>
           <p style="font-size:0.8125rem;color:#4a6275;margin-bottom:1.25rem;"><span class="lang-en">A lead engineer will review your request and respond within 12 hours.</span><span class="lang-zh">首席工程师审核后12小时内回复。</span></p>
-          <form action="https://formspree.io/f/xlgpzqpq" method="POST" style="display:flex;flex-direction:column;gap:0.875rem;">
-          <input type="hidden" name="_next" value="https://elvonis.com/thanks.html"/>
+          <form action="https://formspree.io/f/xlgpzqpq" method="POST" style="display:flex;flex-direction:column;gap:0.875rem;" onsubmit="setTimeout(function(){window.location='https://elvonis.com/thanks.html'},500);">
            <div class="form-group"><label class="form-label"><span class="lang-en">Full Name *</span><span class="lang-zh">姓名 *</span></label><input type="text" name="full_name" class="form-input" required/></div>
             <div class="form-group"><label class="form-label"><span class="lang-en">Work Email *</span><span class="lang-zh">工作邮箱 *</span></label><input type="email" name="_replyto" class="form-input" required/></div>
             <div class="form-group"><label class="form-label"><span class="lang-en">Company &amp; Country</span><span class="lang-zh">公司与国家</span></label><input type="text" name="company_country" class="form-input"/></div>
