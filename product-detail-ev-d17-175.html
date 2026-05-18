@@ -17,6 +17,11 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+.water-strip { background: #f4f6f9; border: 1px solid #e5e7eb; padding: 2.5rem; text-align: center; }
+.water-strip h2 { font-size: 1.5rem; font-weight: 800; color: #1a2a3a; margin-bottom: 1rem; }
+.water-strip .water-row { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 1.25rem; }
+.water-strip .water-point { font-size: 0.9375rem; color: #1a2a3a; font-weight: 600; max-width: 16rem; text-align: center; }
+.water-strip .water-point span { color: #1a2a3a; margin-right: 0.375rem; }
   <style>
     :root { --gold-accent: #3a6ea8; }
     @media(min-width:768px) {
@@ -224,13 +229,14 @@
 <!-- ⑥ PAD SYSTEM -->
 <section class="section" style="background:#fff;">
   <div class="container">
-    <div style="text-align:center;margin-bottom:3rem;" class="reveal">
+    <div class="water-strip reveal">
       <h2><span class="lang-en">Controlled Torque. Consistent Results.</span><span class="lang-zh">扭矩可控，结果一致</span></h2>
-<div class="water-row">
-  <div class="water-point"><span>◆</span> <span class="lang-en">All-steel planetary gear — torque stays stable under load</span><span class="lang-zh">全钢行星齿轮——负载下扭矩稳定</span></div>
-  <div class="water-point"><span>◆</span> <span class="lang-en">175 RPM — repeatable output on every pass</span><span class="lang-zh">175 RPM——每次作业输出一致</span></div>
-  <div class="water-point"><span>◆</span> <span class="lang-en">Mechanical relay control — no PCB to fail mid-job</span><span class="lang-zh">机械继电器控制——无PCB中途故障风险</span></div>
-</div>
+      <div class="water-row">
+        <div class="water-point"><span>◆</span> <span class="lang-en">All-steel planetary gear — torque stays stable under load</span><span class="lang-zh">全钢行星齿轮——负载下扭矩稳定</span></div>
+        <div class="water-point"><span>◆</span> <span class="lang-en">175 RPM — repeatable output on every pass</span><span class="lang-zh">175 RPM——每次作业输出一致</span></div>
+        <div class="water-point"><span>◆</span> <span class="lang-en">Mechanical relay control — no PCB to fail mid-job</span><span class="lang-zh">机械继电器控制——无PCB中途故障风险</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
