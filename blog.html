@@ -18,8 +18,10 @@
       Noto Sans SC       (ZH body — covers all CJK ideographs)
       DM Mono            (labels, monospace accents)
   -->
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="elvonis-style.css"/>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap" media="print" onload="this.media='all'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Noto+Sans+SC:wght@300;400;500;700;900&family=DM+Mono:wght@400;500&display=swap"/></noscript>
+  <link rel="stylesheet" href="/elvonis-style.css"/>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -65,7 +67,7 @@
   <nav>
     <a href="products.html"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a>
     <a href="solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a>
-    <a href="oem-factory.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a>
+    <a href="/about-partners.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a>
     <a href="blog.html"><span class="lang-en">Insights</span><span class="lang-zh">行业资讯</span></a>
     <a href="contact.html"><span class="lang-en">Technical Quote</span><span class="lang-zh">获取技术报价</span></a>
   </nav>
@@ -165,7 +167,7 @@
   </a>
 </div>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="elvonis-core.js"></script>
+<script src="/elvonis-core.js" defer></script>
 <script>
   (function() {
     var p = document.getElementById('lang-pills-desktop');
