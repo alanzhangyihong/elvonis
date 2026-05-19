@@ -74,7 +74,6 @@ function parseMeta(raw) {
   const frontmatterLines = lines.slice(1, frontmatterEnd);
   const bodyRaw = lines.slice(frontmatterEnd + 1).join('\n').trim();
 
-  // 用 <!-- ZH --> 分隔英中正文
   const zhSplit = bodyRaw.indexOf('<!-- ZH -->');
   const _body_en = zhSplit > -1 ? bodyRaw.slice(0, zhSplit).trim() : bodyRaw;
   const _body_zh = zhSplit > -1 ? bodyRaw.slice(zhSplit + 11).trim() : '';
@@ -119,7 +118,7 @@ function buildPage(meta) {
   const een = meta.excerpt_en || '';
   const ezh = meta.excerpt_zh || '';
   const ben = md(meta._body_en || '');
-const bzh = md(meta._body_zh || '');
+  const bzh = md(meta._body_zh || '');
 
   let date = '', datezh = '';
   if (meta.date) {
@@ -148,13 +147,13 @@ const bzh = md(meta._body_zh || '');
 <header id="main-nav">
   <div class="nav-inner">
     <a href="/index.html" class="nav-logo">ELVONIS</a>
-   <ul class="nav-links">
-  <li><a href="/products.html"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a></li>
-  <li><a href="/solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a></li>
-  <li><a href="/distributor.html"><span class="lang-en">Distributors</span><span class="lang-zh">经销商</span></a></li>
-  <li><a href="/about-partners.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a></li>
-  <li><a href="/blog.html" class="active"><span class="lang-en">Insights</span><span class="lang-zh">行业资讯</span></a></li>
-</ul>
+    <ul class="nav-links">
+      <li><a href="/products.html"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a></li>
+      <li><a href="/solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a></li>
+      <li><a href="/distributor.html"><span class="lang-en">Distributors</span><span class="lang-zh">经销商</span></a></li>
+      <li><a href="/about-partners.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a></li>
+      <li><a href="/blog.html" class="active"><span class="lang-en">Insights</span><span class="lang-zh">行业资讯</span></a></li>
+    </ul>
     <div style="display:flex;align-items:center;gap:0.75rem;">
       <div style="display:none;gap:0;" class="lang-pills-desktop" id="lang-pills-desktop">
         <button class="lang-pill lang-pill-inactive" data-lang="en">EN</button>
@@ -209,17 +208,17 @@ const bzh = md(meta._body_zh || '');
 
 <section class="section" style="background:#fff;">
   <div class="container" style="max-width:48rem;">
-    <p style="font-size:1.0625rem;color:#374151;line-height:1.8;margin-bottom:2rem;font-weight:500;border-left:3px solid #2563eb;padding-left:1.25rem;">
+    <p style="font-size:1.0625rem;color:#4a6275;line-height:1.8;margin-bottom:2rem;font-weight:500;border-left:3px solid #3a6ea8;padding-left:1.25rem;">
       <span class="lang-en">${een}</span>
       <span class="lang-zh">${ezh}</span>
     </p>
-    <div class="lang-en" style="font-size:0.9375rem;color:#374151;line-height:1.85;">
+    <div class="lang-en" style="font-size:0.9375rem;color:#4a6275;line-height:1.85;">
       ${ben}
     </div>
-    <div class="lang-zh" style="font-size:0.9375rem;color:#374151;line-height:1.85;display:none;">
+    <div class="lang-zh" style="font-size:0.9375rem;color:#4a6275;line-height:1.85;display:none;">
       ${bzh}
     </div>
-    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid #e5e7eb;">
+    <div style="margin-top:3rem;padding-top:2rem;border-top:1px solid #e2eaf0;">
       <a href="/blog.html" style="font-size:0.875rem;font-weight:700;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #1a2a3a;padding-bottom:2px;">
         <span class="lang-en">← Back to all articles</span>
         <span class="lang-zh">← 返回所有文章</span>
@@ -232,7 +231,7 @@ const bzh = md(meta._body_zh || '');
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="footer-logo">ELVONIS</a>
+        <a href="/index.html" class="footer-logo">ELVONIS</a>
         <p class="footer-tagline">
           <span class="lang-en">Specification-Driven Equipment Partner. We define what goes inside the machine — not just which factory makes it.</span>
           <span class="lang-zh">规格驱动型设备合作伙伴。我们决定机器内部装什么，而不只是选哪家工厂来做。</span>
@@ -246,20 +245,20 @@ const bzh = md(meta._body_zh || '');
       <div>
         <p class="footer-col-title"><span class="lang-en">Equipment</span><span class="lang-zh">设备中心</span></p>
         <ul class="footer-links">
-          <li><a href="products.html#vacuums"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></a></li>
-          <li><a href="products.html#singledisc"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机/抛光机</span></a></li>
-          <li><a href="products.html#scrubbers"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">手推式洗地机</span></a></li>
-          <li><a href="products.html#parts"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></a></li>
+          <li><a href="/products.html#vacuums"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></a></li>
+          <li><a href="/products.html#singledisc"><span class="lang-en">Single-Disc Machines</span><span class="lang-zh">单擦机/抛光机</span></a></li>
+          <li><a href="/products.html#scrubbers"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">手推式洗地机</span></a></li>
+          <li><a href="/products.html#parts"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></a></li>
         </ul>
       </div>
       <div>
-        <p class="footer-col-title"><span class="lang-en">Engineering & Support</span><span class="lang-zh">工程与技术支持</span></p>
+        <p class="footer-col-title"><span class="lang-en">Engineering &amp; Support</span><span class="lang-zh">工程与技术支持</span></p>
         <ul class="footer-links">
-          <li><a href="about-partners.html"><span class="lang-en">OEM / ODM Services</span><span class="lang-zh">贴牌代工服务</span></a></li>
-          <li><a href="distributor.html"><span class="lang-en">Distributor Application</span><span class="lang-zh">经销商申请</span></a></li>
-          <li><a href="solutions.html"><span class="lang-en">Industry Solutions</span><span class="lang-zh">行业解决方案</span></a></li>
-          <li><a href="blog.html"><span class="lang-en">Knowledge Base</span><span class="lang-zh">行业知识库</span></a></li>
-          <li><a href="contact.html"><span class="lang-en">Contact Engineering Team</span><span class="lang-zh">联系工程团队</span></a></li>
+          <li><a href="/about-partners.html"><span class="lang-en">OEM / ODM Services</span><span class="lang-zh">贴牌代工服务</span></a></li>
+          <li><a href="/distributor.html"><span class="lang-en">Distributor Application</span><span class="lang-zh">经销商申请</span></a></li>
+          <li><a href="/solutions.html"><span class="lang-en">Industry Solutions</span><span class="lang-zh">行业解决方案</span></a></li>
+          <li><a href="/blog.html"><span class="lang-en">Knowledge Base</span><span class="lang-zh">行业知识库</span></a></li>
+          <li><a href="/contact.html"><span class="lang-en">Contact Engineering Team</span><span class="lang-zh">联系工程团队</span></a></li>
         </ul>
       </div>
       <div>
@@ -281,73 +280,18 @@ const bzh = md(meta._body_zh || '');
     <div class="footer-bottom">
       <p>© 2026 ELVONIS. <span class="lang-en">All rights reserved.</span><span class="lang-zh">保留所有权利。</span></p>
       <div style="display:flex;gap:1.25rem;flex-wrap:wrap;">
-        <a href="about-partners.html"><span class="lang-en">Specification-Driven Equipment Partner</span><span class="lang-zh">规格驱动型设备合作伙伴</span></a>
+        <a href="/about-partners.html"><span class="lang-en">Specification-Driven Equipment Partner</span><span class="lang-zh">规格驱动型设备合作伙伴</span></a>
       </div>
     </div>
   </div>
 </footer>
+
 <div class="wa-float">
   <div class="wa-tooltip"><span class="lang-en">Direct WhatsApp Support</span><span class="lang-zh">WhatsApp 专线支持</span></div>
   <a href="https://wa.me/+8618057039893?text=Hi" class="wa-float-btn wa-link" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
 </div>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-<script src="elvonis-core.js"></script>
-<script>
-  (function() {
-    var p = document.getElementById('lang-pills-desktop');
-    var c = document.getElementById('nav-cta-desktop');
-    if (p) p.style.display = 'flex';
-    if (c) c.style.display = 'flex';
-    var g = document.querySelector('.oem-grid');
-    function setGrid() { if (!g) return; g.style.gridTemplateColumns = window.innerWidth >= 768 ? '1fr 1fr' : '1fr'; }
-    setGrid();
-    window.addEventListener('resize', setGrid);
-  })();
-
-  (function() {
-    var SELECTS = {
-      'sel-app': {
-        en: [{v:'factory',t:'Manufacturing (continuous dust / multi-shift operation)'},{v:'warehouse',t:'Warehouse / Logistics (large area / forklift traffic)'},{v:'retail',t:'Retail / Supermarket (open hours / low noise)'},{v:'hospital',t:'Healthcare / Hospital (strict hygiene / quiet)'},{v:'hotel',t:'Hotel / Hospitality (guest areas / appearance)'}],
-        zh: [{v:'factory',t:'工业制造（持续粉尘 / 多班运行）'},{v:'warehouse',t:'仓储 / 物流（大面积 / 叉车交通）'},{v:'retail',t:'零售 / 商超（营业时段 / 低噪音）'},{v:'hospital',t:'医疗机构 / 医院（严格卫生 / 静音）'},{v:'hotel',t:'酒店 / 餐饮（宾客区域 / 形象要求）'}]
-      },
-      'sel-size': {
-        en: [{v:'small',t:'Under 500 m² (Small)'},{v:'medium',t:'500 – 2,000 m² (Medium)'},{v:'large',t:'2,000 – 5,000 m² (Large)'},{v:'xlarge',t:'Over 5,000 m² (Industrial)'}],
-        zh: [{v:'small',t:'500 m² 以内（小型）'},{v:'medium',t:'500 – 2,000 m²（中型）'},{v:'large',t:'2,000 – 5,000 m²（大型）'},{v:'xlarge',t:'5,000 m² 以上（超大工业级）'}]
-      },
-      'sel-goal': {
-        en: [{v:'Grease',t:'Heavy Grease / Stain Removal'},{v:'Labor',t:'Reduce Labor Costs / Efficiency'},{v:'Hygiene',t:'Strict Hygiene / Low Noise'},{v:'Polish',t:'Floor Polish &amp; Stone Care'}],
-        zh: [{v:'Grease',t:'去除重度油污与顽固污渍'},{v:'Labor',t:'提升效率 / 降低人工成本'},{v:'Hygiene',t:'严苛卫生标准与静音要求'},{v:'Polish',t:'地面抛光与石材护理'}]
-      },
-      'sel-inquiry': {
-        en: [{v:'',t:'Select…'},{v:'quote',t:'Product Quote (Direct Purchase)'},{v:'tech',t:'Technical Specification'},{v:'dist',t:'Distributor Partnership'},{v:'oem',t:'OEM / ODM Manufacturing'},{v:'visit',t:'Factory Visit / Video Tour'},{v:'other',t:'Other'}],
-        zh: [{v:'',t:'请选择…'},{v:'quote',t:'产品采购报价'},{v:'tech',t:'技术规格咨询'},{v:'dist',t:'经销商合作申请'},{v:'oem',t:'OEM / ODM 代工合作'},{v:'visit',t:'工厂参观 / 视频参观'},{v:'other',t:'其他'}]
-      },
-      'sel-role': {
-        en: [{v:'dist',t:'Distributor / Reseller'},{v:'oem',t:'OEM Brand Owner'},{v:'fm',t:'End-User / Facility Manager'},{v:'pm',t:'Procurement Manager'},{v:'other',t:'Other'}],
-        zh: [{v:'dist',t:'经销商 / 分销商'},{v:'oem',t:'OEM 品牌主'},{v:'fm',t:'终端用户 / 设施管理者'},{v:'pm',t:'采购经理'},{v:'other',t:'其他'}]
-      }
-    };
-    function syncAllSelects(lang) {
-      var L = (lang === 'zh') ? 'zh' : 'en';
-      Object.keys(SELECTS).forEach(function(id) {
-        var el = document.getElementById(id);
-        if (!el) return;
-        var saved = el.value;
-        var opts = SELECTS[id][L];
-        el.innerHTML = '';
-        opts.forEach(function(o) { var opt = document.createElement('option'); opt.value = o.v; opt.textContent = o.t; el.appendChild(opt); });
-        if (saved) el.value = saved;
-      });
-    }
-    var initLang = document.documentElement.getAttribute('lang') || 'en';
-    syncAllSelects(initLang);
-    document.addEventListener('elvonis:langchange', function(e) { syncAllSelects(e.detail && e.detail.lang ? e.detail.lang : 'en'); });
-  })();
-</script>
-</body>
-</html>
 
 <script src="/elvonis-core.js"></script>
 <script>
@@ -357,7 +301,6 @@ const bzh = md(meta._body_zh || '');
     if (p) p.style.display = 'flex';
     if (c) c.style.display = 'flex';
 
-    // 语言切换处理
     function applyLang(lang) {
       var enEls = document.querySelectorAll('.lang-en');
       var zhEls = document.querySelectorAll('.lang-zh');
@@ -370,11 +313,9 @@ const bzh = md(meta._body_zh || '');
       }
     }
 
-    // 读取当前语言
     var savedLang = localStorage.getItem('elvonis_lang') || 'en';
     applyLang(savedLang);
 
-    // 监听语言切换事件
     document.addEventListener('elvonis:langchange', function(e) {
       var lang = e.detail && e.detail.lang ? e.detail.lang : 'en';
       applyLang(lang);
@@ -382,5 +323,5 @@ const bzh = md(meta._body_zh || '');
   })();
 </script>
 </body>
-</html>`;
+</html>\`;
 }
