@@ -323,5 +323,5 @@ function buildPage(meta) {
   })();
 </script>
 </body>
-</html>\`;
+</html>`;
 }
