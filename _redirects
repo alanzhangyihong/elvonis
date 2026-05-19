@@ -1,0 +1,14 @@
+# Force www canonical
+https://elvonis.com/* https://www.elvonis.com/:splat 301
+
+# Old product URLs from previous site version
+/product https://www.elvonis.com/products.html 301
+/product.html https://www.elvonis.com/products.html 301
+/products https://www.elvonis.com/products.html 301
+/products?cat=scrubber https://www.elvonis.com/products.html#scrubbers 301
+/products?cat=sweeper https://www.elvonis.com/products.html 301
+/products?cat=pressure https://www.elvonis.com/products.html 301
+/product-detail-ev-dv70.html https://www.elvonis.com/products.html 301
+/product-detail-ev-ws65.html https://www.elvonis.com/products.html 301
+/contact https://www.elvonis.com/contact.html 301
+/oem-factory.html https://www.elvonis.com/about-partners.html 301
