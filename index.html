@@ -89,6 +89,24 @@
       .product-card-body { padding: 1.25rem; }
     }
   </style>
+  <script>
+  if (window.innerWidth >= 768) {
+    document.addEventListener('DOMContentLoaded', function() {
+      var v = document.getElementById('hero-video');
+      if (v) {
+        var w = document.createElement('source');
+        w.src = 'videos/hero-factory.webm';
+        w.type = 'video/webm';
+        var m = document.createElement('source');
+        m.src = 'videos/hero-factory.mp4';
+        m.type = 'video/mp4';
+        v.appendChild(w);
+        v.appendChild(m);
+        v.load();
+      }
+    });
+  }
+</script>
 </head>
 <body style="padding-top:68px;">
 
@@ -134,9 +152,7 @@
 
 <!-- HERO -->
 <section class="hero-section">
-  <video autoplay loop muted playsinline poster="images/hero-fallback.jpg" preload="none">
-  <source src="videos/hero-factory.webm" type="video/webm">
-  <source src="videos/hero-factory.mp4" type="video/mp4">
+  <video autoplay loop muted playsinline poster="images/hero-fallback.jpg" preload="none" id="hero-video">
 </video>
   <div class="hero-content">
     <h1 class="hero-title">
