@@ -148,7 +148,15 @@ function buildPage(meta) {
   <div class="nav-inner">
     <a href="/index.html" class="nav-logo">ELVONIS</a>
     <ul class="nav-links">
-      <li><a href="/products.html"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a></li>
+     <li class="nav-item-dropdown">
+        <a href="products.html" class="nav-link-dropdown"><span class="lang-en">Products</span><span class="lang-zh">全线产品</span></a>
+        <ul class="nav-dropdown">
+          <li><a href="products.html#vacuums"><span class="lang-en">Industrial Vacuums</span><span class="lang-zh">工业吸尘器</span></a></li>
+          <li><a href="products.html#scrubbers"><span class="lang-en">Walk-Behind Scrubbers</span><span class="lang-zh">手推式洗地机</span></a></li>
+          <li><a href="products.html#singledisc"><span class="lang-en">Single Disc Machines</span><span class="lang-zh">单擦机/抛光机</span></a></li>
+          <li><a href="products.html#parts"><span class="lang-en">Parts &amp; Consumables</span><span class="lang-zh">配件与耗材</span></a></li>
+        </ul>
+      </li>
       <li><a href="/solutions.html"><span class="lang-en">Solutions</span><span class="lang-zh">行业方案</span></a></li>
       <li><a href="/distributor.html"><span class="lang-en">Distributors</span><span class="lang-zh">经销商</span></a></li>
       <li><a href="/about-partners.html"><span class="lang-en">About &amp; OEM</span><span class="lang-zh">关于与代工</span></a></li>
@@ -233,8 +241,8 @@ function buildPage(meta) {
       <div>
         <a href="/index.html" class="footer-logo">ELVONIS</a>
         <p class="footer-tagline">
-          <span class="lang-en">Specification-Driven Equipment Partner. We define what goes inside the machine — not just which factory makes it.</span>
-          <span class="lang-zh">规格驱动型设备合作伙伴。我们决定机器内部装什么，而不只是选哪家工厂来做。</span>
+          <span class="lang-en">We define what goes inside the machine — not just which factory makes it.</span>
+          <span class="lang-zh">我们决定机器内部装什么，而不只是选哪家工厂来做。</span>
         </p>
         <div class="cert-pills"><span class="cert-pill">ISO 9001</span><span class="cert-pill">CE</span><span class="cert-pill">RoHS</span></div>
         <div class="social-icons">
@@ -264,11 +272,11 @@ function buildPage(meta) {
       <div>
         <p class="footer-col-title"><span class="lang-en">Partner Intelligence</span><span class="lang-zh">获取合作伙伴简报</span></p>
         <p style="font-size:0.8125rem;color:rgba(255,255,255,0.45);margin-bottom:1rem;line-height:1.65;">
-          <span class="lang-en">Receive specification guides, maintenance checklists and procurement frameworks from the ELVONIS engineering team.</span>
-          <span class="lang-zh">获取 ELVONIS 工程团队发布的设备规格指南、维护清单与采购决策框架。</span>
+          <span class="lang-en">Specification guides and procurement frameworks from our engineering team.</span>
+          <span class="lang-zh">获取工程团队发布的规格指南与采购框架。</span>
         </p>
-        <form action="https://formspree.io/f/xlgpzqpq" method="POST" class="footer-email-form">
-          <input type="email" name="_replyto" class="footer-email-input" placeholder="Work email…" required/>
+        <form action="https://formspree.io/f/xlgpzqpq" method="POST" class="footer-email-form" onsubmit="setTimeout(function(){window.location='https://elvonis.com/thanks.html'},500);">
+  <input type="email" name="_replyto" class="footer-email-input" placeholder="Work email…" required/>
           <button type="submit" class="footer-email-btn" aria-label="Subscribe">→</button>
         </form>
         <div style="display:flex;flex-direction:column;gap:0.5rem;font-size:0.8125rem;color:rgba(255,255,255,0.45);">
