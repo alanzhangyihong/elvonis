@@ -16,7 +16,7 @@ export async function onRequest(context) {
 
   let blogPosts = [];
   try {
-    const response = await fetch(`${domain}/blog-index.json`);
+    const response = await fetch(`${domain}/api/posts`);
     if (response.ok) {
       blogPosts = await response.json();
     }
