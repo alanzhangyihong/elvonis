@@ -48,7 +48,7 @@ export async function onRequest(context) {
     const raw = await fileRes.text();
     const meta = parseMeta(raw);
 
-    return new Response(buildPage(meta), {
+    return new Response(buildPage(meta, slug), {
       headers: { 'Content-Type': 'text/html; charset=utf-8' }
     });
 
@@ -110,7 +110,7 @@ function md(text) {
     });
 }
 
-function buildPage(meta) {
+function buildPage(meta, slug) {
   const ten = meta.title_en || 'Article';
   const tzh = meta.title_zh || ten;
   const cen = meta.category_en || 'Insights';
