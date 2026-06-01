@@ -1,23 +1,8 @@
-# Force .html extension
-/product-detail-ev-d17-175 /product-detail-ev-d17-175.html 301
-/product-detail-ev-s56-60t /product-detail-ev-s56-60t.html 301
-/product-detail-ev-v100p-40 /product-detail-ev-v100p-40.html 301
-/products /products.html 301
-/blog /blog.html 301
-/about-partners /about-partners.html 301
-/distributor /distributor.html 301
-/contact /contact.html 301
-/solutions /solutions.html 301
-/index /index.html 301
-/thanks /thanks.html 301
-
 # Force www
 https://elvonis.com/* https://www.elvonis.com/:splat 301
 http://elvonis.com/* https://www.elvonis.com/:splat 301
 
-# Old URLs from previous site
-/product /products.html 301
-/product.html /products.html 301
+# Old URLs from previous site only
 /oem-factory.html /about-partners.html 301
 /product-detail-ev-dv70.html /products.html 301
 /product-detail-ev-ws65.html /products.html 301
