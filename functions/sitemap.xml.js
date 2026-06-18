@@ -5,7 +5,7 @@ const staticPages = [
   { loc: '/', priority: '1.0', changefreq: 'weekly' },
   { loc: '/products', priority: '0.9', changefreq: 'weekly' },
   { loc: '/product-detail-ev-v100p-40', priority: '0.8', changefreq: 'monthly' },
-  { loc: '/product-detail-ev-v56-60t', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/product-detail-ev-s56-60t', priority: '0.8', changefreq: 'monthly' },
   { loc: '/product-detail-ev-d17-175', priority: '0.8', changefreq: 'monthly' },
   { loc: '/solutions', priority: '0.8', changefreq: 'monthly' },
   { loc: '/distributor', priority: '0.8', changefreq: 'monthly' },
