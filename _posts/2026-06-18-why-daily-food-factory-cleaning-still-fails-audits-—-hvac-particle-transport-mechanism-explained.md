@@ -1,7 +1,7 @@
 ---
-title_en: Why Daily Food Factory Cleaning Still Fails Audits — HVAC Particle
+title_en: Why Daily Food Factory Cleaning Still Fails Audits - HVAC Particle
   Transport Mechanism Explained
-title_zh: 食品工厂每天清洁为什么审核还是不过——换气系统颗粒输送机制工程分析
+title_zh: 食品工厂每天清洁为什么审核还是不过-换气系统颗粒输送机制工程分析
 category_en: Application
 category_zh: 应用案例
 excerpt_en: >-
@@ -10,7 +10,7 @@ excerpt_en: >-
 
   #FoodFactoryAudit  #DustControl  #HACCPCompliance  #FoodSafety  #IndustrialVacuum
 excerpt_zh: |-
-  连续三次审核，同一个地方，同样的积尘——问题不在清洁频率
+  连续三次审核，同一个地方，同样的积尘-问题不在清洁频率
   #食品工厂审核  #粉尘控制  #HACCP合规  #换气积尘  #食品安全  #审核整改  #工业吸尘器  #食品工厂清洁  #气流粉尘  #审核失败
 date: 2026-06-18T09:04:00.000+08:00
 featured: false
@@ -27,7 +27,7 @@ If increased frequency, more staff, and better equipment all failed, the problem
 
 So why does dust keep returning to the same surfaces despite daily cleaning?
 
-Food factories run ventilation at more than ten air changes per hour — a food safety regulatory requirement.
+Food factories run ventilation at more than ten air changes per hour - a food safety regulatory requirement.
 
 Air moves through the facility in a defined circuit: in through supply air diffusers, across the production area, out through return vents.
 
@@ -107,7 +107,7 @@ Next episode.
 
 针对气流和源头进行系统性改善的工厂，记录显示：局部排风安装后主要沉降位置的积尘速率下降约50-70%；审核重复发现在改善后两次审核中有明显下降；清洁频率因积尘速率降低而减少，保洁成本同步下降。三个改善同时发生，不是因为投入更多，而是因为解决对了问题。
 
-气流把颗粒送到末端水平面——那积尘速率最高的是哪个？
+气流把颗粒送到末端水平面-那积尘速率最高的是哪个？
 
 答案几乎在每个工厂都是一样的：设备顶部。
 
