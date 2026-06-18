@@ -1,8 +1,0 @@
-# 强制使用 www 版本（覆盖所有协议）
-http://elvonis.com/* https://www.elvonis.com/:splat 301
-https://elvonis.com/* https://www.elvonis.com/:splat 301
-
-# 旧页面重定向到新页面
-/oem-factory.html /about-partners.html 301
-/product-detail-ev-dv70.html /products.html 301
-/product-detail-ev-ws65.html /products.html 301
