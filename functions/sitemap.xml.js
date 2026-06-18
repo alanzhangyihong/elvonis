@@ -1,18 +1,18 @@
 export async function onRequest(context) {
-  const domain = 'https://elvonis.com';
+  const domain = 'https://www.elvonis.com';
 
-  const staticPages = [
-    { loc: '/', priority: '1.0', changefreq: 'weekly' },
-    { loc: '/products.html', priority: '0.9', changefreq: 'weekly' },
-    { loc: '/product-detail-ev-v100p-40.html', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/product-detail-ev-s56-60t.html', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/product-detail-ev-d17-175.html', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/solutions.html', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/distributor.html', priority: '0.8', changefreq: 'monthly' },
-    { loc: '/about-partners.html', priority: '0.7', changefreq: 'monthly' },
-    { loc: '/contact.html', priority: '0.6', changefreq: 'yearly' },
-    { loc: '/blog.html', priority: '0.8', changefreq: 'weekly' }
-  ];
+const staticPages = [
+  { loc: '/', priority: '1.0', changefreq: 'weekly' },
+  { loc: '/products', priority: '0.9', changefreq: 'weekly' },
+  { loc: '/product-detail-ev-v100p-40', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/product-detail-ev-v56-60t', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/product-detail-ev-d17-175', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/solutions', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/distributor', priority: '0.8', changefreq: 'monthly' },
+  { loc: '/about-partners', priority: '0.7', changefreq: 'monthly' },
+  { loc: '/contact', priority: '0.6', changefreq: 'yearly' },
+  { loc: '/blog', priority: '0.8', changefreq: 'weekly' }
+];
 
   let blogPosts = [];
   try {
