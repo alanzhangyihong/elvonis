@@ -4,13 +4,10 @@ title_en: "Why Daily Cleaning Still Fails Audits: An Engineering Perspective on
 title_zh: 为什么每天清洁审核还是失败？食品工厂粉尘控制的工程视角
 category_en: Expert Guide
 category_zh: 专家指南
-excerpt_en: >-
-  A Grey Streak Shut Down Production for Three Weeks - It Was Never a Cleaning
-  Problem.
-
-  High Horizontal Surfaces / Dust Elevator / Dust Migration / Stokes Law / Hierarchy of Controls / First Principle / Food Audit / Engineering Controls / STADR Model / Four Layers
+excerpt_en: High Horizontal Surfaces / Dust Elevator / Dust Migration / Stokes
+  Law / Hierarchy of Controls / First Principle / Food Audit / Engineering
+  Controls / STADR Model / Four Layers
 excerpt_zh: |+
-  一道灰痕停线三周：不是清洁问题，是粉尘迁移的物理规律。
   高位水平面 / 粉尘电梯 / 粉尘迁移 / 斯托克斯沉降 / 控制层级 / 第一性原理 / 食品工厂审核 / 工程控制 / STADR模型 / 四层控制架构
 
 date: 2026-06-27T14:25:00.000+08:00
