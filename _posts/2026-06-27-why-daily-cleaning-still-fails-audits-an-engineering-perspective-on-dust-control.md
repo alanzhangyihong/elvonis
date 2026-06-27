@@ -17,6 +17,12 @@ excerpt_zh: >+
 date: 2026-06-27T14:25:00.000+08:00
 featured: false
 ---
+Summary
+
+Perfect records, repeated audit failures. This article explains the Stokes settling mechanism and thermal plume behavior behind dust accumulation on food plant equipment tops, offering a low-cost field verification method and a hierarchy-of-controls solution pathway. It also introduces the ELVONIS Dust Migration Model (STADR Model) and the Four Layers control architecture.
+
+ 
+
 1. The Recurring Finding
 
 An auditor's white glove slides across a machine top. A grey streak. Cleaning records are all checked. Signatures complete. The SOP has been expanded from ten steps to thirty. The cleaning crew has grown from three to six. But corrective action is now paused. Downtime can cost thousands of euros per hour. Worse still, the client has locked in the next audit date.
@@ -101,11 +107,11 @@ This case confirms the physical principle: dust does not accumulate by accident.
 
 8. Engineering Data & References
 
-\- Thermal plume velocity: 0.05–0.30 m/s typical. Reference: ASHRAE Handbook, HVAC Applications.
+Thermal plume velocity: 0.05–0.30 m/s typical. Reference: ASHRAE Handbook, HVAC Applications.
 
-\- Particle settling: ~3–5 mm/s for 10 μm in still air. Reference: Hinds, Aerosol Technology, 2nd Edition.
+Particle settling: ~3–5 mm/s for 10 μm in still air. Reference: Hinds, Aerosol Technology, 2nd Edition.
 
-\- Tape deposition method: Qualitative screening; not a substitute for ISO 14644 or customer-specified monitoring.
+Tape deposition method: Qualitative screening; not a substitute for ISO 14644 or customer-specified monitoring.
 
  
 
@@ -121,13 +127,13 @@ Dust does not accumulate by accident. It deposits according to physics. If you c
 
 10. Engineering Takeaways
 
-\- Dust migration is governed by airflow rather than cleaning frequency.
+Dust migration is governed by airflow rather than cleaning frequency.
 
-\- High horizontal surfaces are deposition endpoints, not contamination sources.
+High horizontal surfaces are deposition endpoints, not contamination sources.
 
-\- Source control precedes engineering controls; engineering controls precede administrative controls.
+Source control precedes engineering controls; engineering controls precede administrative controls.
 
-\- Cleaning is the last step, not the first response.
+Cleaning is the last step, not the first response.
 
  
 
@@ -136,6 +142,12 @@ Dust does not accumulate by accident. It deposits according to physics. If you c
 But even after you solve machine-top dust, the auditor has another move. This time they crouch down. Flashlight under the machine. Around the anchor bolts. There's dust there too. And that dust often comes from a source you would never suspect. Next episode: Why does dust always accumulate on machine tops?
 
 <!-- ZH -->
+
+摘要
+
+清洁记录完美，审核却屡屡失败。本文从斯托克斯沉降理论与现场热羽流特性出发，解释食品工厂设备顶部积尘的工程原因，并提供低成本验证方法与符合控制层级的解决路径。同时介绍ELVONIS粉尘迁移模型（STADR模型）与四层控制架构。
+
+ 
 
 一、现象：一个反复出现的审核发现
 
@@ -225,11 +237,11 @@ But even after you solve machine-top dust, the auditor has another move. This ti
 
 八、工程数据与参考文献
 
-\- 热羽流速度：典型值在发热设备附近约为0.05至0.30米每秒，参考来源：美国采暖、制冷与空调工程师学会手册暖通空调应用分册。
+热羽流速度：典型值在发热设备附近约为0.05至0.30米每秒，参考来源：美国采暖、制冷与空调工程师学会手册暖通空调应用分册。
 
-\- 颗粒沉降：10微米颗粒在静止空气中的沉降速度约为3至5毫米每秒，参考来源：海因茨《气溶胶技术》第二版。
+颗粒沉降：10微米颗粒在静止空气中的沉降速度约为3至5毫米每秒，参考来源：海因茨《气溶胶技术》第二版。
 
-\- 胶带沉降法：定性筛查工具，不替代国际标准化组织14644标准或客户指定的正式环境监测。
+胶带沉降法：定性筛查工具，不替代国际标准化组织14644标准或客户指定的正式环境监测。
 
  
 
@@ -245,13 +257,13 @@ ELVONIS第一性原理第一条
 
 十、工程要点总结
 
-\- 粉尘迁移由气流主导，而非由清洁频率决定。
+粉尘迁移由气流主导，而非由清洁频率决定。
 
-\- 高位水平面是沉积终点，不是污染源头。
+高位水平面是沉积终点，不是污染源头。
 
-\- 源头控制优先于工程控制，工程控制优先于行政控制。
+源头控制优先于工程控制，工程控制优先于行政控制。
 
-\- 清洁是最后一步，不是第一反应。
+清洁是最后一步，不是第一反应。
 
  
 
