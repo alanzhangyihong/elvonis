@@ -4,12 +4,15 @@ title_en: "Why Daily Cleaning Still Fails Audits: An Engineering Perspective on
 title_zh: 为什么每天清洁审核还是失败？食品工厂粉尘控制的工程视角
 category_en: Expert Guide
 category_zh: 专家指南
-excerpt_en: High Horizontal Surfaces | Dust Elevator | Dust Migration | Stokes
-  Law | Hierarchy of Controls | First Principle | Food Audit | Engineering
-  Controls | STADR Model | Four Layers
-excerpt_zh: |+
-  高位水平面 | 粉尘电梯 | 粉尘迁移 | 斯托克斯沉降 | 控制层级 | 第一性原理 | 食品工厂审核 | 工程控制 | STADR模型 | 四层控制架构
+excerpt_en: >-
+  A Grey Streak Shut Down Production for Three Weeks - It Was Never a Cleaning
+  Problem.
 
+  Perfect records, repeated audit failures. This article explains the Stokes settling mechanism and thermal plume behavior behind dust accumulation on food plant equipment tops, offering a low-cost field verification method and a hierarchy-of-controls solution pathway. It also introduces the ELVONIS Dust Migration Model (STADR Model) and the Four Layers control architecture.
+excerpt_zh: >-
+  一道灰痕停线三周：不是清洁问题，是粉尘迁移的物理规律。
+
+  清洁记录完美，审核却屡屡失败。本文从斯托克斯沉降理论与现场热羽流特性出发，解释食品工厂设备顶部积尘的工程原因，并提供低成本验证方法与符合控制层级的解决路径。同时介绍ELVONIS粉尘迁移模型（STADR模型）与四层控制架构。
 date: 2026-06-27T14:25:00.000+08:00
 featured: false
 ---
